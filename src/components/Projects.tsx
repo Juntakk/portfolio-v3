@@ -1,61 +1,26 @@
 "use client"; // Required for client-side interactivity in Next.js
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa"; // React Icons for demo and GitHub
-import { icons } from "@/data/icons"; // Import icons
+import { projects } from "../data/projects/data";
+import { Card } from "./ui/card";
 
 const Projects = () => {
-  // Projects data
-  const projects = [
-    {
-      id: 1,
-      title: "Chatbot",
-      desc: "AI Project: A chatbot built with Python, Django, and NumPy.",
-      icons: [icons.python, icons.django, icons.numpy],
-      demo: "#",
-      github: "#",
-    },
-    {
-      id: 2,
-      title: "Seeflix",
-      desc: "Movie search platform built with React, Node.js, and MongoDB.",
-      icons: [icons.react, icons.node, icons.mongo],
-      demo: "#",
-      github: "#",
-    },
-    {
-      id: 3,
-      title: "E-Commerce",
-      desc: "Commerce platform built with React, Node.js, and MongoDB.",
-      icons: [icons.react, icons.node, icons.mongo],
-      demo: "#",
-      github: "#",
-    },
-    {
-      id: 4,
-      title: "Bullet-hell Game",
-      desc: "2D bullet-hell game developed with C++ and Godot.",
-      icons: [icons.cPlusPlus, icons.godot],
-      demo: "#",
-      github: "#",
-    },
-    {
-      id: 5,
-      title: "RPG Game",
-      desc: "Top-down 2D RPG built with C++, Raylib, and Unreal Engine.",
-      icons: [icons.cPlusPlus, icons.raylib, icons.unreal],
-      demo: "#",
-      github: "#",
-    },
-    {
-      id: 6,
-      title: "Diet App",
-      desc: "Meal planning app built with Next.js, Tailwind CSS, and TypeScript.",
-      icons: [icons.next, icons.tailwind, icons.shadcn],
-      demo: "#",
-      github: "#",
-    },
+  // State to hold selected category
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Extract unique categories from the projects
+  const categories = [
+    "All",
+    ...new Set(projects.map((project) => project.category)),
   ];
+
+  // Filter projects based on the selected category
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <section id="projects" className="py-16 bg-[#0a192f]">
@@ -65,12 +30,31 @@ const Projects = () => {
           My Projects
         </h2>
 
+        {/* Category Buttons */}
+        <div className="flex justify-center gap-4 mb-8">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              size={"lg"}
+              variant={selectedCategory === category ? "default" : "outline"}
+              className={`${
+                selectedCategory === category
+                  ? "bg-[#64ffda] text-[#0a192f] hover:bg-[#64ffda] hover:text-[#0a192f]"
+                  : "text-[#64ffda] border-[#64ffda] hover:bg-[#64ffda] hover:text-[#0a192f]"
+              } transition-colors duration-300`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+
         {/* Project Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
+          {filteredProjects.map((project) => (
+            <Card
               key={project.id}
-              className="bg-[#112240] border-[#1f2a48] rounded-lg overflow-hidden hover:border-[#64ffda] transition-all duration-300 p-6"
+              className="flex flex-col justify-evenly bg-[#112240] border-[#1f2a48] rounded-lg overflow-hidden hover:border-[#64ffda] transition-all duration-300 p-6"
             >
               {/* Project Title */}
               <h3 className="text-xl font-bold text-[#ccd6f6] mb-2">
@@ -82,8 +66,10 @@ const Projects = () => {
 
               {/* Tech Stack Icons */}
               <div className="flex gap-2 mb-4">
-                {project.icons.map((Icon, index) => (
-                  <Icon key={index} className="w-6 h-6 text-[#64ffda]" />
+                {project.icons.map((icon, index) => (
+                  <div key={index} className="w-6 h-6 text-[#64ffda]">
+                    <p className="text-xl">{icon}</p>{" "}
+                  </div>
                 ))}
               </div>
 
@@ -120,7 +106,7 @@ const Projects = () => {
                   </a>
                 )}
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

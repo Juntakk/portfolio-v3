@@ -1,7 +1,7 @@
 "use client"; // Required for client-side interactivity in Next.js
 
 import { Button } from "@/components/ui/button";
-import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa"; // React Icons for contact info
+import { FaLinkedin, FaGithub } from "react-icons/fa"; // React Icons for contact info
 
 const Contact = () => {
   return (
@@ -20,21 +20,10 @@ const Contact = () => {
             with me on social media.
           </p>
 
-          {/* Email */}
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <FaEnvelope className="w-6 h-6 text-[#64ffda]" />
-            <a
-              href="mailto:your-email@example.com" // Replace with your email
-              className="text-lg text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300"
-            >
-              nicolas.gauthier.dev@gmail.com{" "}
-            </a>
-          </div>
-
           {/* Social Media Links */}
           <div className="flex items-center justify-center gap-4">
             <a
-              href="https://linkedin.com/in/your-profile" // Replace with your LinkedIn profile
+              href="https://linkedin.com/in/nicolasgauthierdev" // Replace with your LinkedIn profile
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300"
@@ -42,7 +31,7 @@ const Contact = () => {
               <FaLinkedin className="w-8 h-8" />
             </a>
             <a
-              href="https://github.com/your-username" // Replace with your GitHub profile
+              href="https://github.com/Juntakk" // Replace with your GitHub profile
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300"
@@ -112,6 +101,7 @@ const Contact = () => {
             {/* Submit Button */}
             <div className="text-center">
               <Button
+                variant="outline"
                 type="submit"
                 className="text-[#64ffda] border-[#64ffda] hover:bg-[#64ffda] hover:text-[#0a192f] transition-colors duration-300"
               >

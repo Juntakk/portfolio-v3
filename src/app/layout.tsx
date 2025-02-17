@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ParticlesWrapper from "../components/particles/ParticlesWrapper"; // Import the wrapper component
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ParticlesWrapper /> {/* Particles background */}
+        <div style={{ position: "relative", zIndex: 0 }}>
+          {" "}
+          {/* Ensure content is above particles */}
+          {children}
+        </div>
       </body>
     </html>
   );

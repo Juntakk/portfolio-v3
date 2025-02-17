@@ -60,7 +60,9 @@ const AboutMe = () => {
                 key={index}
                 className="flex flex-col items-center justify-center p-4 bg-[#112240] border-[#1f2a48] rounded-lg hover:border-[#64ffda] transition-all duration-300"
               >
-                <skill.icon className="w-10 h-10 text-[#64ffda] mb-2" />
+                <div className="text-[#64ffda] mb-2">
+                  <i className="text-4xl">{skill.icon}</i>{" "}
+                </div>
                 <p className="text-lg text-[#ccd6f6]">{skill.name}</p>
               </div>
             ))}

@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { Link } from "react-scroll";
 
 const Header = () => {
   return (
@@ -21,16 +22,30 @@ const Header = () => {
       </p>
 
       {/* Call to Action */}
-      <Button
-        variant="outline"
-        className="mt-8 text-accent border-accent hover:bg-accent hover:text-primary transition-colors duration-300"
+      <Link
+        to="projects"
+        smooth={true}
+        duration={1500}
+        aria-label="Scroll to Projects"
       >
-        View My Work
-      </Button>
+        <Button
+          variant="outline"
+          className="mt-8 text-accent border-accent hover:bg-accent hover:text-primary transition-colors duration-300"
+        >
+          View My Work
+        </Button>
+      </Link>
 
       {/* Down Arrow */}
       <div className="mt-12 animate-bounce">
-        <ArrowDown className="text-accent w-8 h-8" />
+        <Link
+          to="services"
+          smooth={true}
+          duration={1500}
+          aria-label="Scroll to Services"
+        >
+          <ArrowDown className="text-accent w-8 h-8 hover:cursor-pointer" />
+        </Link>
       </div>
     </section>
   );
