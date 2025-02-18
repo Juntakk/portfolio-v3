@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import ParticlesWrapper from "../components/particles/ParticlesWrapper"; // Import the wrapper component
+import ThemeProvider from "@/theme/ThemeProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -24,14 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ParticlesWrapper /> {/* Particles background */}
+      <body className={`${inter.variable} antialiased`}>
+        <ParticlesWrapper />
         <div style={{ position: "relative", zIndex: 0 }}>
-          {" "}
-          {/* Ensure content is above particles */}
-          {children}
+          <ThemeProvider>{children}</ThemeProvider>
         </div>
       </body>
     </html>

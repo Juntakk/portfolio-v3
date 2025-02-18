@@ -16,7 +16,10 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.3",
     "lucide-react": "^0.475.0",
+    "magic.css": "^1.4.8",
+    "motion": "^12.4.3",
     "next": "15.1.7",
+    "node-emoji": "^2.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
@@ -25,7 +28,8 @@
     "react-tsparticles": "^2.12.2",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
-    "tsparticles": "^3.8.1"
+    "tsparticles": "^3.8.1",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

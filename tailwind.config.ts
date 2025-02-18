@@ -1,8 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      transitionDuration: {
+        DEFAULT: "500ms",
+      },
+      rotate: {
+        360: "360deg",
+      },
       colors: {
         primary: "#0a192f", // Navy blue
         secondary: "#ccd6f6", // Light grayish-blue

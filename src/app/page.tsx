@@ -1,18 +1,25 @@
 "use client";
-import AboutMe from "@/components/About";
-import Contact from "@/components/Contact";
-import Header from "@/components/Header";
-import Projects from "@/components/Projects";
-import Services from "@/components/Services";
+
+import AboutMe from "@/components/shared/About";
+import Contact from "@/components/shared/Contact";
+import Header from "@/components/shared/Header";
+import Projects from "@/components/shared/Projects";
+import Services from "@/components/shared/Services";
+import Footer from "@/components/shared/Footer";
+import VerticalNavbar from "@/components/shared/VerticalNavbar";
+import ThemeToggle from "@/components/shared/ThemeToggle";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+      <VerticalNavbar />
+      <ThemeToggle />
       <Header />
       <Services />
       <Projects />
       <AboutMe />
       <Contact />
+      <Footer />
     </main>
   );
 }

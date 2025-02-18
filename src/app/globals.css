@@ -2,19 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Iceland, serif";
-}
 section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5rem;
-  box-sizing: border-box;
 }
-
+h2,
+p {
+  cursor: default;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
