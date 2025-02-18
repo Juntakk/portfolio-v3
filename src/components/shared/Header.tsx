@@ -5,11 +5,12 @@ import { motion, AnimatePresence, Variants } from "framer-motion"; // Add Framer
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { Link } from "react-scroll";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const Header = () => {
-  const words = ["  Web ", "Mobile", " Game "];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-
+  const translations = useTranslation();
+  const words = [translations.word1, translations.word2, translations.word3];
   const titleVariants: Variants = {
     offscreen: {
       opacity: 0,
@@ -48,7 +49,7 @@ const Header = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white"
       >
-        Hi, I&apos;m{" "}
+        {translations.greeting}
         <motion.span
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -61,6 +62,7 @@ const Header = () => {
 
       {/* Role */}
       <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mt-4">
+        {translations.greeting2}
         <span className="text-accent">
           <AnimatePresence mode="wait">
             <motion.span
@@ -69,13 +71,13 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="inline-block w-16 sm:w-24 text-center"
+              className="inline-block text-center"
             >
               {words[currentWordIndex]}
             </motion.span>
           </AnimatePresence>
         </span>{" "}
-        Developer building modern and scalable solutions.
+        {translations.greeting3}
       </p>
 
       {/* Call to Action */}
@@ -89,7 +91,7 @@ const Header = () => {
           variant="outline"
           className="mt-8 text-accent border-accent hover:bg-accent hover:text-primary transition-colors duration-300"
         >
-          View My Work
+          {translations.workCta}
         </Button>
       </Link>
 

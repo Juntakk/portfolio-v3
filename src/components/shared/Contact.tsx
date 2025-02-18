@@ -3,9 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const Contact = () => {
-  // Animation variants
+  const translations = useTranslation();
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -26,7 +27,7 @@ const Contact = () => {
       className="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ amount: 0.2 }}
       variants={containerVariants}
     >
       <div className="container mx-auto px-4">
@@ -35,7 +36,7 @@ const Contact = () => {
           className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-100 text-center mb-12"
           variants={childVariants}
         >
-          Get in Touch
+          {translations.contactTitle}
         </motion.h2>
 
         {/* Contact Information */}
@@ -44,9 +45,7 @@ const Contact = () => {
           variants={childVariants}
         >
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            I&apos;m always open to new opportunities, collaborations, or just a
-            friendly chat. Feel free to reach out to me via email or connect
-            with me on social media.
+            {translations.contactHeader}
           </p>
 
           {/* Social Media Links */}
@@ -84,14 +83,14 @@ const Contact = () => {
                 htmlFor="name"
                 className="block text-sm font-medium text-gray-800 dark:text-gray-100 mb-2"
               >
-                Name
+                {translations.name}
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 className="w-full p-3 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
-                placeholder="Your Name"
+                placeholder={translations.yourName}
                 required
               />
             </motion.div>
@@ -109,7 +108,7 @@ const Contact = () => {
                 id="email"
                 name="email"
                 className="w-full p-3 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
-                placeholder="your-email@example.com"
+                placeholder={translations.yourEmail}
                 required
               />
             </motion.div>
@@ -127,7 +126,7 @@ const Contact = () => {
                 name="message"
                 rows={5}
                 className="w-full p-3 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
-                placeholder="Your Message"
+                placeholder={translations.yourMessage}
                 required
               />
             </motion.div>
@@ -139,7 +138,7 @@ const Contact = () => {
                 type="submit"
                 className="text-primary dark:text-accent border-primary dark:border-accent hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-gray-900 transition-colors duration-300"
               >
-                Send Message
+                {translations.sendMessage}
               </Button>
             </motion.div>
           </form>

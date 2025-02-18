@@ -10,8 +10,10 @@ import {
   IoMail,
 } from "react-icons/io5";
 import NavLink from "../ui/navlink";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function VerticalNavbar() {
+  const translations = useTranslation();
   const [activeSection, setActiveSection] = useState("header"); // State to track active section
 
   // Function to handle intersection changes
@@ -56,7 +58,7 @@ export default function VerticalNavbar() {
         {/* Home Link */}
         <NavLink
           icon={<IoHome />}
-          content="Home"
+          content={translations.home}
           destination="header"
           isActive={activeSection === "header"} // Pass active state
         />
@@ -72,7 +74,7 @@ export default function VerticalNavbar() {
         {/* Projects Link */}
         <NavLink
           icon={<IoFolderOpen />}
-          content="Projects"
+          content={translations.projects}
           destination="projects"
           isActive={activeSection === "projects"} // Pass active state
         />
@@ -80,7 +82,7 @@ export default function VerticalNavbar() {
         {/* About Link */}
         <NavLink
           icon={<IoPerson />}
-          content="About"
+          content={translations.about}
           destination="about"
           isActive={activeSection === "about"} // Pass active state
         />

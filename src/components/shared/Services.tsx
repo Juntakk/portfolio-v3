@@ -8,32 +8,30 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { motion, Variants } from "framer-motion";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const Services = () => {
+  const translations = useTranslation();
   const services = [
     {
       icon: <Code className="w-10 h-10 text-accent" />,
-      title: "Web Development",
-      description:
-        "Building modern, responsive, and scalable websites tailored to your needs.",
+      title: translations.webDevelopment,
+      description: translations.servicesDesc1,
     },
     {
       icon: <Smartphone className="w-10 h-10 text-accent" />,
-      title: "Mobile Development",
-      description:
-        "Creating cross-platform mobile apps with seamless user experiences.",
+      title: translations.mobileDevelopment,
+      description: translations.servicesDesc2,
     },
     {
       icon: <Gamepad className="w-10 h-10 text-accent" />,
-      title: "Game Development",
-      description:
-        "Designing and developing engaging games for web and mobile platforms.",
+      title: translations.gameDevelopment,
+      description: translations.servicesDesc3,
     },
     {
       icon: <LayoutDashboard className="w-10 h-10 text-accent" />,
-      title: "UI/UX Design",
-      description:
-        "Crafting intuitive and visually stunning interfaces for your applications.",
+      title: translations.uiUxDesign,
+      description: translations.servicesDesc4,
     },
   ];
 
@@ -74,7 +72,7 @@ const Services = () => {
           variants={titleVariants}
           className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center mb-12"
         >
-          What I Offer
+          {translations.servicesTitle}
         </motion.h2>
 
         {/* Service Cards */}

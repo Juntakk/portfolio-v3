@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { icons } from "@/data/icons";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const AboutMe = () => {
   const skills = [
@@ -15,6 +16,7 @@ const AboutMe = () => {
     { name: "C++", icon: icons.cPlusPlus },
     { name: "Flutter", icon: icons.flutter },
   ];
+  const translations = useTranslation();
 
   return (
     <section id="about" className="py-16 bg-gray-100 dark:bg-gray-900">
@@ -26,7 +28,7 @@ const AboutMe = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center mb-12"
         >
-          About Me
+          {translations.aboutTitle}
         </motion.h2>
 
         {/* Introduction with Picture */}
@@ -50,10 +52,7 @@ const AboutMe = () => {
 
           <div className="flex-1 text-center md:text-left px-10 max-w-xl">
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              Hi, I&apos;m Nicolas Gauthier, a passionate developer with
-              expertise in building modern web and mobile applications. I love
-              solving complex problems and creating user-friendly, scalable
-              solutions.
+              {translations.aboutHeader}
             </p>
           </div>
         </motion.div>
@@ -72,7 +71,7 @@ const AboutMe = () => {
           className="max-w-4xl mx-auto"
         >
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-8">
-            Skills
+            {translations.skills}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
@@ -104,9 +103,7 @@ const AboutMe = () => {
           className="max-w-3xl mx-auto text-center mt-12"
         >
           <p className="text-lg text-gray-700 dark:text-gray-300">
-            When I&apos;m not coding, I enjoy playing video games, exploring new
-            technologies, and contributing to open-source projects. I believe in
-            continuous learning and always strive to improve my skills.
+            {translations.aboutFooter}
           </p>
         </motion.div>
       </div>
