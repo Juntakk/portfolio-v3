@@ -61,7 +61,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="h-screen px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900"
+      className="h-screen px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900 overflow-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Section Title */}

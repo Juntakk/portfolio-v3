@@ -13,9 +13,8 @@ h2,
 p {
   cursor: default;
 }
-body {
-  margin: 0;
-  overflow-x: hidden;
+canvas {
+  overflow: hidden !important;
 }
 @layer base {
   :root {

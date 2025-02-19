@@ -97,7 +97,7 @@ const ParticlesBackground = () => {
         position: "fixed",
         top: 0,
         left: 0,
-        width: "100%",
+        width: "100vw",
         height: "100%",
         zIndex: 1, // Ensure it stays in the background
         pointerEvents: "none", // Allow clicks to pass through
