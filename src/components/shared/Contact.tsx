@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/hooks/useTranslation";
+import { Input } from "../ui/input";
 
 const Contact = () => {
   const translations = useTranslation();
@@ -28,10 +29,10 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-14 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+      className="py-10 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
     >
       <motion.div
-        className="container mx-auto px-6"
+        className="container mx-auto px-2"
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.2 }}
@@ -39,7 +40,7 @@ const Contact = () => {
       >
         {/* Section Title */}
         <motion.h2
-          className="text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-gray-100 text-center mb-16"
+          className="text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-gray-100 text-center mb-6"
           variants={childVariants}
         >
           {translations.contactTitle}
@@ -47,7 +48,7 @@ const Contact = () => {
 
         {/* Social Media Links */}
         <motion.div
-          className="flex justify-center gap-8 mb-16"
+          className="flex justify-center gap-8 mb-12"
           variants={childVariants}
         >
           <motion.a
@@ -86,7 +87,7 @@ const Contact = () => {
               >
                 {translations.name}
               </label>
-              <input
+              <Input
                 type="text"
                 id="name"
                 name="name"
@@ -104,7 +105,7 @@ const Contact = () => {
               >
                 Email
               </label>
-              <input
+              <Input
                 type="email"
                 id="email"
                 name="email"
@@ -137,7 +138,7 @@ const Contact = () => {
               <Button
                 variant="outline"
                 type="submit"
-                className="px-6 py-3 text-lg font-medium text-primary dark:text-accent border-primary dark:border-accent hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-gray-900 rounded-lg transition-all duration-500"
+                className="text-md p-4 text-primary dark:text-accent border-primary dark:border-accent hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-gray-900 transition-all duration-500"
               >
                 {translations.sendMessage}
               </Button>

@@ -51,7 +51,7 @@ const NavLink = ({ icon, content, destination, isActive }: NavLinkProps) => {
         <TooltipContent
           side="right"
           sideOffset={10}
-          className="bg-white text-gray-700 border border-gray-100 rounded-lg shadow-lg px-3 py-2 text-sm font-medium" // Light mode tooltip
+          className="bg-transparent text-accent rounded-lg shadow-lg py-2 text-sm font-medium" // Light mode tooltip
         >
           <p>{content}</p>
         </TooltipContent>
