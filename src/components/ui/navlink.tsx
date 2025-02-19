@@ -37,7 +37,7 @@ const NavLink = ({ icon, content, destination, isActive }: NavLinkProps) => {
               spy={true}
             >
               <span
-                className={`lg:text-3xl text-xl transition-all duration-300 ${
+                className={`lg:text-3xl text-lg transition-all duration-300 ${
                   isActive
                     ? "text-accent border-b-2 border-accent py-1" // Active link styles (your accent color)
                     : "text-gray-400 hover:text-accent" // Inactive link styles (gray with accent hover)
@@ -50,8 +50,8 @@ const NavLink = ({ icon, content, destination, isActive }: NavLinkProps) => {
         </TooltipTrigger>
         <TooltipContent
           side="right"
-          sideOffset={10}
-          className="bg-transparent text-accent rounded-lg shadow-lg py-2 text-sm font-medium" // Light mode tooltip
+          sideOffset={5}
+          className="bg-transparent text-accent rounded-lg shadow-lg py-2 text-xs sm:text-sm font-medium" // Light mode tooltip
         >
           <p>{content}</p>
         </TooltipContent>

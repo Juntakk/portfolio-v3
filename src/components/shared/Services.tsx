@@ -61,22 +61,22 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="h-screen px-8 bg-gray-100 dark:bg-gray-900"
+      className="h-screen px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900"
     >
-      <div className="container mx-auto px-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Section Title */}
         <motion.h2
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ amount: 0.5 }}
           variants={titleVariants}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center mb-12"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center mb-8 sm:mb-12"
         >
           {translations.servicesTitle}
         </motion.h2>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -91,10 +91,10 @@ const Services = () => {
                   <div className="flex justify-center mb-4 text-accent">
                     {service.icon}
                   </div>
-                  <CardTitle className="text-xl text-gray-900 dark:text-white text-center cursor-default">
+                  <CardTitle className="text-lg sm:text-xl md:text-2xl text-gray-900 dark:text-white text-center cursor-default">
                     {service.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-700 dark:text-gray-300 text-center mt-2 cursor-default">
+                  <CardDescription className="text-sm sm:text-base text-gray-700 dark:text-gray-300 text-center mt-2 cursor-default">
                     {service.description}
                   </CardDescription>
                 </CardHeader>

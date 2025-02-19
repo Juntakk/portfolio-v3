@@ -46,15 +46,15 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-16 px-12 sm:px-6 lg:px-20 overflow-hidden bg-gray-50 dark:bg-gray-900"
+      className="py-24 sm:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 text-center mb-12"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 text-center mb-8 sm:mb-12"
         >
           {translations.projectsTitle}
         </motion.h2>
@@ -71,7 +71,7 @@ const Projects = () => {
               transition: { staggerChildren: 0.2 },
             },
           }}
-          className="flex flex-wrap justify-center gap-4 mb-8"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8"
         >
           {translatedCategories.map((category) => (
             <motion.div
@@ -82,7 +82,7 @@ const Projects = () => {
               }}
             >
               <Button
-                size="lg"
+                size="sm" // Responsive button size
                 variant={selectedCategory === category ? "default" : "outline"}
                 className={
                   selectedCategory === category
@@ -106,7 +106,7 @@ const Projects = () => {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
           }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[500px]" // Set a minimum height
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 min-h-[400px] sm:min-h-[500px]" // Responsive minimum height
         >
           {filteredProjects.map((project) => (
             <motion.div
@@ -118,26 +118,29 @@ const Projects = () => {
             >
               <Card className="flex flex-col justify-evenly bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden hover:shadow-lg hover:border-accent transition-all duration-300 p-4 sm:p-5 md:p-6 max-w-full">
                 {/* Project Title */}
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2 cursor-default">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-100 mb-2 cursor-default">
                   {project.title}
                 </h3>
 
                 {/* Project Description */}
-                <p className="sm:h-30 h-24 text-gray-600 dark:text-gray-400 mb-4 cursor-default">
+                <p className="h-16 sm:h-32 text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 cursor-default">
                   {project.desc}
                 </p>
 
                 {/* Tech Stack Icons */}
-                <div className="flex gap-8 mt-4 mb-8">
+                <div className="flex gap-4 sm:gap-6 mt-4 mb-6 sm:mb-8">
                   {project.icons.map((icon, index) => (
-                    <div key={index} className="w-6 h-6 text-accent text-3xl">
+                    <div
+                      key={index}
+                      className="w-6 h-6 text-accent text-2xl sm:text-3xl"
+                    >
                       {icon}
                     </div>
                   ))}
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-4">
+                <div className="flex gap-3 sm:gap-4">
                   {project.demo && (
                     <a
                       href={project.demo}
@@ -146,6 +149,7 @@ const Projects = () => {
                       aria-label={`View demo for ${project.title}`}
                     >
                       <Button
+                        size="sm" // Responsive button size
                         variant="outline"
                         className="text-accent border-accent hover:bg-accent/10 dark:text-accent dark:border-accent dark:hover:bg-accent/20"
                       >
@@ -162,6 +166,7 @@ const Projects = () => {
                       aria-label={`View GitHub repository for ${project.title}`}
                     >
                       <Button
+                        size="sm" // Responsive button size
                         variant="outline"
                         className="text-accent border-accent hover:bg-accent/10 dark:text-accent dark:border-accent dark:hover:bg-accent/20"
                       >

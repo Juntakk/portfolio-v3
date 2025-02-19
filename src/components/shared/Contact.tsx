@@ -31,10 +31,10 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-10 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+      className="py-10 px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
     >
       <motion.div
-        className="container mx-auto px-2"
+        className="container mx-auto px-4 sm:px-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.2 }}
@@ -42,7 +42,7 @@ const Contact = () => {
       >
         {/* Section Title */}
         <motion.h2
-          className="text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-gray-100 text-center mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-gray-100 text-center mb-6"
           variants={childVariants}
         >
           {translations.contactTitle}
@@ -50,7 +50,7 @@ const Contact = () => {
 
         {/* Social Media Links */}
         <motion.div
-          className="flex justify-center gap-8 mb-12"
+          className="flex justify-center gap-6 sm:gap-8 mb-10 sm:mb-12"
           variants={childVariants}
         >
           <motion.a
@@ -61,7 +61,7 @@ const Contact = () => {
             variants={childVariants}
             whileHover={{ scale: 1.1 }}
           >
-            <FaLinkedin className="w-10 h-10" />
+            <FaLinkedin className="w-8 h-8 sm:w-10 sm:h-10" />
           </motion.a>
           <motion.a
             href="https://github.com/Juntakk"
@@ -71,16 +71,16 @@ const Contact = () => {
             variants={childVariants}
             whileHover={{ scale: 1.1 }}
           >
-            <FaGithub className="w-10 h-10" />
+            <FaGithub className="w-8 h-8 sm:w-10 sm:h-10" />
           </motion.a>
         </motion.div>
 
         {/* Contact Form */}
         <motion.div
-          className="max-w-2xl mx-6 sm:mx-auto"
+          className="max-w-2xl mx-4 sm:mx-auto"
           variants={childVariants}
         >
-          <form className="space-y-8">
+          <form className="space-y-6 sm:space-y-8">
             {/* Name */}
             <motion.div variants={childVariants}>
               <Label
@@ -128,7 +128,7 @@ const Contact = () => {
               <Textarea
                 id="message"
                 name="message"
-                rows={6}
+                rows={5}
                 className="w-full p-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
                 placeholder={translations.yourMessage}
                 required
@@ -140,7 +140,7 @@ const Contact = () => {
               <Button
                 variant="outline"
                 type="submit"
-                className="text-md p-4 text-primary dark:text-accent border-primary dark:border-accent hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-gray-900 transition-all duration-500"
+                className="w-full sm:w-auto text-md p-4 text-primary dark:text-accent border-primary dark:border-accent hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-gray-900 transition-all duration-500"
               >
                 {translations.sendMessage}
               </Button>
