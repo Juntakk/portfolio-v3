@@ -8,12 +8,14 @@ import Services from "@/components/shared/Services";
 import Footer from "@/components/shared/Footer";
 import VerticalNavbar from "@/components/shared/VerticalNavbar";
 import ThemeToggle from "@/components/shared/ThemeToggle";
+import CVDownloadButton from "@/components/shared/CvDownloadButton";
 
 export default function Home() {
   return (
     <main className="z-2">
       <VerticalNavbar />
       <ThemeToggle />
+      <CVDownloadButton />
       <Header />
       <Services />
       <Projects />

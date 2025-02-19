@@ -5,6 +5,8 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/hooks/useTranslation";
 import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Textarea } from "../ui/textarea";
 
 const Contact = () => {
   const translations = useTranslation();
@@ -81,12 +83,12 @@ const Contact = () => {
           <form className="space-y-8">
             {/* Name */}
             <motion.div variants={childVariants}>
-              <label
+              <Label
                 htmlFor="name"
                 className="block text-sm font-medium text-gray-800 dark:text-gray-100 mb-2"
               >
                 {translations.name}
-              </label>
+              </Label>
               <Input
                 type="text"
                 id="name"
@@ -99,12 +101,12 @@ const Contact = () => {
 
             {/* Email */}
             <motion.div variants={childVariants}>
-              <label
+              <Label
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-800 dark:text-gray-100 mb-2"
               >
                 Email
-              </label>
+              </Label>
               <Input
                 type="email"
                 id="email"
@@ -117,13 +119,13 @@ const Contact = () => {
 
             {/* Message */}
             <motion.div variants={childVariants}>
-              <label
+              <Label
                 htmlFor="message"
                 className="block text-sm font-medium text-gray-800 dark:text-gray-100 mb-2"
               >
                 Message
-              </label>
-              <textarea
+              </Label>
+              <Textarea
                 id="message"
                 name="message"
                 rows={6}

@@ -50,6 +50,7 @@ const translations: { [key: string]: Translations } = {
     about: "About",
     projects: "Projects",
     home: "Home",
+    downloadCv: "Download CV",
   },
   fr: {
     greeting: "Allô, je suis ",
@@ -96,6 +97,7 @@ const translations: { [key: string]: Translations } = {
     about: "À propos",
     projects: "Projets",
     home: "Accueil",
+    downloadCv: "Télécharger CV",
   },
 };
 
