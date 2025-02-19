@@ -1,9 +1,11 @@
 "use client";
 
+import { useThemeStore } from "@/theme/theme";
 import React, { useEffect, useRef } from "react";
 
 const ParticlesBackground = () => {
   const canvasRef = useRef(null);
+  const { theme } = useThemeStore();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -36,7 +38,7 @@ const ParticlesBackground = () => {
       particles.forEach((particle) => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "#64FFDB4B";
+        ctx.fillStyle = theme === "dark" ? "#52d4ba" : "#33333349";
         ctx.fill();
         ctx.closePath();
       });
@@ -86,7 +88,7 @@ const ParticlesBackground = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas

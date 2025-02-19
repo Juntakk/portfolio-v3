@@ -40,7 +40,7 @@ export default function VerticalNavbar() {
   }, []);
 
   return (
-    <nav className="fixed top-3/4 transform -translate-y-3/4 p-1 sm:p-5 rounded-lg z-50 ">
+    <nav className="fixed top-2/3 transform -translate-y-2/3 text-accent p-1 sm:p-3 bg-transparent backdrop-blur-sm rounded-lg shadow-sm border border-white/10">
       <motion.ul
         initial="hidden"
         animate="visible"

@@ -11,7 +11,7 @@ import ThemeToggle from "@/components/shared/ThemeToggle";
 
 export default function Home() {
   return (
-    <main className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <main className="z-2">
       <VerticalNavbar />
       <ThemeToggle />
       <Header />

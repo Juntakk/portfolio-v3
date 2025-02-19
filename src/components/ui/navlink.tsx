@@ -34,14 +34,13 @@ const NavLink = ({ icon, content, destination, isActive }: NavLinkProps) => {
               to={destination}
               smooth={true}
               duration={1000}
-              spy={true} // Enables active state when scrolling
-              offset={-50} // Adjusts active state detection
+              spy={true}
             >
               <span
                 className={`lg:text-3xl text-xl transition-all duration-300 ${
                   isActive
-                    ? "text-[#64ffda] border-b-2 border-[#64ffda] py-1" // Active link styles
-                    : "text-[#ccd6f6] dark:text-gray-400 hover:text-[#64ffda]" // Inactive link styles
+                    ? "text-accent border-b-2 border-accent py-1" // Active link styles (your accent color)
+                    : "text-gray-400 hover:text-accent" // Inactive link styles (gray with accent hover)
                 }`}
               >
                 {icon}
@@ -50,9 +49,9 @@ const NavLink = ({ icon, content, destination, isActive }: NavLinkProps) => {
           </motion.li>
         </TooltipTrigger>
         <TooltipContent
-          side="right" // Tooltip appears on the right
-          sideOffset={10} // Adds spacing between the icon and tooltip
-          className="bg-[#0a192f] text-[#64ffda] border border-[#64ffda] rounded-lg shadow-lg px-3 py-2 text-sm font-medium" // Tooltip styles
+          side="right"
+          sideOffset={10}
+          className="bg-white text-gray-700 border border-gray-100 rounded-lg shadow-lg px-3 py-2 text-sm font-medium" // Light mode tooltip
         >
           <p>{content}</p>
         </TooltipContent>

@@ -12,71 +12,72 @@ const Contact = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, staggerChildren: 0.2 },
+      transition: { duration: 0.8, staggerChildren: 0.25, ease: "easeOut" },
     },
   };
 
   const childVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   return (
-    <motion.section
+    <section
       id="contact"
-      className="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.2 }}
-      variants={containerVariants}
+      className="py-14 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
     >
-      <div className="container mx-auto px-4">
+      <motion.div
+        className="container mx-auto px-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.2 }}
+        variants={containerVariants}
+      >
         {/* Section Title */}
         <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-100 text-center mb-12"
+          className="text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-gray-100 text-center mb-16"
           variants={childVariants}
         >
           {translations.contactTitle}
         </motion.h2>
 
-        {/* Contact Information */}
+        {/* Social Media Links */}
         <motion.div
-          className="max-w-2xl mx-auto text-center mb-12"
+          className="flex justify-center gap-8 mb-16"
           variants={childVariants}
         >
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            {translations.contactHeader}
-          </p>
-
-          {/* Social Media Links */}
-          <div className="flex items-center justify-center gap-4">
-            <motion.a
-              href="https://linkedin.com/in/nicolasgauthierdev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-800 dark:text-gray-100 hover:text-accent dark:hover:text-accent transition-colors duration-300"
-              variants={childVariants}
-            >
-              <FaLinkedin className="w-8 h-8" />
-            </motion.a>
-            <motion.a
-              href="https://github.com/Juntakk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-800 dark:text-gray-100 hover:text-accent dark:hover:text-accent transition-colors duration-300"
-              variants={childVariants}
-            >
-              <FaGithub className="w-8 h-8" />
-            </motion.a>
-          </div>
+          <motion.a
+            href="https://linkedin.com/in/nicolasgauthierdev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-800 dark:text-gray-100 hover:text-accent dark:hover:text-accent transition-colors duration-300"
+            variants={childVariants}
+            whileHover={{ scale: 1.1 }}
+          >
+            <FaLinkedin className="w-10 h-10" />
+          </motion.a>
+          <motion.a
+            href="https://github.com/Juntakk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-800 dark:text-gray-100 hover:text-accent dark:hover:text-accent transition-colors duration-300"
+            variants={childVariants}
+            whileHover={{ scale: 1.1 }}
+          >
+            <FaGithub className="w-10 h-10" />
+          </motion.a>
         </motion.div>
 
         {/* Contact Form */}
         <motion.div
-          className="max-w-2xl mx-5 sm:mx-auto"
+          className="max-w-2xl mx-6 sm:mx-auto"
           variants={childVariants}
         >
-          <form className="space-y-6">
+          <form className="space-y-8">
             {/* Name */}
             <motion.div variants={childVariants}>
               <label
@@ -89,7 +90,7 @@ const Contact = () => {
                 type="text"
                 id="name"
                 name="name"
-                className="w-full p-3 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
+                className="w-full p-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
                 placeholder={translations.yourName}
                 required
               />
@@ -107,7 +108,7 @@ const Contact = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full p-3 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
+                className="w-full p-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
                 placeholder={translations.yourEmail}
                 required
               />
@@ -124,8 +125,8 @@ const Contact = () => {
               <textarea
                 id="message"
                 name="message"
-                rows={5}
-                className="w-full p-3 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
+                rows={6}
+                className="w-full p-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
                 placeholder={translations.yourMessage}
                 required
               />
@@ -136,15 +137,15 @@ const Contact = () => {
               <Button
                 variant="outline"
                 type="submit"
-                className="text-primary dark:text-accent border-primary dark:border-accent hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-gray-900 transition-colors duration-300"
+                className="px-6 py-3 text-lg font-medium text-primary dark:text-accent border-primary dark:border-accent hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-gray-900 rounded-lg transition-all duration-500"
               >
                 {translations.sendMessage}
               </Button>
             </motion.div>
           </form>
         </motion.div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 };
 

@@ -38,7 +38,7 @@ const Header = () => {
   return (
     <section
       id="header"
-      className="h-screen flex flex-col justify-center items-center text-center px-4 bg-white dark:bg-gray-900"
+      className="flex flex-col justify-center items-center text-center px-4 bg-white dark:bg-gray-900"
     >
       {/* Greeting */}
       <motion.h1
@@ -47,7 +47,7 @@ const Header = () => {
         animate={{ opacity: 1, y: 0 }}
         variants={titleVariants}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white"
+        className="mb-3 text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white"
       >
         {translations.greeting}
         <motion.span
@@ -61,7 +61,7 @@ const Header = () => {
       </motion.h1>
 
       {/* Role */}
-      <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mt-4">
+      <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300">
         {translations.greeting2}
         <span className="text-accent">
           <AnimatePresence mode="wait">

@@ -61,7 +61,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="py-16 px-8 overflow-hidden bg-gray-100 dark:bg-gray-900"
+      className="h-screen px-8 bg-gray-100 dark:bg-gray-900"
     >
       <div className="container mx-auto px-12">
         {/* Section Title */}
@@ -91,10 +91,10 @@ const Services = () => {
                   <div className="flex justify-center mb-4 text-accent">
                     {service.icon}
                   </div>
-                  <CardTitle className="text-xl text-gray-900 dark:text-white text-center">
+                  <CardTitle className="text-xl text-gray-900 dark:text-white text-center cursor-default">
                     {service.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-700 dark:text-gray-300 text-center mt-2">
+                  <CardDescription className="text-gray-700 dark:text-gray-300 text-center mt-2 cursor-default">
                     {service.description}
                   </CardDescription>
                 </CardHeader>

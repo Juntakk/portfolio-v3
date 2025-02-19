@@ -9,10 +9,10 @@ const AboutMe = () => {
   const skills = [
     { name: "Python", icon: icons.python },
     { name: "React", icon: icons.react },
-    { name: "Node.js", icon: icons.node },
-    { name: "MongoDB", icon: icons.mongo },
-    { name: "Next.js", icon: icons.next },
-    { name: "Tailwind CSS", icon: icons.tailwind },
+    { name: "Node", icon: icons.node },
+    { name: "Shadcn", icon: icons.shadcn },
+    { name: "Next", icon: icons.next },
+    { name: "Tailwind", icon: icons.tailwind },
     { name: "C++", icon: icons.cPlusPlus },
     { name: "Flutter", icon: icons.flutter },
   ];
