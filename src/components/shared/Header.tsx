@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react"; // Add useState and useEffect
-import { motion, AnimatePresence, Variants } from "framer-motion"; // Add Framer Motion
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+// import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { Link } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -11,6 +11,7 @@ const Header = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const translations = useTranslation();
   const words = [translations.word1, translations.word2, translations.word3];
+
   const titleVariants: Variants = {
     offscreen: {
       opacity: 0,
@@ -61,16 +62,23 @@ const Header = () => {
       </motion.h1>
 
       {/* Role */}
-      <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300">
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.5 }}
+        className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300"
+      >
         {translations.greeting2}
         <span className="text-accent">
           <AnimatePresence mode="wait">
             <motion.span
               key={currentWordIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.5 }}
+              variants={titleVariants}
               className="inline-block text-center"
             >
               {words[currentWordIndex]}
@@ -78,34 +86,45 @@ const Header = () => {
           </AnimatePresence>
         </span>{" "}
         {translations.greeting3}
-      </p>
+      </motion.p>
 
       {/* Call to Action */}
-      <Link
-        to="projects"
-        smooth={true}
-        duration={1500}
-        aria-label="Scroll to Projects"
+      {/* <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
       >
-        <Button
-          variant="outline"
-          className="mt-8 text-accent border-accent hover:bg-accent hover:text-primary transition-colors duration-300"
+        <Link
+          to="projects"
+          smooth={true}
+          duration={1500}
+          aria-label="Scroll to Projects"
         >
-          {translations.workCta}
-        </Button>
-      </Link>
+          <Button
+            variant="outline"
+            className="mt-8 text-accent border-accent hover:bg-accent hover:text-primary transition-colors duration-300"
+          >
+            {translations.workCta}
+          </Button>
+        </Link>
+      </motion.div> */}
 
       {/* Down Arrow */}
-      <div className="mt-12 animate-bounce">
+      <motion.div
+        className="mt-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+      >
         <Link
           to="services"
           smooth={true}
           duration={1500}
           aria-label="Scroll to Services"
         >
-          <ArrowDown className="text-accent w-8 h-8 hover:cursor-pointer" />
+          <ArrowDown className="text-accent w-14 h-14 hover:cursor-pointer animate-bounce" />
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 };

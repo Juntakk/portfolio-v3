@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 0.33rem; /* Width of the scrollbar */
+  background: #111827;
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    #00ff88,
+    #00aaff
+  ); /* Futuristic gradient */
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    #00ff88,
+    #00aaff
+  ); /* Brighter gradient on hover */
+}
+
+/* Optional: Add a glowing effect to the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  box-shadow: 0 0 10px rgba(0, 255, 150, 0.5); /* Neon glow */
+}
+
+/* Optional: Style the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background: #0a0a0a; /* Match the track color */
+}
+
 section {
   min-height: 100vh;
   display: flex;

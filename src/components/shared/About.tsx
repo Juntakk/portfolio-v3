@@ -20,7 +20,7 @@ const AboutMe = () => {
 
   return (
     <section id="about" className="bg-gray-100 dark:bg-gray-900">
-      <div className="py-12 sm:py-16 px-4 sm:px-12 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900">
+      <div className="py-12 sm:py-24 px-4 sm:px-12 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900">
         {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}

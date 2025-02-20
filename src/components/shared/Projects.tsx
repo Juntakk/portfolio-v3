@@ -9,6 +9,12 @@ import { projects_fr } from "../../data/projects/data_fr";
 import { Card } from "../ui/card";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/theme/LanguageProvider";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
 const Projects = () => {
   const translations = useTranslation();
@@ -82,7 +88,6 @@ const Projects = () => {
               }}
             >
               <Button
-                size="sm" // Responsive button size
                 variant={selectedCategory === category ? "default" : "outline"}
                 className={
                   selectedCategory === category
@@ -130,12 +135,25 @@ const Projects = () => {
                 {/* Tech Stack Icons */}
                 <div className="flex gap-4 sm:gap-6 mt-4 mb-6 sm:mb-8">
                   {project.icons.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="w-6 h-6 text-accent text-2xl sm:text-3xl"
-                    >
-                      {icon}
-                    </div>
+                    <TooltipProvider key={index}>
+                      <Tooltip delayDuration={0}>
+                        <TooltipTrigger asChild>
+                          <div
+                            key={index}
+                            className="w-6 h-6 text-accent text-2xl sm:text-3xl"
+                          >
+                            {icon}
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent
+                          side="top"
+                          sideOffset={0}
+                          className="bg-transparent text-accent rounded-lg py-2 text-xs sm:text-sm font-medium" // Light mode tooltip
+                        >
+                          <p className="ml-2">{project.languages[index]}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   ))}
                 </div>
 

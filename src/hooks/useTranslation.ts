@@ -19,7 +19,7 @@ const translations: { [key: string]: Translations } = {
     gameDevelopment: "Game Development",
     uiUxDesign: "UI/UX Design",
     servicesDesc1:
-      "Building modern, responsive, and scalable websites tailored to your needs.",
+      "Building modern, responsive, and scalable tailored websites.",
     servicesDesc2:
       "Creating cross-platform mobile apps with seamless user experiences.",
     servicesDesc3:

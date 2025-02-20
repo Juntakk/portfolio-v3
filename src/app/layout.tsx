@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ParticlesWrapper from "../components/particles/ParticlesWrapper"; // Import the wrapper component
 import ThemeProvider from "@/theme/ThemeProvider";
+import ClientLoader from "@/components/shared/ClientLoader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,7 +24,9 @@ export default function RootLayout({
       <body className={`${inter.variable} antialiased`}>
         <ParticlesWrapper />
         <div style={{ position: "relative", zIndex: 0 }}>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <ClientLoader>{children}</ClientLoader>
+          </ThemeProvider>
         </div>
       </body>
     </html>
