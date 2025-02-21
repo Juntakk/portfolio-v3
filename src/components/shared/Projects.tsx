@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -34,12 +35,29 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import Image from "next/image";
+import { IoMdChatboxes } from "react-icons/io";
+import { BiSolidCameraMovie } from "react-icons/bi";
+import { IoLogoGameControllerB } from "react-icons/io";
+import { GiFire } from "react-icons/gi";
+import { GiSwordsEmblem } from "react-icons/gi";
+import { IoFastFood } from "react-icons/io5";
+import { BsFillAirplaneEnginesFill } from "react-icons/bs";
+import { PiArticleNyTimesFill } from "react-icons/pi";
 
 const Projects = () => {
   const translations = useTranslation();
   const language = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState(translations.all);
-
+  const mainIcons = [
+    <IoMdChatboxes />,
+    <BiSolidCameraMovie />,
+    <IoLogoGameControllerB />,
+    <GiFire />,
+    <GiSwordsEmblem />,
+    <IoFastFood />,
+    <BsFillAirplaneEnginesFill />,
+    <PiArticleNyTimesFill />,
+  ];
   // Reset selectedCategory when language changes
   useEffect(() => {
     setSelectedCategory(translations.all);
@@ -130,9 +148,9 @@ const Projects = () => {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
           }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 min-h-[400px] sm:min-h-[500px]" // Responsive minimum height
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:px-24 gap-4 sm:gap-6 lg:gap-8" // Responsive minimum height
         >
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               variants={{
@@ -142,51 +160,32 @@ const Projects = () => {
             >
               <AlertDialog>
                 <AlertDialogTrigger asChild>
-                  <Card className="flex flex-col justify-evenly bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dark:hover:border-accent rounded-lg overflow-hidden hover:border-accent transition-all duration-300 p-4 sm:p-5 md:p-6 max-w-full hover:cursor-pointer">
+                  <Card className="flex justify-evenly h-48 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dark:hover:border-accent rounded-lg overflow-hidden hover:border-accent transition-all duration-300 p-4 sm:p-8 md:p-6 max-w-full hover:cursor-pointer">
                     {/* Project Title */}
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-2 cursor-pointer">
-                      {project.title}
-                    </h3>
 
-                    {/* Project Description */}
-                    <p className="h-20 sm:h-32 md:h-36 lg:h-40 text-sm sm:text-lg text-gray-600 dark:text-gray-400 mb-4 cursor-pointer">
-                      {project.desc}
-                    </p>
+                    {/* First Div */}
+                    <div className="relative w-full h-full group">
+                      {/* First Div - Main Icon */}
+                      <div className="flex items-center justify-center text-8xl text-accent w-full h-full transition-all duration-500 group-hover:opacity-0">
+                        {mainIcons[index]}
+                      </div>
 
-                    {/* Tech Stack Icons */}
-                    <div className="flex gap-4 sm:gap-6 m-2">
-                      {project.icons.map((icon, index) => (
-                        <TooltipProvider key={index}>
-                          <Tooltip delayDuration={0}>
-                            <TooltipTrigger asChild>
-                              <div
-                                key={index}
-                                className="w-6 h-6 text-accent text-2xl sm:text-3xl hover:cursor-default"
-                              >
-                                {icon}
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent
-                              side="top"
-                              sideOffset={0}
-                              className="bg-transparent text-accent rounded-lg py-2 text-xs sm:text-sm font-medium" // Light mode tooltip
-                            >
-                              <p className="ml-2">{project.languages[index]}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      ))}
+                      {/* Second Div - Project Title */}
+                      <div className="absolute text-xl top-0 left-0 bg-green w-full h-full flex items-center justify-center text-accent transition-all duration-500 opacity-0 group-hover:opacity-100">
+                        {project.title}
+                      </div>
                     </div>
                   </Card>
                 </AlertDialogTrigger>
-                <AlertDialogContent className="flex flex-col justify-center items-center bg-secondary dark:bg-gradient-dark border border-muted dark:border-border rounded-lg max-w-sm sm:max-w-xl md:max-w-3xl h-auto max-h-[90vh] mx-4 shadow-xl overflow-y-auto">
+                <AlertDialogContent className="flex flex-col justify-center items-center bg-white dark:bg-gray-900 border border-accent dark:border-border rounded-lg max-w-sm sm:max-w-xl md:max-w-3xl h-auto max-h-[90vh] mx-4 shadow-xl">
                   {/* Header Section */}
                   <AlertDialogHeader className="w-full px-4 sm:px-6 pt-4 sm:pt-6">
-                    <AlertDialogTitle className="text-2xl sm:text-3xl font-bold text-primary dark:text-secondary text-center">
+                    <AlertDialogTitle className="text-2xl sm:text-3xl font-bold text-primary dark:text-white/90 text-center">
                       {project.title}
                     </AlertDialogTitle>
-                    <AlertDialogDescription className="mt-2 text-muted dark:text-muted text-center">
+                    <AlertDialogDescription className="mt-2 text-primary dark:text-white/70 text-start">
                       {/* Add a description if needed */}
+                      {project.desc}
                     </AlertDialogDescription>
                   </AlertDialogHeader>
 
@@ -214,8 +213,8 @@ const Projects = () => {
                     {/* Carousel Navigation Buttons */}
                     {project.screenShots.length > 1 ? (
                       <>
-                        <CarouselPrevious className="hidden sm:flex absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-primary dark:text-muted hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-secondary/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-secondary/90 dark:hover:bg-card/90 border border-muted dark:border-border" />
-                        <CarouselNext className="hidden sm:flex absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-primary dark:text-muted hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-secondary/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-secondary/90 dark:hover:bg-card/90 border border-muted dark:border-border" />
+                        <CarouselPrevious className="hidden sm:flex absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-primary dark:text-white hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-secondary/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-secondary/90 dark:hover:bg-card/90 border border-accent dark:border-border" />
+                        <CarouselNext className="hidden sm:flex absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-primary dark:text-white hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-secondary/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-secondary/90 dark:hover:bg-card/90 border border-muted dark:border-border" />
                       </>
                     ) : (
                       ""
@@ -224,34 +223,62 @@ const Projects = () => {
 
                   {/* Footer Section */}
                   <AlertDialogFooter className="mt-6 w-full px-4 sm:px-6 pb-4 sm:pb-2 flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4">
-                    {project.demo && (
-                      <Link
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`View demo for ${project.title}`}
-                        className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-secondary border border-muted rounded-lg hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-primary transition-colors duration-300 space-x-2 shadow-sm hover:shadow-md"
-                      >
-                        <span>Demo</span>
-                        <FaExternalLinkAlt className="ml-2 text-lg" />
-                      </Link>
-                    )}
-                    {project.github && (
-                      <Link
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`View GitHub repository for ${project.title}`}
-                        className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-secondary border border-muted rounded-lg hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-primary transition-colors duration-300 space-x-2 shadow-sm hover:shadow-md"
-                      >
-                        <span>GitHub</span>
-                        <FaGithub className="ml-2 text-lg" />
-                      </Link>
-                    )}
+                    {/* Tech Stack Icons */}
+                    <div className="flex mr-auto ml-4 flex-wrap gap-2 sm:gap-10">
+                      {project.icons.map((icon, index) => (
+                        <TooltipProvider key={index}>
+                          <Tooltip delayDuration={0}>
+                            <TooltipTrigger asChild>
+                              <div
+                                key={index}
+                                className="w-6 h-6 text-primary dark:text-accent text-2xl sm:text-4xl hover:scale-110 transition-transform duration-200 hover:cursor-default"
+                              >
+                                {icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent
+                              side="top"
+                              sideOffset={-3}
+                              className="bg-transparent ms-3 mb-1 text-accent rounded-lg py-2 px-3 text-xs sm:text-sm font-mediumshadow-sm"
+                            >
+                              <p>{project.languages[index]}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      ))}
+                    </div>
+
+                    {/* Demo and GitHub Links */}
+                    <div className="flex flex-wrap gap-2 sm:gap-3">
+                      {project.demo && (
+                        <Link
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View demo for ${project.title}`}
+                          className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent border border-muted rounded-lg hover:bg-accent/10 hover:text-accent dark:hover:bg-accent/10 dark:hover:text-accent transition-all duration-300 space-x-2 shadow-sm hover:shadow-md"
+                        >
+                          <span>Demo</span>
+                          <FaExternalLinkAlt className="ml-2 text-lg" />
+                        </Link>
+                      )}
+                      {project.github && (
+                        <Link
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View GitHub repository for ${project.title}`}
+                          className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent border border-muted rounded-lg hover:bg-accent/10 hover:text-accent dark:hover:bg-accent/10 dark:hover:text-accent transition-all duration-300 space-x-2 shadow-sm hover:shadow-md"
+                        >
+                          <span>GitHub</span>
+                          <FaGithub className="ml-2 text-lg" />
+                        </Link>
+                      )}
+                    </div>
 
                     {/* Close Button */}
                     <AlertDialogCancel
-                      className="absolute top-3 right-3 sm:top-4 sm:right-4 text-muted dark:text-muted hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-secondary/80 dark:bg-card/80 backdrop-blur-sm p-2.5 rounded-full hover:bg-secondary/90 dark:hover:bg-card/90 border border-muted dark:border-border shadow-sm hover:shadow-md"
+                      className="absolute top-3 right-3 sm:top-4 sm:right-4 text-primary dark:text-accent hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-background/80 dark:bg-card/80 backdrop-blur-sm p-2.5 rounded-full hover:bg-background/90 dark:hover:bg-card/90 border border-primary dark:border-border shadow-sm hover:shadow-md"
                       aria-label="Close dialog"
                     >
                       ✕

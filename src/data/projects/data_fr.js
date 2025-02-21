@@ -27,7 +27,7 @@ export const projects_fr = [
   },
   {
     id: 3,
-    title: "E-Commerce",
+    title: "Steem",
     desc: "Plateforme e-commerce complète permettant la navigation, l'achat et des transactions sécurisées.",
     icons: [icons.react, icons.node, icons.mongo],
     languages: ["React", "Node", "Mongo"],
@@ -38,7 +38,7 @@ export const projects_fr = [
   },
   {
     id: 4,
-    title: "Jeu Bullet-hell",
+    title: "Survivors",
     desc: "Jeu de tir 2D rapide avec des vagues d'ennemis dynamiques et des contrôles réactifs pour une expérience immersive.",
     icons: [icons.cPlusPlus, icons.godot],
     languages: ["C++", "Godot"],
@@ -49,7 +49,7 @@ export const projects_fr = [
   },
   {
     id: 5,
-    title: "Jeu RPG",
+    title: "RPG",
     desc: "RPG en 2D vue du dessus avec exploration, combats et quêtes, des visuels riches et un gameplay engageant.",
     icons: [icons.cPlusPlus, icons.raylib, icons.unreal],
     languages: ["C++", "Raylib", "Unreal"],
@@ -60,7 +60,7 @@ export const projects_fr = [
   },
   {
     id: 6,
-    title: "Application de régime",
+    title: "Régime",
     desc: "Application de planification des repas et de suivi de la nutrition avec une interface utilisateur intuitive et une expérience utilisateur fluide.",
     icons: [icons.next, icons.tailwind, icons.shadcn],
     languages: ["Next", "Tailwind", "Shadcn"],
@@ -71,7 +71,7 @@ export const projects_fr = [
   },
   {
     id: 7,
-    title: "Application de voyage",
+    title: "Voyage",
     desc: "Application compagnon de voyage intégrant la capture de souvenirs basés sur la localisation et des cartes interactives pour une planification de voyage fluide.",
     icons: [icons.flutter, icons.dart, icons.sql],
     languages: ["Flutter", "Dart", "SQL"],
@@ -82,7 +82,7 @@ export const projects_fr = [
   },
   {
     id: 8,
-    title: "Application de blog",
+    title: "Blog",
     desc: "Plateforme de blogging interactive avec authentification des utilisateurs, création de posts et mises à jour en temps réel.",
     icons: [icons.flutter, icons.dart, icons.sql],
     languages: ["Flutter", "Dart", "SQL"],

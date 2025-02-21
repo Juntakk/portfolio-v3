@@ -26,7 +26,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: "E-Commerce",
+    title: "Steem",
     desc: "Full-featured e-commerce platform enabling product browsing, purchasing, and secure transactions.",
     icons: [icons.react, icons.node, icons.mongo],
     languages: ["React", "Node", "Mongo"],
@@ -37,7 +37,7 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Bullet-hell Game",
+    title: "Survivors",
     desc: "Fast-paced 2D shooter game with dynamic enemy waves and responsive controls for an immersive experience.",
     icons: [icons.cPlusPlus, icons.godot],
     languages: ["C++", "Godot"],
@@ -48,7 +48,7 @@ export const projects = [
   },
   {
     id: 5,
-    title: "RPG Game",
+    title: "RPG",
     desc: "Top-down 2D RPG featuring exploration, combat, and quests with rich visuals and engaging gameplay.",
     icons: [icons.cPlusPlus, icons.raylib, icons.unreal],
     languages: ["C++", "Raylib", "Unreal"],
@@ -59,7 +59,7 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Diet App",
+    title: "Diet",
     desc: "Meal planning and nutrition tracking app with intuitive UI and seamless user experience to help with planning a diet.",
     icons: [icons.next, icons.tailwind, icons.shadcn],
     languages: ["Next", "Tailwind", "Shadcn"],
@@ -70,7 +70,7 @@ export const projects = [
   },
   {
     id: 7,
-    title: "Travel App",
+    title: "Travel",
     desc: "Travel companion app integrating location-based memory capture and interactive maps for seamless travel planning.",
     icons: [icons.flutter, icons.dart, icons.sql],
     languages: ["Flutter", "Dart", "SQL"],
@@ -81,7 +81,7 @@ export const projects = [
   },
   {
     id: 8,
-    title: "Blog App",
+    title: "Blog",
     desc: "Interactive blogging platform with user authentication, post creation, and real-time updates.",
     icons: [icons.flutter, icons.dart, icons.sql],
     languages: ["Flutter", "Dart", "SQL"],
