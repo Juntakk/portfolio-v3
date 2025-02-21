@@ -19,7 +19,7 @@ const translations: { [key: string]: Translations } = {
     gameDevelopment: "Game Development",
     uiUxDesign: "UI/UX Design",
     servicesDesc1:
-      "Building modern, responsive, and scalable tailored websites.",
+      "Building modern, responsive, and scalable tailored deployed websites.",
     servicesDesc2:
       "Creating cross-platform mobile apps with seamless user experiences.",
     servicesDesc3:
@@ -66,7 +66,7 @@ const translations: { [key: string]: Translations } = {
     gameDevelopment: "Développement de jeux",
     uiUxDesign: "Conception UI/UX",
     servicesDesc1:
-      "Création de sites web modernes, réactifs et évolutifs, adaptés à vos besoins, capacités et budgets.",
+      "Création de sites web modernes, réactifs et évolutifs, adaptés à vos besoins et budgets.",
     servicesDesc2:
       "Création d'applications mobiles multiplateformes avec une expérience utilisateur fluide.",
     servicesDesc3:

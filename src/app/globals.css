@@ -4,27 +4,20 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 0.33rem; /* Width of the scrollbar */
+  width: 0.25rem; /* Width of the scrollbar */
   background: #111827;
 }
 
 /* Handle (the draggable part of the scrollbar) */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    45deg,
-    #00ff88,
-    #00aaff
-  ); /* Futuristic gradient */
-  border-radius: 5px;
+  background: #52d4ba; /* Brighter gradient on hover */
+  /* Futuristic gradient */
+  border-radius: 3px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    45deg,
-    #00ff88,
-    #00aaff
-  ); /* Brighter gradient on hover */
+  background: #52d4ba; /* Brighter gradient on hover */
 }
 
 /* Optional: Add a glowing effect to the scrollbar handle */

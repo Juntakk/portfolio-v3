@@ -1,4 +1,5 @@
 import { icons } from "../icons"; // Importer les icônes
+import images from "../../../public/assets/images";
 
 // Données des projets avec catégories
 export const projects_fr = [
@@ -11,6 +12,7 @@ export const projects_fr = [
     demo: "",
     github: "https://github.com/Juntakk/chat-bot",
     category: "IA",
+    screenShots: images.chatbotScreenShot,
   },
   {
     id: 2,
@@ -21,6 +23,7 @@ export const projects_fr = [
     demo: "https://seeflix.netlify.app/",
     github: "https://github.com/Juntakk/seeflix",
     category: "Web",
+    screenShots: images.seeflixScreenshots,
   },
   {
     id: 3,
@@ -31,6 +34,7 @@ export const projects_fr = [
     demo: "https://steemgames.netlify.app/",
     github: "https://github.com/Juntakk/steem",
     category: "Web",
+    screenShots: images.steemScreenshots,
   },
   {
     id: 4,
@@ -41,6 +45,7 @@ export const projects_fr = [
     demo: "",
     github: "https://github.com/Juntakk/survivors",
     category: "Jeux",
+    screenShots: images.survivorsScreenshots,
   },
   {
     id: 5,
@@ -51,35 +56,39 @@ export const projects_fr = [
     demo: "",
     github: "https://github.com/Juntakk/mini-game-3",
     category: "Jeux",
+    screenShots: images.game3ScreenShot,
   },
   {
     id: 6,
     title: "Application de régime",
-    desc: "Application de planification des repas et de suivi de la nutrition avec une interface utilisateur intuitive et une expérience utilisateur fluide pour aider à la planification d'un régime.",
+    desc: "Application de planification des repas et de suivi de la nutrition avec une interface utilisateur intuitive et une expérience utilisateur fluide.",
     icons: [icons.next, icons.tailwind, icons.shadcn],
     languages: ["Next", "Tailwind", "Shadcn"],
     demo: "https://diet-app-ten.vercel.app/",
     github: "https://github.com/Juntakk/diet_app",
     category: "Web",
+    screenShots: images.dietAppScreenshot,
   },
-  //   {
-  //     id: 7,
-  //     title: "Application de voyage",
-  //     desc: "Application compagnon de voyage intégrant la capture de souvenirs basés sur la localisation et des cartes interactives pour une planification de voyage fluide.",
-  //     icons: [icons.flutter, icons.dart, icons.sql],
-  //     languages: ["Flutter", "Dart", "SQL"],
-  //     demo: "https://diet-app-ten.vercel.app/",
-  //     github: "https://github.com/Juntakk/favorite-places",
-  //     category: "Mobile",
-  //   },
-  //   {
-  //     id: 8,
-  //     title: "Application de blog",
-  //     desc: "Plateforme de blogging interactive avec authentification des utilisateurs, création de posts et mises à jour en temps réel.",
-  //     icons: [icons.flutter, icons.dart, icons.sql],
-  //     languages: ["Flutter", "Dart", "SQL"],
-  //     demo: "",
-  //     github: "https://github.com/Juntakk/blog-app",
-  //     category: "Mobile",
-  //   },
+  {
+    id: 7,
+    title: "Application de voyage",
+    desc: "Application compagnon de voyage intégrant la capture de souvenirs basés sur la localisation et des cartes interactives pour une planification de voyage fluide.",
+    icons: [icons.flutter, icons.dart, icons.sql],
+    languages: ["Flutter", "Dart", "SQL"],
+    demo: "https://diet-app-ten.vercel.app/",
+    github: "https://github.com/Juntakk/favorite-places",
+    category: "Mobile",
+    screenShots: images.favPlaces,
+  },
+  {
+    id: 8,
+    title: "Application de blog",
+    desc: "Plateforme de blogging interactive avec authentification des utilisateurs, création de posts et mises à jour en temps réel.",
+    icons: [icons.flutter, icons.dart, icons.sql],
+    languages: ["Flutter", "Dart", "SQL"],
+    demo: "",
+    github: "https://github.com/Juntakk/blog-app",
+    category: "Mobile",
+    screenShots: images.blogScreenshot,
+  },
 ];

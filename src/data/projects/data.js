@@ -1,5 +1,5 @@
 import { icons } from "../icons"; // Import icons
-
+import images from "../../../public/assets/images";
 // Projects data with categories
 export const projects = [
   {
@@ -11,6 +11,7 @@ export const projects = [
     demo: "",
     github: "https://github.com/Juntakk/chat-bot",
     category: "AI",
+    screenShots: images.chatbotScreenShot,
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ export const projects = [
     demo: "https://seeflix.netlify.app/",
     github: "https://github.com/Juntakk/seeflix",
     category: "Web",
+    screenShots: images.seeflixScreenshots,
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const projects = [
     demo: "https://steemgames.netlify.app/",
     github: "https://github.com/Juntakk/steem",
     category: "Web",
+    screenShots: images.steemScreenshots,
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ export const projects = [
     demo: "",
     github: "https://github.com/Juntakk/survivors",
     category: "Games",
+    screenShots: images.survivorsScreenshots,
   },
   {
     id: 5,
@@ -51,6 +55,7 @@ export const projects = [
     demo: "",
     github: "https://github.com/Juntakk/mini-game-3",
     category: "Games",
+    screenShots: images.game3ScreenShot,
   },
   {
     id: 6,
@@ -61,25 +66,28 @@ export const projects = [
     demo: "https://diet-app-ten.vercel.app/",
     github: "https://github.com/Juntakk/diet_app",
     category: "Web",
+    screenShots: images.dietAppScreenshot,
   },
-  //   {
-  //     id: 7,
-  //     title: "Travel App",
-  //     desc: "Travel companion app integrating location-based memory capture and interactive maps for seamless travel planning.",
-  //     icons: [icons.flutter, icons.dart, icons.sql],
-  //     languages: ["Flutter", "Dart", "SQL"],
-  //     demo: "https://diet-app-ten.vercel.app/",
-  //     github: "https://github.com/Juntakk/favorite-places",
-  //     category: "Mobile",
-  //   },
-  //   {
-  //     id: 8,
-  //     title: "Blog App",
-  //     desc: "Interactive blogging platform with user authentication, post creation, and real-time updates.",
-  //     icons: [icons.flutter, icons.dart, icons.sql],
-  //     languages: ["Flutter", "Dart", "SQL"],
-  //     demo: "",
-  //     github: "https://github.com/Juntakk/blog-app",
-  //     category: "Mobile",
-  //   },
+  {
+    id: 7,
+    title: "Travel App",
+    desc: "Travel companion app integrating location-based memory capture and interactive maps for seamless travel planning.",
+    icons: [icons.flutter, icons.dart, icons.sql],
+    languages: ["Flutter", "Dart", "SQL"],
+    demo: "https://diet-app-ten.vercel.app/",
+    github: "https://github.com/Juntakk/favorite-places",
+    category: "Mobile",
+    screenShots: images.favPlaces,
+  },
+  {
+    id: 8,
+    title: "Blog App",
+    desc: "Interactive blogging platform with user authentication, post creation, and real-time updates.",
+    icons: [icons.flutter, icons.dart, icons.sql],
+    languages: ["Flutter", "Dart", "SQL"],
+    demo: "",
+    github: "https://github.com/Juntakk/blog-app",
+    category: "Mobile",
+    screenShots: images.blogScreenshot,
+  },
 ];

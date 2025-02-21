@@ -15,6 +15,25 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
+import {
+  AlertDialog,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "../ui/alert-dialog";
+import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
+import Image from "next/image";
 
 const Projects = () => {
   const translations = useTranslation();
@@ -121,80 +140,125 @@ const Projects = () => {
                 visible: { opacity: 1, scale: 1 },
               }}
             >
-              <Card className="flex flex-col justify-evenly bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden hover:shadow-lg hover:border-accent transition-all duration-300 p-4 sm:p-5 md:p-6 max-w-full">
-                {/* Project Title */}
-                <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-100 mb-2 cursor-default">
-                  {project.title}
-                </h3>
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <Card className="flex flex-col justify-evenly bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dark:hover:border-accent rounded-lg overflow-hidden hover:border-accent transition-all duration-300 p-4 sm:p-5 md:p-6 max-w-full hover:cursor-pointer">
+                    {/* Project Title */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-2 cursor-pointer">
+                      {project.title}
+                    </h3>
 
-                {/* Project Description */}
-                <p className="h-16 sm:h-32 text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 cursor-default">
-                  {project.desc}
-                </p>
+                    {/* Project Description */}
+                    <p className="h-20 sm:h-32 md:h-36 lg:h-40 text-sm sm:text-lg text-gray-600 dark:text-gray-400 mb-4 cursor-pointer">
+                      {project.desc}
+                    </p>
 
-                {/* Tech Stack Icons */}
-                <div className="flex gap-4 sm:gap-6 mt-4 mb-6 sm:mb-8">
-                  {project.icons.map((icon, index) => (
-                    <TooltipProvider key={index}>
-                      <Tooltip delayDuration={0}>
-                        <TooltipTrigger asChild>
-                          <div
-                            key={index}
-                            className="w-6 h-6 text-accent text-2xl sm:text-3xl"
-                          >
-                            {icon}
+                    {/* Tech Stack Icons */}
+                    <div className="flex gap-4 sm:gap-6 m-2">
+                      {project.icons.map((icon, index) => (
+                        <TooltipProvider key={index}>
+                          <Tooltip delayDuration={0}>
+                            <TooltipTrigger asChild>
+                              <div
+                                key={index}
+                                className="w-6 h-6 text-accent text-2xl sm:text-3xl hover:cursor-default"
+                              >
+                                {icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent
+                              side="top"
+                              sideOffset={0}
+                              className="bg-transparent text-accent rounded-lg py-2 text-xs sm:text-sm font-medium" // Light mode tooltip
+                            >
+                              <p className="ml-2">{project.languages[index]}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      ))}
+                    </div>
+                  </Card>
+                </AlertDialogTrigger>
+                <AlertDialogContent className="flex flex-col justify-center items-center bg-secondary dark:bg-gradient-dark border border-muted dark:border-border rounded-lg max-w-sm sm:max-w-xl md:max-w-3xl h-auto max-h-[90vh] mx-4 shadow-xl overflow-y-auto">
+                  {/* Header Section */}
+                  <AlertDialogHeader className="w-full px-4 sm:px-6 pt-4 sm:pt-6">
+                    <AlertDialogTitle className="text-2xl sm:text-3xl font-bold text-primary dark:text-secondary text-center">
+                      {project.title}
+                    </AlertDialogTitle>
+                    <AlertDialogDescription className="mt-2 text-muted dark:text-muted text-center">
+                      {/* Add a description if needed */}
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+
+                  {/* Carousel Section */}
+                  <Carousel className="w-full max-w-2xl mx-auto rounded-lg mt-4">
+                    <CarouselContent>
+                      {project.screenShots.map((screenshot, index) => (
+                        <CarouselItem key={index}>
+                          <div className="p-2">
+                            <Image
+                              src={screenshot}
+                              alt={`Screenshot ${index + 1}`}
+                              width={1980}
+                              height={1020}
+                              layout="responsive"
+                              className="rounded-lg object-cover"
+                              quality={100} // Ensure high-quality images
+                              priority={index === 0} // Prioritize loading the first image
+                            />
                           </div>
-                        </TooltipTrigger>
-                        <TooltipContent
-                          side="top"
-                          sideOffset={0}
-                          className="bg-transparent text-accent rounded-lg py-2 text-xs sm:text-sm font-medium" // Light mode tooltip
-                        >
-                          <p className="ml-2">{project.languages[index]}</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  ))}
-                </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
 
-                {/* Links */}
-                <div className="flex gap-3 sm:gap-4">
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`View demo for ${project.title}`}
-                    >
-                      <Button
-                        size="sm" // Responsive button size
-                        variant="outline"
-                        className="text-accent border-accent hover:bg-accent/10 dark:text-accent dark:border-accent dark:hover:bg-accent/20"
+                    {/* Carousel Navigation Buttons */}
+                    {project.screenShots.length > 1 ? (
+                      <>
+                        <CarouselPrevious className="hidden sm:flex absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-primary dark:text-muted hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-secondary/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-secondary/90 dark:hover:bg-card/90 border border-muted dark:border-border" />
+                        <CarouselNext className="hidden sm:flex absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-primary dark:text-muted hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-secondary/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-secondary/90 dark:hover:bg-card/90 border border-muted dark:border-border" />
+                      </>
+                    ) : (
+                      ""
+                    )}
+                  </Carousel>
+
+                  {/* Footer Section */}
+                  <AlertDialogFooter className="mt-6 w-full px-4 sm:px-6 pb-4 sm:pb-2 flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4">
+                    {project.demo && (
+                      <Link
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View demo for ${project.title}`}
+                        className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-secondary border border-muted rounded-lg hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-primary transition-colors duration-300 space-x-2 shadow-sm hover:shadow-md"
                       >
-                        <FaExternalLinkAlt className="mr-1 w-4 h-4" />
-                        Demo
-                      </Button>
-                    </a>
-                  )}
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`View GitHub repository for ${project.title}`}
-                    >
-                      <Button
-                        size="sm" // Responsive button size
-                        variant="outline"
-                        className="text-accent border-accent hover:bg-accent/10 dark:text-accent dark:border-accent dark:hover:bg-accent/20"
+                        <span>Demo</span>
+                        <FaExternalLinkAlt className="ml-2 text-lg" />
+                      </Link>
+                    )}
+                    {project.github && (
+                      <Link
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View GitHub repository for ${project.title}`}
+                        className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-secondary border border-muted rounded-lg hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-primary transition-colors duration-300 space-x-2 shadow-sm hover:shadow-md"
                       >
-                        <FaGithub className="mr-1 w-4 h-4" />
-                        GitHub
-                      </Button>
-                    </a>
-                  )}
-                </div>
-              </Card>
+                        <span>GitHub</span>
+                        <FaGithub className="ml-2 text-lg" />
+                      </Link>
+                    )}
+
+                    {/* Close Button */}
+                    <AlertDialogCancel
+                      className="absolute top-3 right-3 sm:top-4 sm:right-4 text-muted dark:text-muted hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-secondary/80 dark:bg-card/80 backdrop-blur-sm p-2.5 rounded-full hover:bg-secondary/90 dark:hover:bg-card/90 border border-muted dark:border-border shadow-sm hover:shadow-md"
+                      aria-label="Close dialog"
+                    >
+                      ✕
+                    </AlertDialogCancel>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
             </motion.div>
           ))}
         </motion.div>
