@@ -59,7 +59,7 @@ const UI = () => {
       {/* CV Download Button */}
       <Button
         onClick={downloadCV}
-        className="fixed bottom-2 right-2 flex items-center justify-center gap-2 bg-accent text-primary py-2 px-4 md:py-3 md:px-5 rounded-lg shadow-lg hover:bg-accent-dark transition-colors duration-300 z-20 text-sm md:text-base"
+        className="fixed bottom-2 right-2 flex items-center justify-center gap-2 bg-transparent border dark:border-accent/40 text-accent py-2 px-4 md:py-3 md:px-5 rounded-lg shadow-lg hover:bg-accent transition-colors duration-300 z-20 text-sm md:text-base hover:text-primary"
       >
         <span className="hidden md:block">{translations.downloadCv}</span>
         <span className="block md:hidden">CV</span>

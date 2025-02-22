@@ -14,10 +14,10 @@ const translations: { [key: string]: Translations } = {
     word2: "Mobile",
     word3: "Video Game",
     servicesTitle: "What I Offer",
-    webDevelopment: "Web Development",
-    mobileDevelopment: "Mobile Development",
-    gameDevelopment: "Game Development",
-    uiUxDesign: "UI/UX Design",
+    webDevelopment: "Full-Stack Web",
+    mobileDevelopment: "Mobile",
+    gameDevelopment: "Video games",
+    uiUxDesign: "UI/UX",
     servicesDesc1:
       "Building modern, responsive, and scalable tailored deployed websites.",
     servicesDesc2:
@@ -60,11 +60,11 @@ const translations: { [key: string]: Translations } = {
     word1: "Web",
     word2: "Mobile",
     word3: "de Jeux Vidéos",
-    webDevelopment: "Développement Web",
     servicesTitle: "Ce que je propose",
-    mobileDevelopment: "Développement Mobile",
-    gameDevelopment: "Développement de jeux",
-    uiUxDesign: "Conception UI/UX",
+    webDevelopment: "Web Full-Stack",
+    mobileDevelopment: "Mobile",
+    gameDevelopment: "Jeux Vidéos",
+    uiUxDesign: "UI/UX",
     servicesDesc1:
       "Création de sites web modernes, réactifs et évolutifs, adaptés à vos besoins et budgets.",
     servicesDesc2:
@@ -72,7 +72,7 @@ const translations: { [key: string]: Translations } = {
     servicesDesc3:
       "Conception et développement de jeux engageants pour les plateformes web et mobiles.",
     servicesDesc4:
-      "Création d'interfaces intuitives et visuellement impressionnantes pour vos applications.",
+      "Création d'interfaces intuitives et animées pour vos applications.",
     projectsTitle: "Mes projets",
     all: "Tout",
     AI: "IA",

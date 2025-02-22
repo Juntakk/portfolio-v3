@@ -16,6 +16,15 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { SiDart } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
 import { SiShadcnui } from "react-icons/si";
+import { IoMdChatboxes } from "react-icons/io";
+import { BiSolidCameraMovie } from "react-icons/bi";
+import { IoLogoGameControllerB } from "react-icons/io";
+import { GiFire } from "react-icons/gi";
+import { GiSwordsEmblem } from "react-icons/gi";
+import { IoFastFood } from "react-icons/io5";
+import { BsFillAirplaneEnginesFill } from "react-icons/bs";
+import { PiArticleNyTimesFill } from "react-icons/pi";
+import { GiVolleyballBall } from "react-icons/gi";
 
 export const icons = {
   python: <FaPython />,
@@ -36,4 +45,16 @@ export const icons = {
   dart: <SiDart />,
   next: <SiNextdotjs />,
   shadcn: <SiShadcnui />,
+  volleyball: <GiVolleyballBall />,
+};
+
+export const mainIcons = {
+  chatbot: <IoMdChatboxes />,
+  seeflix: <BiSolidCameraMovie />,
+  steem: <IoLogoGameControllerB />,
+  survivors: <GiFire />,
+  rpg: <GiSwordsEmblem />,
+  diet: <IoFastFood />,
+  travel: <BsFillAirplaneEnginesFill />,
+  blog: <PiArticleNyTimesFill />,
 };

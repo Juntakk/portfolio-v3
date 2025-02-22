@@ -1,4 +1,4 @@
-import { icons } from "../icons"; // Import icons
+import { icons, mainIcons } from "../icons"; // Import icons
 import images from "../../../public/assets/images";
 // Projects data with categories
 export const projects = [
@@ -12,6 +12,7 @@ export const projects = [
     github: "https://github.com/Juntakk/chat-bot",
     category: "AI",
     screenShots: images.chatbotScreenShot,
+    icon: mainIcons.chatbot,
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ export const projects = [
     github: "https://github.com/Juntakk/seeflix",
     category: "Web",
     screenShots: images.seeflixScreenshots,
+    icon: mainIcons.seeflix,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const projects = [
     github: "https://github.com/Juntakk/steem",
     category: "Web",
     screenShots: images.steemScreenshots,
+    icon: mainIcons.steem,
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ export const projects = [
     github: "https://github.com/Juntakk/survivors",
     category: "Games",
     screenShots: images.survivorsScreenshots,
+    icon: mainIcons.survivors,
   },
   {
     id: 5,
@@ -55,6 +59,7 @@ export const projects = [
     demo: "",
     github: "https://github.com/Juntakk/mini-game-3",
     category: "Games",
+    icon: mainIcons.rpg,
     screenShots: images.game3ScreenShot,
   },
   {
@@ -67,6 +72,7 @@ export const projects = [
     github: "https://github.com/Juntakk/diet_app",
     category: "Web",
     screenShots: images.dietAppScreenshot,
+    icon: mainIcons.diet,
   },
   {
     id: 7,
@@ -78,6 +84,7 @@ export const projects = [
     github: "https://github.com/Juntakk/favorite-places",
     category: "Mobile",
     screenShots: images.favPlaces,
+    icon: mainIcons.travel,
   },
   {
     id: 8,
@@ -88,6 +95,7 @@ export const projects = [
     demo: "",
     github: "https://github.com/Juntakk/blog-app",
     category: "Mobile",
+    icon: mainIcons.blog,
     screenShots: images.blogScreenshot,
   },
 ];

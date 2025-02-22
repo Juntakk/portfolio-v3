@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -35,29 +34,12 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import Image from "next/image";
-import { IoMdChatboxes } from "react-icons/io";
-import { BiSolidCameraMovie } from "react-icons/bi";
-import { IoLogoGameControllerB } from "react-icons/io";
-import { GiFire } from "react-icons/gi";
-import { GiSwordsEmblem } from "react-icons/gi";
-import { IoFastFood } from "react-icons/io5";
-import { BsFillAirplaneEnginesFill } from "react-icons/bs";
-import { PiArticleNyTimesFill } from "react-icons/pi";
 
 const Projects = () => {
   const translations = useTranslation();
   const language = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState(translations.all);
-  const mainIcons = [
-    <IoMdChatboxes />,
-    <BiSolidCameraMovie />,
-    <IoLogoGameControllerB />,
-    <GiFire />,
-    <GiSwordsEmblem />,
-    <IoFastFood />,
-    <BsFillAirplaneEnginesFill />,
-    <PiArticleNyTimesFill />,
-  ];
+
   // Reset selectedCategory when language changes
   useEffect(() => {
     setSelectedCategory(translations.all);
@@ -150,7 +132,7 @@ const Projects = () => {
           }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:px-24 gap-4 sm:gap-6 lg:gap-8" // Responsive minimum height
         >
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
               variants={{
@@ -167,7 +149,7 @@ const Projects = () => {
                     <div className="relative w-full h-full group">
                       {/* First Div - Main Icon */}
                       <div className="flex items-center justify-center text-8xl text-accent w-full h-full transition-all duration-500 group-hover:opacity-0">
-                        {mainIcons[index]}
+                        {project.icon}
                       </div>
 
                       {/* Second Div - Project Title */}
@@ -224,14 +206,14 @@ const Projects = () => {
                   {/* Footer Section */}
                   <AlertDialogFooter className="mt-6 w-full px-4 sm:px-6 pb-4 sm:pb-2 flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4">
                     {/* Tech Stack Icons */}
-                    <div className="flex mr-auto ml-4 flex-wrap gap-2 sm:gap-10">
+                    <div className="flex justify-center mb-4 items-center text-center sm:mr-auto sm:ml-4 flex-wrap gap-8 sm:gap-10">
                       {project.icons.map((icon, index) => (
                         <TooltipProvider key={index}>
                           <Tooltip delayDuration={0}>
                             <TooltipTrigger asChild>
                               <div
                                 key={index}
-                                className="w-6 h-6 text-primary dark:text-accent text-2xl sm:text-4xl hover:scale-110 transition-transform duration-200 hover:cursor-default"
+                                className="w-6 h-6 text-primary dark:text-accent text-3xl sm:text-4xl hover:scale-110 transition-transform duration-200 hover:cursor-default"
                               >
                                 {icon}
                               </div>
@@ -249,7 +231,7 @@ const Projects = () => {
                     </div>
 
                     {/* Demo and GitHub Links */}
-                    <div className="flex flex-wrap gap-2 sm:gap-3">
+                    <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-3 ">
                       {project.demo && (
                         <Link
                           href={project.demo}
