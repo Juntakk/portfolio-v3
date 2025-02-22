@@ -72,7 +72,7 @@ const translations: { [key: string]: Translations } = {
     servicesDesc3:
       "Conception et développement de jeux engageants pour les plateformes web et mobiles.",
     servicesDesc4:
-      "Création d'interfaces intuitives et animées pour vos applications.",
+      "Création d'interfaces intuitives, fluides et animées pour vos applications.",
     projectsTitle: "Mes projets",
     all: "Tout",
     AI: "IA",
