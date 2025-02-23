@@ -143,30 +143,24 @@ const Projects = () => {
               <AlertDialog>
                 <AlertDialogTrigger asChild>
                   <Card className="flex justify-evenly h-48 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dark:hover:border-accent rounded-lg overflow-hidden hover:border-accent transition-all duration-300 p-4 sm:p-8 md:p-6 max-w-full hover:cursor-pointer">
-                    {/* Project Title */}
-
-                    {/* First Div */}
                     <div className="relative w-full h-full group">
-                      {/* First Div - Main Icon */}
+                      {/*Front*/}
                       <div className="flex items-center justify-center text-8xl text-accent w-full h-full transition-all duration-500 group-hover:opacity-0">
                         {project.icon}
                       </div>
-
-                      {/* Second Div - Project Title */}
-                      <div className="absolute text-xl top-0 left-0 bg-green w-full h-full flex items-center justify-center text-accent transition-all duration-500 opacity-0 group-hover:opacity-100">
+                      {/*Back*/}
+                      <div className="absolute text-4xl top-0 left-0 bg-green w-full h-full flex items-end justify-end text-accent transition-all duration-500 opacity-0 group-hover:opacity-100">
                         {project.title}
                       </div>
                     </div>
                   </Card>
                 </AlertDialogTrigger>
                 <AlertDialogContent className="flex flex-col justify-center items-center bg-white dark:bg-gray-900 border border-accent dark:border-border rounded-lg max-w-sm sm:max-w-xl md:max-w-3xl h-auto max-h-[90vh] mx-4 shadow-xl">
-                  {/* Header Section */}
                   <AlertDialogHeader className="w-full px-4 sm:px-6 pt-4 sm:pt-6">
                     <AlertDialogTitle className="text-2xl sm:text-3xl font-bold text-primary dark:text-white/90 text-center">
                       {project.title}
                     </AlertDialogTitle>
                     <AlertDialogDescription className="mt-2 text-primary dark:text-white/70 text-start">
-                      {/* Add a description if needed */}
                       {project.desc}
                     </AlertDialogDescription>
                   </AlertDialogHeader>
