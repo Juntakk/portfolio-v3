@@ -17,6 +17,7 @@ export const projects = [
   {
     id: 2,
     title: "Grocerease",
+    icons: [icons.next, icons.shadcn, icons.tailwind],
     desc: "Intuitive e-commerce platform for purchasing groceries online, with secure payment and efficient stock management via an admin dashboard.",
     languages: ["Next", "Shadcn", "Tailwind"],
     demo: "https://ngdev-store.vercel.app/",
