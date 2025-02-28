@@ -25,6 +25,7 @@ import { IoFastFood } from "react-icons/io5";
 import { BsFillAirplaneEnginesFill } from "react-icons/bs";
 import { PiArticleNyTimesFill } from "react-icons/pi";
 import { GiVolleyballBall } from "react-icons/gi";
+import { MdLocalGroceryStore } from "react-icons/md";
 
 export const icons = {
   python: <FaPython />,
@@ -57,4 +58,5 @@ export const mainIcons = {
   diet: <IoFastFood />,
   travel: <BsFillAirplaneEnginesFill />,
   blog: <PiArticleNyTimesFill />,
+  grocerease: <MdLocalGroceryStore />,
 };

@@ -12,6 +12,11 @@ import game3ScreenShot from "../../public/assets/screenshots/game3_1.png";
 import survivors1 from "../../public/assets/screenshots/survivors1.png";
 import survivors2 from "../../public/assets/screenshots/survivors2.png";
 
+import grocerease1 from "../../public/assets/screenshots/grocerease1.png";
+import grocerease2 from "../../public/assets/screenshots/grocerease2.png";
+import grocerease3 from "../../public/assets/screenshots/grocerease3.png";
+import grocerease4 from "../../public/assets/screenshots/grocerease4.png";
+
 const images = {
   dietAppScreenshot: [dietAppScreenshot],
   blogScreenshot: [blogScreenshot],
@@ -23,6 +28,7 @@ const images = {
   survivorsScreenshots: [survivors1, survivors2],
   survivorsScreenshots: [survivors1, survivors2],
   favPlaces: [placesScreenShot],
+  grocerease: [grocerease1, grocerease2, grocerease3, grocerease4],
 };
 
 export default images;
