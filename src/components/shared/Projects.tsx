@@ -201,7 +201,7 @@ const Projects = () => {
                   <AlertDialogFooter className="mt-6 w-full px-4 sm:px-6 pb-4 sm:pb-2 flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4">
                     {/* Tech Stack Icons */}
                     <div className="flex justify-center mb-4 items-center text-center sm:mr-auto sm:ml-4 flex-wrap gap-8 sm:gap-10">
-                      {project.icons.map((icon, index) => (
+                      {project.icons?.map((icon, index) => (
                         <TooltipProvider key={index}>
                           <Tooltip delayDuration={0}>
                             <TooltipTrigger asChild>
