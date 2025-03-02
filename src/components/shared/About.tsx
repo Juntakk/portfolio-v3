@@ -51,7 +51,7 @@ const AboutMe = () => {
           </div>
 
           <div className="flex-1 text-center md:text-left px-4 sm:px-6 max-w-xl">
-            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 sm:block hidden">
+            <p className="text-base leading-relaxed sm:text-lg text-gray-700 dark:text-gray-300 sm:block hidden ">
               {translations.aboutHeader}
             </p>
           </div>
@@ -99,7 +99,7 @@ const AboutMe = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="max-w-3xl mx-auto text-center mt-12 px-4 sm:px-6"
         >
-          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 sm:block hidden">
+          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 sm:block hidden leading-relaxed">
             {translations.aboutFooter}
           </p>
         </motion.div>

@@ -157,10 +157,10 @@ const Projects = () => {
                 </AlertDialogTrigger>
                 <AlertDialogContent className="flex flex-col justify-center items-center bg-white dark:bg-gray-900 border border-accent dark:border-border rounded-lg max-w-sm sm:max-w-xl md:max-w-3xl h-auto max-h-[90vh] mx-4 shadow-xl">
                   <AlertDialogHeader className="w-full px-4 sm:px-6 pt-4 sm:pt-6">
-                    <AlertDialogTitle className="text-2xl sm:text-3xl font-bold text-primary dark:text-white/90 text-center">
+                    <AlertDialogTitle className="text-2xl sm:text-3xl mb-2 font-bold text-primary dark:text-white/90 text-center">
                       {project.title}
                     </AlertDialogTitle>
-                    <AlertDialogDescription className="mt-2 text-primary dark:text-white/70 text-start">
+                    <AlertDialogDescription className="mt-2 text-primary dark:text-white/70 text-start leading-relaxed">
                       {project.desc}
                     </AlertDialogDescription>
                   </AlertDialogHeader>

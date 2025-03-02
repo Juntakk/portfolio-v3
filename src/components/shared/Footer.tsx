@@ -13,7 +13,7 @@ const Footer = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="container mx-auto text-center">
-        <p className="text-gray-700 dark:text-accent">
+        <p className="text-gray-500">
           &copy; {new Date().getFullYear()} NGDev. {translations.footer}
         </p>
       </div>

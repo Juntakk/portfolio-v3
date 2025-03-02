@@ -17,6 +17,10 @@ import grocerease2 from "../../public/assets/screenshots/grocerease2.png";
 import grocerease3 from "../../public/assets/screenshots/grocerease3.png";
 import grocerease4 from "../../public/assets/screenshots/grocerease4.png";
 
+import oldfolio1 from "../../public/assets/screenshots/oldfolio1.png";
+import oldfolio2 from "../../public/assets/screenshots/oldfolio2.png";
+import oldfolio3 from "../../public/assets/screenshots/oldfolio3.png";
+
 const images = {
   dietAppScreenshot: [dietAppScreenshot],
   blogScreenshot: [blogScreenshot],
@@ -29,6 +33,7 @@ const images = {
   survivorsScreenshots: [survivors1, survivors2],
   favPlaces: [placesScreenShot],
   grocerease: [grocerease1, grocerease2, grocerease3, grocerease4],
+  oldfolio: [oldfolio1, oldfolio2, oldfolio3],
 };
 
 export default images;

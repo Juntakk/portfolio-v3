@@ -26,7 +26,7 @@ const translations: { [key: string]: Translations } = {
       "Designing and developing engaging games for web and mobile platforms.",
     servicesDesc4:
       "Crafting intuitive and visually stunning interfaces for your applications.",
-    projectsTitle: "My Projects",
+    projectsTitle: "Some Projects",
     all: "All",
     AI: "AI",
     games: "Jeux",
@@ -73,7 +73,7 @@ const translations: { [key: string]: Translations } = {
       "Conception et développement de jeux engageants pour les plateformes web et mobiles.",
     servicesDesc4:
       "Création d'interfaces intuitives, fluides et animées pour toutes vos applications.",
-    projectsTitle: "Mes projets",
+    projectsTitle: "Quelques projets",
     all: "Tout",
     AI: "IA",
     games: "Jeux",

@@ -76,6 +76,18 @@ export const projects = [
   },
   {
     id: 7,
+    title: "Portfolio",
+    desc: "My former portfolio developed with React, Redux, and CSS, offering smooth navigation and a modern user interface to dynamically showcase my projects and skills.",
+    icons: [icons.react, icons.css, icons.javascript],
+    languages: ["React", "CSS", "Javascript"],
+    demo: "https://nicolasgauthier.netlify.app/",
+    github: "https://github.com/Juntakk/portfolio-v2",
+    category: "Web",
+    screenShots: images.oldfolio,
+    icon: mainIcons.oldfolio,
+  },
+  {
+    id: 8,
     title: "Diet",
     desc: "Meal planning and nutrition tracking app with intuitive UI and seamless user experience to help with planning a diet.",
     icons: [icons.next, icons.tailwind, icons.shadcn],
