@@ -155,7 +155,7 @@ const Projects = () => {
                     </div>
                   </Card>
                 </AlertDialogTrigger>
-                <AlertDialogContent className="flex flex-col justify-center items-center bg-white dark:bg-gray-900 border border-accent dark:border-border rounded-lg max-w-sm sm:max-w-xl md:max-w-3xl h-auto max-h-[90vh] mx-4 shadow-xl">
+                <AlertDialogContent className="flex flex-col justify-center items-center bg-white dark:bg-gray-900 border border-accent dark:border-accent rounded-lg max-w-sm sm:max-w-xl p-5 md:max-w-5xl h-auto max-h-[95vh] mx-4 shadow-xl">
                   <AlertDialogHeader className="w-full px-4 sm:px-6 pt-4 sm:pt-6">
                     <AlertDialogTitle className="text-2xl sm:text-3xl mb-2 font-bold text-primary dark:text-white/90 text-center">
                       {project.title}
@@ -166,7 +166,7 @@ const Projects = () => {
                   </AlertDialogHeader>
 
                   {/* Carousel Section */}
-                  <Carousel className="w-full max-w-2xl mx-auto rounded-lg mt-4">
+                  <Carousel className="w-full max-w-2xl mx-auto rounded-lg mt-2">
                     <CarouselContent>
                       {project.screenShots.map((screenshot, index) => (
                         <CarouselItem key={index}>
@@ -189,8 +189,8 @@ const Projects = () => {
                     {/* Carousel Navigation Buttons */}
                     {project.screenShots.length > 1 ? (
                       <>
-                        <CarouselPrevious className="hidden sm:flex absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-primary dark:text-white hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-secondary/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-secondary/90 dark:hover:bg-card/90 border border-accent dark:border-border" />
-                        <CarouselNext className="hidden sm:flex absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-primary dark:text-white hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-secondary/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-secondary/90 dark:hover:bg-card/90 border border-muted dark:border-border" />
+                        <CarouselPrevious className="hidden ml-2 sm:flex top-1/2 transform -translate-y-1/2 text-primary dark:text-accent hover:text-primary dark:hover:text-accent transition-colors duration-200 bg-accent/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-accent/90 dark:hover:bg-card/90 border border-accent dark:border-border" />
+                        <CarouselNext className="hidden mr-2 sm:flex top-1/2 transform -translate-y-1/2 text-primary dark:text-accent hover:text-primary dark:hover:text-accent transition-colors duration-200 bg-accent/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-accent/90 dark:hover:bg-card/90 border border-muted dark:border-border" />
                       </>
                     ) : (
                       ""
@@ -198,7 +198,7 @@ const Projects = () => {
                   </Carousel>
 
                   {/* Footer Section */}
-                  <AlertDialogFooter className="mt-6 w-full px-4 sm:px-6 pb-4 sm:pb-2 flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4">
+                  <AlertDialogFooter className="w-full mt-2 px-4 sm:px-6 pb-4 sm:pb-2 flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4">
                     {/* Tech Stack Icons */}
                     <div className="flex justify-center mb-4 items-center text-center sm:mr-auto sm:ml-4 flex-wrap gap-8 sm:gap-10">
                       {project.icons?.map((icon, index) => (
@@ -214,7 +214,7 @@ const Projects = () => {
                             </TooltipTrigger>
                             <TooltipContent
                               side="top"
-                              sideOffset={-3}
+                              sideOffset={-7}
                               className="bg-transparent ms-3 mb-1 text-accent rounded-lg py-2 px-3 text-xs sm:text-sm font-mediumshadow-sm"
                             >
                               <p>{project.languages[index]}</p>
@@ -232,7 +232,7 @@ const Projects = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`View demo for ${project.title}`}
-                          className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent border border-muted rounded-lg hover:bg-accent/10 hover:text-accent dark:hover:bg-accent/10 dark:hover:text-accent transition-all duration-300 space-x-2 shadow-sm hover:shadow-md"
+                          className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent dark:border-accent border border-muted rounded-lg hover:bg-accent/10 hover:text-accent dark:hover:bg-accent/10 dark:hover:text-accent transition-all duration-300 space-x-2 shadow-sm hover:shadow-md"
                         >
                           <span>Demo</span>
                           <FaExternalLinkAlt className="ml-2 text-lg" />
@@ -244,7 +244,7 @@ const Projects = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`View GitHub repository for ${project.title}`}
-                          className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent border border-muted rounded-lg hover:bg-accent/10 hover:text-accent dark:hover:bg-accent/10 dark:hover:text-accent transition-all duration-300 space-x-2 shadow-sm hover:shadow-md"
+                          className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent border border-muted dark:border-accent rounded-lg hover:bg-accent/10 hover:text-accent dark:hover:bg-accent/10 dark:hover:text-accent transition-all duration-300 space-x-2 shadow-sm hover:shadow-md"
                         >
                           <span>GitHub</span>
                           <FaGithub className="ml-2 text-lg" />
@@ -254,7 +254,7 @@ const Projects = () => {
 
                     {/* Close Button */}
                     <AlertDialogCancel
-                      className="absolute top-3 right-3 sm:top-4 sm:right-4 text-primary dark:text-accent hover:text-primary dark:hover:text-secondary transition-colors duration-200 bg-background/80 dark:bg-card/80 backdrop-blur-sm p-2.5 rounded-full hover:bg-background/90 dark:hover:bg-card/90 border border-primary dark:border-border shadow-sm hover:shadow-md"
+                      className="absolute top-3 right-3 sm:top-4 sm:right-4 text-primary dark:text-accent hover:text-primary dark:hover:text-accent transition-colors duration-200 bg-background/80 dark:bg-card/80 backdrop-blur-sm p-2.5 rounded-full hover:bg-background/90 dark:hover:bg-card/90 border border-primary dark:border-border shadow-sm hover:shadow-md"
                       aria-label="Close dialog"
                     >
                       ✕
