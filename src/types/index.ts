@@ -12,3 +12,7 @@ export type Project = {
   screenShots: StaticImageData[];
   icon: React.ReactNode;
 };
+export type LanguageHook = {
+  language: string;
+  setLanguage: (lang: string) => void;
+};

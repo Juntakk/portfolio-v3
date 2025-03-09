@@ -3,37 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { projects } from "../../data/projects/data";
 import { projects_fr } from "../../data/projects/data_fr";
-import { Card } from "../ui/card";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/theme/LanguageProvider";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../ui/tooltip";
-import {
-  AlertDialog,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "../ui/alert-dialog";
-import Link from "next/link";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "../ui/carousel";
-import Image from "next/image";
+import ProjectList from "../ProjectList";
 
 const Projects = () => {
   const translations = useTranslation();
@@ -121,150 +95,11 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        {/* Project Cards */}
-        <motion.div
-          initial="hidden"
-          key={selectedCategory + language.language} // Force re-render on language or category change
-          whileInView="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
-          }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:px-24 gap-4 sm:gap-6 lg:gap-8" // Responsive minimum height
-        >
-          {filteredProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={{
-                hidden: { opacity: 0, scale: 0.8 },
-                visible: { opacity: 1, scale: 1 },
-              }}
-            >
-              <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <Card className="flex justify-evenly h-48 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dark:hover:border-accent rounded-lg overflow-hidden hover:border-accent transition-all duration-300 p-4 sm:p-8 md:p-6 max-w-full hover:cursor-pointer">
-                    <div className="relative w-full h-full group">
-                      {/*Front*/}
-                      <div className="flex items-center justify-center text-8xl text-accent w-full h-full transition-all duration-500 group-hover:opacity-0">
-                        {project.icon}
-                      </div>
-                      {/*Back*/}
-                      <div className="absolute text-4xl top-0 left-0 bg-green w-full h-full flex items-end justify-end text-accent transition-all duration-500 opacity-0 group-hover:opacity-100">
-                        {project.title}
-                      </div>
-                    </div>
-                  </Card>
-                </AlertDialogTrigger>
-                <AlertDialogContent className="flex flex-col justify-center items-center bg-white dark:bg-gray-900 border border-accent dark:border-accent rounded-lg max-w-sm sm:max-w-xl p-5 md:max-w-5xl h-auto max-h-[95vh] mx-4 shadow-xl">
-                  <AlertDialogHeader className="w-full px-4 sm:px-6 pt-4 sm:pt-6">
-                    <AlertDialogTitle className="text-2xl sm:text-3xl mb-2 font-bold text-primary dark:text-white/90 text-center">
-                      {project.title}
-                    </AlertDialogTitle>
-                    <AlertDialogDescription className="mt-2 text-primary dark:text-white/70 text-start leading-relaxed">
-                      {project.desc}
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-
-                  {/* Carousel Section */}
-                  <Carousel className="w-full max-w-2xl mx-auto rounded-lg mt-2">
-                    <CarouselContent>
-                      {project.screenShots.map((screenshot, index) => (
-                        <CarouselItem key={index}>
-                          <div className="p-2">
-                            <Image
-                              src={screenshot}
-                              alt={`Screenshot ${index + 1}`}
-                              width={1980}
-                              height={1020}
-                              layout="responsive"
-                              className="rounded-lg object-cover"
-                              quality={100} // Ensure high-quality images
-                              priority={index === 0} // Prioritize loading the first image
-                            />
-                          </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-
-                    {/* Carousel Navigation Buttons */}
-                    {project.screenShots.length > 1 ? (
-                      <>
-                        <CarouselPrevious className="hidden ml-2 sm:flex top-1/2 transform -translate-y-1/2 text-primary dark:text-accent hover:text-primary dark:hover:text-accent transition-colors duration-200 bg-accent/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-accent/90 dark:hover:bg-card/90 border border-accent dark:border-border" />
-                        <CarouselNext className="hidden mr-2 sm:flex top-1/2 transform -translate-y-1/2 text-primary dark:text-accent hover:text-primary dark:hover:text-accent transition-colors duration-200 bg-accent/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-accent/90 dark:hover:bg-card/90 border border-muted dark:border-border" />
-                      </>
-                    ) : (
-                      ""
-                    )}
-                  </Carousel>
-
-                  {/* Footer Section */}
-                  <AlertDialogFooter className="w-full mt-2 px-4 sm:px-6 pb-4 sm:pb-2 flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4">
-                    {/* Tech Stack Icons */}
-                    <div className="flex justify-center mb-4 items-center text-center sm:mr-auto sm:ml-4 flex-wrap gap-8 sm:gap-10">
-                      {project.icons?.map((icon, index) => (
-                        <TooltipProvider key={index}>
-                          <Tooltip delayDuration={0}>
-                            <TooltipTrigger asChild>
-                              <div
-                                key={index}
-                                className="w-6 h-6 text-primary dark:text-accent text-3xl sm:text-4xl hover:scale-110 transition-transform duration-200 hover:cursor-default"
-                              >
-                                {icon}
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent
-                              side="top"
-                              sideOffset={-7}
-                              className="bg-transparent ms-3 mb-1 text-accent rounded-lg py-2 px-3 text-xs sm:text-sm font-mediumshadow-sm"
-                            >
-                              <p>{project.languages[index]}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      ))}
-                    </div>
-
-                    {/* Demo and GitHub Links */}
-                    <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-3 ">
-                      {project.demo && (
-                        <Link
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`View demo for ${project.title}`}
-                          className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent dark:border-accent border border-muted rounded-lg hover:bg-accent/10 hover:text-accent dark:hover:bg-accent/10 dark:hover:text-accent transition-all duration-300 space-x-2 shadow-sm hover:shadow-md"
-                        >
-                          <span>Demo</span>
-                          <FaExternalLinkAlt className="ml-2 text-lg" />
-                        </Link>
-                      )}
-                      {project.github && (
-                        <Link
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`View GitHub repository for ${project.title}`}
-                          className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent border border-muted dark:border-accent rounded-lg hover:bg-accent/10 hover:text-accent dark:hover:bg-accent/10 dark:hover:text-accent transition-all duration-300 space-x-2 shadow-sm hover:shadow-md"
-                        >
-                          <span>GitHub</span>
-                          <FaGithub className="ml-2 text-lg" />
-                        </Link>
-                      )}
-                    </div>
-
-                    {/* Close Button */}
-                    <AlertDialogCancel
-                      className="absolute top-3 right-3 sm:top-4 sm:right-4 text-primary dark:text-accent hover:text-primary dark:hover:text-accent transition-colors duration-200 bg-background/80 dark:bg-card/80 backdrop-blur-sm p-2.5 rounded-full hover:bg-background/90 dark:hover:bg-card/90 border border-primary dark:border-border shadow-sm hover:shadow-md"
-                      aria-label="Close dialog"
-                    >
-                      ✕
-                    </AlertDialogCancel>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-            </motion.div>
-          ))}
-        </motion.div>
+        <ProjectList
+          filteredProjects={filteredProjects}
+          language={language}
+          selectedCategory={selectedCategory}
+        />
       </div>
     </section>
   );
