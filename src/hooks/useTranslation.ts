@@ -51,6 +51,8 @@ const translations: { [key: string]: Translations } = {
     projects: "Projects",
     home: "Home",
     downloadCv: "Download CV",
+    nextProject: "Next Project",
+    prevProject: "Previous Project",
   },
   fr: {
     greeting: "Allô, je suis ",
@@ -98,6 +100,8 @@ const translations: { [key: string]: Translations } = {
     projects: "Projets",
     home: "Accueil",
     downloadCv: "Télécharger CV",
+    nextProject: "Project Suivant",
+    prevProject: "Project Précédent",
   },
 };
 

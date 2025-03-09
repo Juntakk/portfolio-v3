@@ -23,6 +23,7 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import ProjectCarousel from "./ProjectCarousel";
 import { Button } from "./ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const ProjectList = ({
   filteredProjects,
@@ -34,6 +35,7 @@ const ProjectList = ({
   selectedCategory: string;
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const translations = useTranslation();
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % filteredProjects.length);
@@ -168,7 +170,7 @@ const ProjectList = ({
                         sideOffset={0}
                         className="bg-transparent text-accent rounded-lg py-2 text-xs  mr-1 sm:text-sm font-medium shadow-sm"
                       >
-                        <p>Previous Project</p>
+                        <p>{translations.prevProject}</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -188,7 +190,7 @@ const ProjectList = ({
                         sideOffset={0}
                         className="bg-transparent text-accent rounded-lg py-2 mr-1 text-xs sm:text-sm font-medium shadow-sm"
                       >
-                        <p>Next Project</p>
+                        <p>{translations.nextProject}</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
