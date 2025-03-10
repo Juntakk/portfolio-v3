@@ -99,7 +99,7 @@ const ProjectList = ({
                 <AlertDialogTitle className="text-2xl sm:text-3xl mb-2 font-bold text-primary dark:text-white/90 text-center">
                   {currentProject.title}
                 </AlertDialogTitle>
-                <AlertDialogDescription className="mt-2 text-primary dark:text-white/70 text-start leading-relaxed">
+                <AlertDialogDescription className="mt-2 text-primary dark:text-white/70 text-center leading-relaxed">
                   {currentProject.desc}
                 </AlertDialogDescription>
               </AlertDialogHeader>

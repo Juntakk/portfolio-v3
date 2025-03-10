@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import Link from "next/link";
-import Image from "next/image";
+import ImageEffect from "./ImageEffect";
 
 const ProjectCarousel = ({ project }: { project: Project }) => {
   return (
@@ -21,16 +21,7 @@ const ProjectCarousel = ({ project }: { project: Project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image
-                  src={screenshot}
-                  alt={`Screenshot ${index + 1}`}
-                  width={0}
-                  height={0}
-                  layout="responsive"
-                  className="rounded-lg object-cover"
-                  quality={100}
-                  priority={index === 0}
-                />
+                <ImageEffect sampleImg={screenshot} />
               </Link>
             </div>
           </CarouselItem>
