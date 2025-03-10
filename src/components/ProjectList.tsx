@@ -78,7 +78,7 @@ const ProjectList = ({
         >
           <AlertDialog>
             <AlertDialogTrigger asChild onClick={() => handleOpen(project.id)}>
-              <Card className="flex justify-evenly h-48 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dark:hover:border-accent rounded-lg overflow-hidden hover:border-accent transition-all duration-300 p-4 sm:p-8 md:p-6 max-w-full hover:cursor-pointer">
+              <Card className="flex justify-evenly h-48 bg-white dark:bg-gray-800 border border-accent dark:border-accent dark:hover:border-accent rounded-lg overflow-hidden hover:border-accent transition-all duration-300 p-4 sm:p-8 md:p-6 max-w-full hover:cursor-pointer">
                 <div className="relative w-full h-full group">
                   {/* Front */}
                   <div
