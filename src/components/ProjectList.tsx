@@ -94,7 +94,7 @@ const ProjectList = ({
                 </div>
               </Card>
             </AlertDialogTrigger>
-            <AlertDialogContent className="flex flex-col justify-center items-center bg-white dark:bg-gray-900 border border-accent dark:border-accent rounded-lg max-w-sm sm:max-w-xl p-5 md:max-w-5xl max-h-[95vh] mx-4 shadow-xl">
+            <AlertDialogContent className="flex flex-col justify-center items-center bg-white dark:bg-gray-900 border border-accent dark:border-accent rounded-lg max-w-sm sm:max-w-xl p-5 md:max-w-3xl max-h-[95vh] mx-4 shadow-xl">
               <AlertDialogHeader className="w-full px-4 sm:px-6 pt-4 sm:pt-6">
                 <AlertDialogTitle className="text-2xl sm:text-3xl mb-2 font-bold text-primary dark:text-white/90 text-center">
                   {currentProject.title}

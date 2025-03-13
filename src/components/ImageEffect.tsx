@@ -1,15 +1,12 @@
 // Import dependencies
-import React, { MouseEvent, useState } from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
-
-// Constants for magnifier size and zoom level
-const MAGNIFIER_SIZE = 450;
-const ZOOM_LEVEL = 2;
 
 // ImageEffect component
 const ImageEffect = ({ sampleImg }: { sampleImg: StaticImageData }) => {
   // State variables
   const [zoomable, setZoomable] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
   const [position, setPosition] = useState({
     x: 100,
@@ -18,6 +15,15 @@ const ImageEffect = ({ sampleImg }: { sampleImg: StaticImageData }) => {
     mouseY: 0,
   });
 
+  useEffect(() => {
+    const handleMobile = () => {
+      setIsMobile(window.innerWidth < 1025);
+    };
+    handleMobile();
+  }, []);
+  // Constants for magnifier size and zoom level
+  const MAGNIFIER_SIZE = isMobile ? 0 : 350;
+  const ZOOM_LEVEL = 1.55;
   // Event handlers
   const handleMouseEnter = (e: MouseEvent) => {
     const element = e.currentTarget;
