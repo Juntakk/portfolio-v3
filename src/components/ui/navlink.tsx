@@ -37,10 +37,10 @@ const NavLink = ({ icon, content, destination, isActive }: NavLinkProps) => {
               spy={true}
             >
               <span
-                className={`lg:text-3xl text-lg transition-all duration-300 ${
+                className={`text-4xl lg:text-3xl transition-all duration-300 ${
                   isActive
-                    ? "text-accent border-b-2 border-accent py-1" // Active link styles (your accent color)
-                    : "text-gray-400 hover:text-accent" // Inactive link styles (gray with accent hover)
+                    ? "text-accent border-b-2 border-accent py-1"
+                    : "text-gray-400 hover:text-accent"
                 }`}
               >
                 {icon}
