@@ -4,6 +4,7 @@ import "./globals.css";
 import ParticlesWrapper from "../components/particles/ParticlesWrapper"; // Import the wrapper component
 import ThemeProvider from "@/theme/ThemeProvider";
 import ClientLoader from "@/components/shared/ClientLoader";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,7 +26,10 @@ export default function RootLayout({
         <ParticlesWrapper />
         <div style={{ position: "relative", zIndex: 0 }}>
           <ThemeProvider>
-            <ClientLoader>{children}</ClientLoader>
+            <ClientLoader>
+              <Toaster position="bottom-right" />
+              {children}
+            </ClientLoader>
           </ThemeProvider>
         </div>
       </body>

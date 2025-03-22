@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"; // Required for client-side interactivity in Next.js
 
 import { Button } from "@/components/ui/button";
@@ -7,9 +8,77 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
+import { useState } from "react";
+import { useLanguage } from "@/theme/LanguageProvider";
+import emailjs from "emailjs-com";
+import { toast } from "react-hot-toast";
 
 const Contact = () => {
   const translations = useTranslation();
+  const [loading, setLoading] = useState(false);
+  const language = useLanguage();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const handleChange = (e: { target: { name: string; value: string } }) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    if (loading) return;
+    setLoading(true);
+    try {
+      const result = await emailjs.send(
+        "service_1ke57ce",
+        "template_zrerjkw",
+        {
+          to_name: "Nick",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          reply_to: formData.email,
+        },
+        "78CM3jHVxqrSQ8s3i"
+      );
+
+      const successMessage =
+        language.language === "en"
+          ? "Message sent successfully, talk to you soon!"
+          : "Message envoyé avec succès, à bientôt !";
+
+      toast.success(successMessage, {
+        duration: 4000,
+        position: "bottom-center",
+        className:
+          "bg-white dark:bg-gray-900 text-primary dark:text-white/90 border border-accent dark:border-accent shadow-md rounded-lg px-6 py-4 flex items-center gap-3 text-sm sm:text-base font-medium",
+        style: {
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+        },
+        iconTheme: {
+          primary: "#52d4ba",
+          secondary: "#333333",
+        },
+        removeDelay: 3000,
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Email send error:", error);
+      toast.error("There was an error sending the message.");
+    } finally {
+      setLoading(false);
+    }
+  };
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -18,7 +87,6 @@ const Contact = () => {
       transition: { duration: 0.8, staggerChildren: 0.25, ease: "easeOut" },
     },
   };
-
   const childVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -80,7 +148,7 @@ const Contact = () => {
           className="max-w-2xl mx-4 sm:mx-auto"
           variants={childVariants}
         >
-          <form className="space-y-6 sm:space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
             {/* Name */}
             <motion.div variants={childVariants}>
               <Label
@@ -95,6 +163,8 @@ const Contact = () => {
                 name="name"
                 className="w-full p-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
                 placeholder={translations.yourName}
+                value={formData.name}
+                onChange={handleChange}
                 required
               />
             </motion.div>
@@ -113,6 +183,8 @@ const Contact = () => {
                 name="email"
                 className="w-full p-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
                 placeholder={translations.yourEmail}
+                value={formData.email}
+                onChange={handleChange}
                 required
               />
             </motion.div>
@@ -131,6 +203,8 @@ const Contact = () => {
                 rows={5}
                 className="w-full p-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-800 dark:text-gray-100 focus:border-accent focus:ring-accent transition-colors duration-300"
                 placeholder={translations.yourMessage}
+                value={formData.message}
+                onChange={handleChange}
                 required
               />
             </motion.div>
@@ -139,10 +213,11 @@ const Contact = () => {
             <motion.div className="text-center" variants={childVariants}>
               <Button
                 variant="outline"
-                type="submit"
                 className="w-full sm:w-auto text-md p-4 text-primary dark:text-accent border-primary dark:border-accent hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-gray-900 transition-all duration-500"
+                type="submit"
+                disabled={loading}
               >
-                {translations.sendMessage}
+                {loading ? "Sending..." : translations.sendMessage}
               </Button>
             </motion.div>
           </form>

@@ -65,7 +65,7 @@ const ProjectList = ({
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
       }}
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:px-24 gap-4 sm:gap-6 lg:gap-8"
+      className="min-h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:px-24 gap-4 sm:gap-6 lg:gap-8"
     >
       {filteredProjects.map((project) => (
         <motion.div

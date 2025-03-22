@@ -20,16 +20,6 @@
   background: #52d4ba; /* Brighter gradient on hover */
 }
 
-/* Optional: Add a glowing effect to the scrollbar handle */
-::-webkit-scrollbar-thumb {
-  box-shadow: 0 0 10px rgba(0, 255, 150, 0.5); /* Neon glow */
-}
-
-/* Optional: Style the scrollbar corner */
-::-webkit-scrollbar-corner {
-  background: #0a0a0a; /* Match the track color */
-}
-
 section {
   min-height: 100vh;
   display: flex;

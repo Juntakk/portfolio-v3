@@ -14,38 +14,39 @@ const Projects = () => {
   const language = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState(translations.all);
 
-  // Reset selectedCategory when language changes
-  useEffect(() => {
-    setSelectedCategory(translations.all);
-  }, [language.language, translations.all]);
-
-  // Get translated projects based on language
   const translatedProjects =
     language.language === "fr" ? projects_fr : projects;
 
-  // Generate categories from translated projects
   const categories = [
     translations.all,
     ...new Set(translatedProjects.map((project) => project.category)),
   ];
 
-  // Translate category names (if translations exist)
   const translatedCategories = categories.map((category) => {
-    return translations[category] || category; // Fallback to the original category if no translation exists
+    return translations[category] || category;
   });
 
-  // Filter projects based on selected category
   const filteredProjects =
     selectedCategory === translations.all
       ? translatedProjects
       : translatedProjects.filter(
           (project) => project.category === selectedCategory
         );
+  useEffect(() => {
+    if (!translatedCategories.includes(selectedCategory)) {
+      setSelectedCategory(translations.all);
+    }
+  }, [
+    language.language,
+    translations.all,
+    translatedCategories,
+    selectedCategory,
+  ]);
 
   return (
     <section
       id="projects"
-      className="py-24 sm:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900"
+      className="min-h-full sm:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
@@ -96,7 +97,7 @@ const Projects = () => {
         </motion.div>
 
         <ProjectList
-          filteredProjects={filteredProjects}
+          filteredProjects={filteredProjects ?? []}
           language={language}
           selectedCategory={selectedCategory}
         />
