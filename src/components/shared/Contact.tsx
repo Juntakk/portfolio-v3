@@ -54,7 +54,7 @@ const Contact = () => {
 
       toast.success(successMessage, {
         duration: 4000,
-        position: "bottom-center",
+        position: "bottom-left",
         className:
           "bg-white dark:bg-gray-900 text-primary dark:text-white/90 border border-accent dark:border-accent shadow-md rounded-lg px-6 py-4 flex items-center gap-3 text-sm sm:text-base font-medium",
         style: {
