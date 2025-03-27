@@ -29,7 +29,7 @@ const translations: { [key: string]: Translations } = {
     projectsTitle: "Some Projects",
     all: "All",
     AI: "AI",
-    games: "Jeux",
+    games: "Games",
     web: "Web",
     mobile: "Mobile",
     aboutTitle: "About Me",
@@ -108,7 +108,6 @@ const translations: { [key: string]: Translations } = {
 export const useTranslation = () => {
   const { language } = useLanguage();
 
-  // Default to 'en' if the language is invalid or undefined
   const currentLanguage =
     language && ["en", "fr"].includes(language) ? language : "fr";
 

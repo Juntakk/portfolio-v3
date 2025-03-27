@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { projects } from "../../data/projects/data";
@@ -11,38 +11,41 @@ import ProjectList from "../ProjectList";
 
 const Projects = () => {
   const translations = useTranslation();
-  const language = useLanguage();
+  const language = useLanguage(); // Destructure directly for better clarity
   const [selectedCategory, setSelectedCategory] = useState(translations.all);
 
+  // Determine the correct set of projects based on language
   const translatedProjects =
     language.language === "fr" ? projects_fr : projects;
 
-  const categories = [
-    translations.all,
-    ...new Set(translatedProjects.map((project) => project.category)),
-  ];
-
+  // Create categories and translate them efficiently
+  const categories = useMemo(() => {
+    const allCategories = [
+      translations.all,
+      ...new Set(translatedProjects.map((project) => project.category)),
+    ];
+    return allCategories.map(
+      (category) => translations[category.toLowerCase()] || category
+    );
+  }, [translatedProjects, translations]);
   const translatedCategories = categories.map((category) => {
-    return translations[category] || category;
+    return translations[category.toLowerCase()] || category;
   });
-
-  const filteredProjects =
-    selectedCategory === translations.all
+  // Filter projects based on selected category
+  const filteredProjects = useMemo(() => {
+    return selectedCategory === translations.all
       ? translatedProjects
       : translatedProjects.filter(
           (project) => project.category === selectedCategory
         );
-  useEffect(() => {
-    if (!translatedCategories.includes(selectedCategory)) {
-      setSelectedCategory(translations.all);
-    }
-  }, [
-    language.language,
-    translations.all,
-    translatedCategories,
-    selectedCategory,
-  ]);
+  }, [selectedCategory, translatedProjects, translations.all]);
 
+  // Reset selected category if it becomes invalid
+  useEffect(() => {
+    if (!categories.includes(selectedCategory)) {
+      setSelectedCategory(translations.all); // Set back to "all" if invalid category is selected
+    }
+  }, [selectedCategory, categories, translations.all]);
   return (
     <section
       id="projects"

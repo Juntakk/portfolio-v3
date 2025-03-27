@@ -1,6 +1,6 @@
 import { LanguageHook, Project } from "@/types";
 import { motion } from "framer-motion";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -37,6 +37,10 @@ const ProjectList = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const translations = useTranslation();
 
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [filteredProjects]);
+
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % filteredProjects.length);
   };
@@ -48,11 +52,11 @@ const ProjectList = ({
   };
 
   const handleOpen = (index: number) => {
-    setCurrentIndex(index - 1);
+    setCurrentIndex(index);
   };
 
   const currentProject = useMemo(
-    () => filteredProjects[currentIndex],
+    () => filteredProjects[currentIndex] || filteredProjects[0], // Ensure valid index
     [filteredProjects, currentIndex]
   );
 
@@ -67,7 +71,7 @@ const ProjectList = ({
       }}
       className="min-h-full pb-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:px-24 gap-4 sm:gap-6 lg:gap-8"
     >
-      {filteredProjects.map((project) => (
+      {filteredProjects.map((project, index) => (
         <motion.div
           key={project.id}
           variants={{
@@ -77,7 +81,7 @@ const ProjectList = ({
           }}
         >
           <AlertDialog>
-            <AlertDialogTrigger asChild onClick={() => handleOpen(project.id)}>
+            <AlertDialogTrigger asChild onClick={() => handleOpen(index)}>
               <Card className="flex justify-evenly h-48 bg-white dark:bg-gray-800 border border-accent dark:border-accent dark:hover:border-accent rounded-lg overflow-hidden hover:border-accent transition-all duration-300 p-4 sm:p-8 md:p-6 max-w-full hover:cursor-pointer">
                 <div className="relative w-full h-full group">
                   {/* Front */}
