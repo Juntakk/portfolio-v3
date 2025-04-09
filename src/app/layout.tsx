@@ -27,10 +27,10 @@ export default function RootLayout({
         <ParticlesWrapper />
         <div style={{ position: "relative", zIndex: 0 }}>
           <ThemeProvider>
-            {/* <ClientLoader> */}
+            <ClientLoader>
             <Toaster position="bottom-right" />
             {children}
-            {/* </ClientLoader> */}
+            </ClientLoader>
           </ThemeProvider>
         </div>
       </body>
