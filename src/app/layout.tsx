@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -28,8 +27,8 @@ export default function RootLayout({
         <div style={{ position: "relative", zIndex: 0 }}>
           <ThemeProvider>
             <ClientLoader>
-            <Toaster position="bottom-right" />
-            {children}
+              <Toaster position="bottom-right" />
+              {children}
             </ClientLoader>
           </ThemeProvider>
         </div>
