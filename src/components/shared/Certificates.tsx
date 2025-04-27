@@ -62,7 +62,7 @@ const Certificates = () => {
                 className="relative w-[95vw] h-[300px] sm:h-[225px] sm:w-[300px] border border-accent dark:border-accent hover:border-none  bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group"
               >
                 {/* Text in the middle */}
-                <div className="cursor-pointer absolute inset-0 text-2xl font-semibold z-50 p-4 sm:p-8 md:p-6 group-hover:opacity-0 top-0 left-0 bg-green w-full h-full flex items-end justify-end text-accent transition-all duration-500 opacity-100">
+                <div className="cursor-pointer absolute inset-0 text-2xl font-semibold z-20 p-4 sm:p-8 md:p-6 group-hover:opacity-0 top-0 left-0 bg-green w-full h-full flex items-end justify-end text-accent transition-all duration-500 opacity-100">
                   {cert.title}
                 </div>
 
@@ -79,7 +79,7 @@ const Certificates = () => {
                 </motion.div>
               </motion.div>
             </AlertDialogTrigger>
-            <VisuallyHidden.Root className="absolute inset-0 z-50 w-full">
+            <VisuallyHidden.Root className="absolute inset-0 z-20 w-full">
               <AlertDialogTitle></AlertDialogTitle>
             </VisuallyHidden.Root>
             <AlertDialogContent className="fixed ml-4 flex-col items-center justify-center p-0 min-w-screen max-w-none bg-transparent border-none">
