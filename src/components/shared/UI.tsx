@@ -89,7 +89,7 @@ const UI = () => {
 
       <div className="fixed top-2 left-2 z-30 md:hidden">
         <Button
-          className="text-accent z-50 bg-transparent backdrop-blur-sm rounded-lg shadow-sm border border-white/10 hover:bg-accent/10"
+          className="text-accent z-40 bg-transparent backdrop-blur-sm rounded-lg shadow-sm border border-white/10 hover:bg-accent/10"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <IoClose /> : <IoMenu />}

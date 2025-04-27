@@ -62,19 +62,19 @@ const Certificates = () => {
                 className="relative w-[95vw] h-[300px] sm:h-[225px] sm:w-[300px] border border-accent dark:border-accent hover:border-none  bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group"
               >
                 {/* Text in the middle */}
-                <div className="cursor-pointer absolute inset-0 text-2xl font-semibold p-4 sm:p-8 md:p-6 group-hover:opacity-0 top-0 left-0 bg-green w-full h-full flex items-end justify-end text-accent transition-all duration-500 opacity-100">
+                <div className="cursor-pointer absolute inset-0 text-2xl font-semibold z-20 p-4 sm:p-8 md:p-6 group-hover:opacity-0 top-0 left-0 bg-green w-full h-full flex items-end justify-end text-accent transition-all duration-500 opacity-100">
                   {cert.title}
                 </div>
 
                 {/* Image appears on hover */}
-                <motion.div className="border-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <motion.div className="border-none w-full absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <Image
                     src={cert.src}
                     alt={cert.title}
                     objectFit="cover"
                     className="rounded-lg"
-                    height={0}
-                    width={0}
+                    height={225}
+                    width={450}
                   />
                 </motion.div>
               </motion.div>
