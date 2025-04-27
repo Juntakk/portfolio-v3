@@ -99,7 +99,7 @@ const UI = () => {
       <nav
         className={`fixed md:top-2/3 md:transform md:-translate-y-2/3 md:left-0 text-accent p-2 backdrop-blur-xl rounded-lg shadow-sm z-20 transition-all duration-300 md:bg-transparent ${
           isMenuOpen
-            ? "top-12 max-w-fit left-3.5 right-3.5 flex justify-start md:justify-center"
+            ? "top-12 max-w-fit left-1.5 right-3.5 flex justify-start md:justify-center"
             : "hidden md:block"
         }`}
       >
