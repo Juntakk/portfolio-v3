@@ -21,8 +21,8 @@ const Certificates = () => {
   const certificates = [
     { title: "Terraform", src: "/certificates/terraform.jpg" },
     { title: "C++", src: "/certificates/c++_certificate.jpg" },
-    { title: "Python", src: "/certificates/react_certificate.jpg" },
-    { title: "React", src: "/certificates/python_certificate.jpg" },
+    { title: "Python", src: "/certificates/python_certificate.jpg" },
+    { title: "React", src: "/certificates/react_certificate.jpg" },
   ];
 
   return (
@@ -59,7 +59,7 @@ const Certificates = () => {
               <motion.div
                 key={index}
                 variants={childVariants}
-                className="relative w-[400px] h-[300px] sm:h-[225px] sm:w-[300px] border border-accent dark:border-accent hover:border-none  bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group"
+                className="relative w-[95vw] h-[300px] sm:h-[225px] sm:w-[300px] border border-accent dark:border-accent hover:border-none  bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group"
               >
                 {/* Text in the middle */}
                 <div className="cursor-pointer absolute inset-0 text-2xl font-semibold z-50 p-4 sm:p-8 md:p-6 group-hover:opacity-0 top-0 left-0 bg-green w-full h-full flex items-end justify-end text-accent transition-all duration-500 opacity-100">
