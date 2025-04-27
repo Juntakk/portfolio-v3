@@ -18,6 +18,7 @@ import CV from "../../../public/assets/NicolasGauthier_DEV.pdf";
 import CV_fr from "../../../public/assets/NicolasGauthier_DEV_fr.pdf";
 import { motion } from "framer-motion";
 import NavLink from "../ui/navlink";
+import { TbAwardFilled } from "react-icons/tb";
 
 const UI = () => {
   const { language, setLanguage } = useLanguage();
@@ -56,7 +57,6 @@ const UI = () => {
 
   return (
     <>
-      {/* CV Download Button */}
       <Button
         onClick={downloadCV}
         className="fixed bottom-2 right-2 flex items-center justify-center gap-2 bg-transparent border dark:border-accent/40 text-accent py-2 px-4 md:py-3 md:px-5 rounded-lg shadow-lg hover:bg-accent transition-colors duration-300 z-20 text-sm md:text-base hover:text-primary"
@@ -65,7 +65,6 @@ const UI = () => {
         <span className="block md:hidden">CV</span>
       </Button>
 
-      {/* Top Right Controls */}
       <div className="fixed flex items-center text-sm md:text-xl right-2 top-2 text-accent p-2 bg-transparent backdrop-blur-sm rounded-lg shadow-sm border border-white/10 z-20 space-x-2 md:space-x-4">
         <button
           className="bg-transparent px-2 py-1 rounded-md hover:bg-accent/10 transition-colors duration-300 text-xs md:text-sm font-medium"
@@ -88,7 +87,6 @@ const UI = () => {
         </div>
       </div>
 
-      {/* Mobile Hamburger Menu */}
       <div className="fixed top-2 left-2 z-30 md:hidden">
         <Button
           className="text-accent bg-transparent backdrop-blur-sm rounded-lg shadow-sm border border-white/10 hover:bg-accent/10 z-20"
@@ -98,7 +96,6 @@ const UI = () => {
         </Button>
       </div>
 
-      {/* Navigation */}
       <nav
         className={`fixed md:top-2/3 md:transform md:-translate-y-2/3 md:left-0 text-accent p-2 backdrop-blur-xl rounded-lg shadow-sm z-20 transition-all duration-300 md:bg-transparent ${
           isMenuOpen
@@ -135,6 +132,12 @@ const UI = () => {
             content={translations.projects}
             destination="projects"
             isActive={activeSection === "projects"}
+          />
+          <NavLink
+            icon={<TbAwardFilled />}
+            content={translations.certificates}
+            destination="certificates"
+            isActive={activeSection === "certificates"}
           />
           <NavLink
             icon={<IoPerson />}

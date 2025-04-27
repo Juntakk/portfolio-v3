@@ -62,8 +62,8 @@ const ProjectList = ({
 
   return (
     <motion.div
-      initial="hidden"
       key={`${selectedCategory}-${language.language}`} // Optimisation du key
+      initial="hidden"
       whileInView="visible"
       variants={{
         hidden: { opacity: 0 },

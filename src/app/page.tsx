@@ -7,6 +7,7 @@ import Projects from "@/components/shared/Projects";
 import Services from "@/components/shared/Services";
 import Footer from "@/components/shared/Footer";
 import UI from "@/components/shared/UI";
+import Certificates from "@/components/shared/Certificates";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Header />
       <Services />
       <Projects />
+      <Certificates />
       <AboutMe />
       <Contact />
       <Footer />
