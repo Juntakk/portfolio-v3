@@ -1,6 +1,14 @@
 import { useTranslation } from "@/hooks/useTranslation";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "../ui/alert-dialog";
+import { VisuallyHidden } from "radix-ui";
+import { AlertDialogCancel } from "@radix-ui/react-alert-dialog";
 
 const Certificates = () => {
   const translations = useTranslation();
@@ -46,28 +54,50 @@ const Certificates = () => {
         className="flex flex-wrap sm:grid sm:grid-cols-2  gap-6 px-0 md:px-24 justify-center md:justify-start items-center"
       >
         {certificates.map((cert, index) => (
-          <motion.div
-            key={index}
-            variants={childVariants}
-            className="relative w-[400px] h-[200px] sm:h-[225px] sm:w-[300px] border border-accent dark:border-accent hover:border-none  bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group"
-          >
-            {/* Text in the middle */}
-            <div className="absolute inset-0 text-2xl font-semibold z-50 p-4 sm:p-8 md:p-6 group-hover:opacity-0 top-0 left-0 bg-green w-full h-full flex items-end justify-end text-accent transition-all duration-500 opacity-100">
-              {cert.title}
-            </div>
+          <AlertDialog key={index}>
+            <AlertDialogTrigger asChild>
+              <motion.div
+                key={index}
+                variants={childVariants}
+                className="relative w-[400px] h-[300px] sm:h-[225px] sm:w-[300px] border border-accent dark:border-accent hover:border-none  bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group"
+              >
+                {/* Text in the middle */}
+                <div className="cursor-pointer absolute inset-0 text-2xl font-semibold z-50 p-4 sm:p-8 md:p-6 group-hover:opacity-0 top-0 left-0 bg-green w-full h-full flex items-end justify-end text-accent transition-all duration-500 opacity-100">
+                  {cert.title}
+                </div>
 
-            {/* Image appears on hover */}
-            <motion.div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <Image
-                src={cert.src}
-                alt={cert.title}
-                objectFit="cover"
-                className="rounded-lg"
-                height={225}
-                width={400}
-              />
-            </motion.div>
-          </motion.div>
+                {/* Image appears on hover */}
+                <motion.div className="border-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <Image
+                    src={cert.src}
+                    alt={cert.title}
+                    objectFit="cover"
+                    className="rounded-lg"
+                    height={225}
+                    width={400}
+                  />
+                </motion.div>
+              </motion.div>
+            </AlertDialogTrigger>
+            <VisuallyHidden.Root className="absolute inset-0 z-50 w-full">
+              <AlertDialogTitle></AlertDialogTitle>
+            </VisuallyHidden.Root>
+            <AlertDialogContent className="fixed ml-4 flex-col items-center justify-center p-0 min-w-screen max-w-none bg-transparent border-none">
+              <div className="flex flex-col items-center justify-center w-screen h-full">
+                <Image
+                  src={cert.src}
+                  alt={cert.title}
+                  className="rounded-lg object-contain w-full"
+                  width={0}
+                  height={0}
+                  sizes="(max-width: 768px) 100vw, 1000px"
+                />
+              </div>
+              <AlertDialogCancel className="text-white text-3xl w-full items-end justify-end flex p-4 bg-transparent rounded-lg hover:bg-accent/80 transition-colors duration-300">
+                X
+              </AlertDialogCancel>
+            </AlertDialogContent>
+          </AlertDialog>
         ))}
       </motion.div>
     </section>
