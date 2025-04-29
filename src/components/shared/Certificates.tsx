@@ -59,43 +59,46 @@ const Certificates = () => {
               <motion.div
                 key={index}
                 variants={childVariants}
-                className="relative w-[95vw] h-[300px] sm:h-[225px] sm:w-[300px] border border-accent dark:border-accent hover:border-none  bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group"
+                className="relative w-[95vw] sm:w-[300px] h-auto aspect-[4/3] hover:cursor-pointer border border-accent dark:border-accent hover:border-transparent bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group transition-all duration-300"
               >
                 {/* Text in the middle */}
-                <div className="cursor-pointer absolute inset-0 text-2xl font-semibold z-20 p-4 sm:p-8 md:p-6 group-hover:opacity-0 top-0 left-0 bg-green w-full h-full flex items-end justify-end text-accent transition-all duration-500 opacity-100">
+                <div className="absolute inset-0 z-20 flex items-end justify-end p-4 sm:p-6 md:p-8 text-2xl font-semibold text-accent bg-green transition-all duration-500 opacity-100 group-hover:opacity-0 rounded-lg">
                   {cert.title}
                 </div>
 
                 {/* Image appears on hover */}
-                <motion.div className="border-none w-full absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <motion.div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <Image
                     src={cert.src}
                     alt={cert.title}
-                    objectFit="cover"
-                    className="rounded-lg"
-                    height={225}
+                    className="object-contain w-full h-full rounded-lg"
                     width={450}
+                    height={338}
+                    sizes="(max-width: 768px) 90vw, 300px"
+                    priority
                   />
                 </motion.div>
               </motion.div>
             </AlertDialogTrigger>
-            <VisuallyHidden.Root className="absolute inset-0 z-20 w-full">
+
+            <VisuallyHidden.Root className="">
               <AlertDialogTitle></AlertDialogTitle>
             </VisuallyHidden.Root>
-            <AlertDialogContent className="fixed ml-4 flex-col items-center justify-center p-0 min-w-screen max-w-none bg-transparent border-none">
-              <div className="flex flex-col items-center justify-center w-screen h-full">
+            <AlertDialogContent className="border-none p-4 max-w-full md:max-w-3xl ml-4 w-full">
+              <AlertDialogCancel className="text-white hover:text-accent transition-all duration-300 ml-auto text-2xl border-none focus:border-none outline-none">
+                X
+              </AlertDialogCancel>
+              <div className="w-full flex justify-center">
                 <Image
                   src={cert.src}
                   alt={cert.title}
-                  className="rounded-lg object-contain w-full"
-                  width={0}
-                  height={0}
-                  sizes="(max-width: 768px) 100vw, 1000px"
+                  className="rounded-lg object-contain w-full h-auto"
+                  width={1000}
+                  height={600}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+                  priority
                 />
               </div>
-              <AlertDialogCancel className="text-white text-3xl w-full items-end justify-end flex p-4 bg-transparent rounded-lg hover:bg-accent/80 transition-colors duration-300">
-                X
-              </AlertDialogCancel>
             </AlertDialogContent>
           </AlertDialog>
         ))}
