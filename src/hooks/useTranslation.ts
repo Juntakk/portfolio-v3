@@ -69,7 +69,7 @@ const translations: { [key: string]: Translations } = {
     gameDevelopment: "Jeux Vidéos",
     uiUxDesign: "UI/UX",
     servicesDesc1:
-      "Création de sites web modernes, réactifs et évolutifs, adaptés à vos besoins et budgets.",
+      "Création de sites web modernes, réactifs et évolutifs, adaptés à tout vos besoins.",
     servicesDesc2:
       "Création d'applications mobiles multiplateformes avec une expérience utilisateur fluide.",
     servicesDesc3:
