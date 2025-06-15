@@ -29,6 +29,10 @@ import floppybird2 from "../../public/assets/screenshots/floppy_2.png";
 import floppybird3 from "../../public/assets/screenshots/floppy_3.png";
 import floppybird4 from "../../public/assets/screenshots/floppy_4.png";
 
+import dino1 from "../../public/assets/screenshots/dino_1.png";
+import dino2 from "../../public/assets/screenshots/dino_2.png";
+import dino3 from "../../public/assets/screenshots/dino_3.png";
+
 const images = {
   dietAppScreenshot: [dietAppScreenshot],
   steemScreenshots: [steem1, steem2, steem3, steem4],
@@ -39,6 +43,7 @@ const images = {
   survivorsScreenshots: [survivors1, survivors2],
   grocerease: [grocerease1, grocerease2, grocerease3, grocerease4],
   oldfolio: [oldfolio1, oldfolio2, oldfolio3],
+  dinoScreenshots: [dino1, dino2, dino3],
   floppybirdScreenshots: [floppybird1, floppybird2, floppybird3, floppybird4],
 };
 

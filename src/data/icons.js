@@ -28,6 +28,7 @@ import { GiVolleyballBall } from "react-icons/gi";
 import { MdLocalGroceryStore } from "react-icons/md";
 import { HiMiniCodeBracketSquare } from "react-icons/hi2";
 import { PiBirdFill } from "react-icons/pi";
+import { GiDinosaurRex } from "react-icons/gi";
 
 export const icons = {
   python: <FaPython />,
@@ -63,4 +64,5 @@ export const mainIcons = {
   grocerease: <MdLocalGroceryStore />,
   oldfolio: <HiMiniCodeBracketSquare />,
   floppybird: <PiBirdFill />,
+  dino: <GiDinosaurRex />,
 };

@@ -110,4 +110,16 @@ export const projects = [
     screenShots: images.dietAppScreenshot,
     icon: mainIcons.diet,
   },
+  {
+    id: 9,
+    title: "Dino Jump",
+    desc: "A simple yet addictive game where you control a dinosaur to jump over obstacles, featuring smooth animations and responsive controls.",
+    icons: [icons.javascript],
+    languages: ["Javascript"],
+    demo: "https://dino-kappa.vercel.app/",
+    github: "https://github.com/Juntakk/dino",
+    category: "Games",
+    screenShots: images.dinoScreenshots,
+    icon: mainIcons.dino,
+  },
 ];
