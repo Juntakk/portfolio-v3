@@ -108,8 +108,9 @@ const ProjectList = ({
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <ProjectCarousel project={currentProject} />
-              <AlertDialogFooter className="w-full mt-4 px-4 sm:px-6 pb-4 sm:pb-2 flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4">
-                <div className="flex justify-center sm:justify-start items-center text-center flex-wrap gap-6 sm:gap-8">
+              <AlertDialogFooter className="w-full mt-4 px-4 sm:px-6 pb-4 sm:pb-2 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6 sm:gap-8 text-center">
+                {/* Language Icons */}
+                <div className="flex justify-center items-center flex-wrap gap-6 sm:gap-8 w-full sm:w-1/3">
                   {currentProject.icons?.map((icon, index) => (
                     <TooltipProvider key={index}>
                       <Tooltip delayDuration={0}>
@@ -133,7 +134,8 @@ const ProjectList = ({
                   ))}
                 </div>
 
-                <div className="flex items-center justify-center flex-wrap gap-3 sm:gap-4">
+                {/* CTA Buttons */}
+                <div className="flex justify-center items-center gap-2 sm:gap-4 w-full sm:w-1/3">
                   {currentProject.demo && (
                     <Link
                       href={currentProject.demo}
@@ -158,7 +160,8 @@ const ProjectList = ({
                   )}
                 </div>
 
-                <div className="flex justify-between gap-2 w-full sm:w-auto">
+                {/* Previous/Next Buttons */}
+                <div className="flex justify-center items-center gap-2 w-full sm:w-1/3">
                   <TooltipProvider>
                     <Tooltip delayDuration={0}>
                       <TooltipTrigger asChild>
@@ -172,7 +175,7 @@ const ProjectList = ({
                       <TooltipContent
                         side="top"
                         sideOffset={0}
-                        className="bg-transparent text-accent rounded-lg py-2 text-xs  mr-1 sm:text-sm font-medium shadow-sm"
+                        className="bg-transparent text-accent rounded-lg py-2 text-xs mr-1 sm:text-sm font-medium shadow-sm"
                       >
                         <p>{translations.prevProject}</p>
                       </TooltipContent>
@@ -184,7 +187,7 @@ const ProjectList = ({
                       <TooltipTrigger asChild>
                         <Button
                           onClick={handleNext}
-                          className="text-primary bg-transparent dark:text-accent border border-muted dark:border-accent rounded-lg hover:bg-accent/10 hover:text-accent hover:scale-110 transition-all duration-200 shadow-sm hover:shadow-md"
+                          className="text-primary bg-transparent dark:text-accent border border-muted dark:border-accent rounded-lg hover:bg-accent/10 hover:text-accent hover:scale-110 transition-transform duration-200 shadow-sm hover:shadow-md"
                         >
                           <ArrowRight />
                         </Button>
@@ -192,14 +195,13 @@ const ProjectList = ({
                       <TooltipContent
                         side="top"
                         sideOffset={0}
-                        className="bg-transparent text-accent rounded-lg py-2 mr-1 text-xs sm:text-sm font-medium shadow-sm"
+                        className="bg-transparent text-accent rounded-lg py-2 text-xs mr-1 sm:text-sm font-medium shadow-sm"
                       >
                         <p>{translations.nextProject}</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
                 </div>
-
                 <AlertDialogCancel
                   className="absolute top-3 right-3 sm:top-4 sm:right-4 text-primary dark:text-accent dark:hover:bg-accent hover:text-primary dark:hover:text-primary transition-colors duration-200 bg-background/80 dark:bg-card/80 backdrop-blur-sm p-2.5 rounded-full hover:bg-background/90 border border-primary dark:border-accent shadow-sm hover:shadow-md"
                   aria-label="Close dialog"

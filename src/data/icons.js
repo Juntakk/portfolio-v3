@@ -27,6 +27,7 @@ import { PiArticleNyTimesFill } from "react-icons/pi";
 import { GiVolleyballBall } from "react-icons/gi";
 import { MdLocalGroceryStore } from "react-icons/md";
 import { HiMiniCodeBracketSquare } from "react-icons/hi2";
+import { PiBirdFill } from "react-icons/pi";
 
 export const icons = {
   python: <FaPython />,
@@ -61,4 +62,5 @@ export const mainIcons = {
   blog: <PiArticleNyTimesFill />,
   grocerease: <MdLocalGroceryStore />,
   oldfolio: <HiMiniCodeBracketSquare />,
+  floppybird: <PiBirdFill />,
 };

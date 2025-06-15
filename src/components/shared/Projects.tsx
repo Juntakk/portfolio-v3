@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -11,14 +10,12 @@ import ProjectList from "../ProjectList";
 
 const Projects = () => {
   const translations = useTranslation();
-  const language = useLanguage(); // Destructure directly for better clarity
+  const language = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState(translations.all);
 
-  // Determine the correct set of projects based on language
   const translatedProjects =
     language.language === "fr" ? projects_fr : projects;
 
-  // Create categories and translate them efficiently
   const categories = useMemo(() => {
     const allCategories = [
       translations.all,
@@ -31,7 +28,6 @@ const Projects = () => {
   const translatedCategories = categories.map((category) => {
     return translations[category.toLowerCase()] || category;
   });
-  // Filter projects based on selected category
   const filteredProjects = useMemo(() => {
     return selectedCategory === translations.all
       ? translatedProjects
@@ -40,10 +36,9 @@ const Projects = () => {
         );
   }, [selectedCategory, translatedProjects, translations.all]);
 
-  // Reset selected category if it becomes invalid
   useEffect(() => {
     if (!categories.includes(selectedCategory)) {
-      setSelectedCategory(translations.all); // Set back to "all" if invalid category is selected
+      setSelectedCategory(translations.all);
     }
   }, [selectedCategory, categories, translations.all]);
   return (
