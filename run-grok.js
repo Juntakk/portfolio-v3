@@ -9,7 +9,13 @@ async function run() {
   try {
     const result = await streamText({
       model: xai("grok-2-1212"),
-      prompt: "Whats 3 + 2?",
+      prompt: `
+    You are a helpful assistant that knows about Nick, a senior web developer.
+    Nick has 8+ years of experience, is based in Canada, and specializes in Next.js and Terraform.
+    Answer the following question accordingly:
+
+    Question: What technologies does Nick work with?
+  `,
     });
 
     console.log("Streaming response:");
