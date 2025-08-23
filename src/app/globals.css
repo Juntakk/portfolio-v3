@@ -34,6 +34,10 @@ p {
 canvas {
   overflow: hidden !important;
 }
+
+body {
+  background: #111827;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

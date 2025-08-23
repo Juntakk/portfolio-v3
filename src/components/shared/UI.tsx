@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Button } from "../ui/button";
-import { useTranslation } from "@/hooks/useTranslation";
-import { useLanguage } from "@/theme/LanguageProvider";
-import { useThemeStore } from "@/theme/theme";
+import React, { useEffect, useState } from 'react';
+import { Button } from '../ui/button';
+import { useTranslation } from '@/hooks/useTranslation';
+import { useLanguage } from '@/theme/LanguageProvider';
+import { useThemeStore } from '@/theme/theme';
 import {
   IoSunny,
   IoMoon,
@@ -13,30 +13,30 @@ import {
   IoMail,
   IoMenu,
   IoClose,
-} from "react-icons/io5";
-import CV from "../../../public/assets/NicolasGauthier_DEV.pdf";
-import CV_fr from "../../../public/assets/NicolasGauthier_DEV_fr.pdf";
-import { motion } from "framer-motion";
-import NavLink from "../ui/navlink";
-import { TbAwardFilled } from "react-icons/tb";
+} from 'react-icons/io5';
+import CV from '../../../public/assets/NicolasGauthier_DEV.pdf';
+import CV_fr from '../../../public/assets/NicolasGauthier_DEV_fr.pdf';
+import { motion } from 'framer-motion';
+import NavLink from '../ui/navlink';
+import { TbAwardFilled } from 'react-icons/tb';
 
 const UI = () => {
   const { language, setLanguage } = useLanguage();
   const { theme, toggleTheme } = useThemeStore();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("header");
+  const [activeSection, setActiveSection] = useState('header');
 
   const downloadCV = () => {
-    const cvUrl = language === "en" ? CV : CV_fr;
-    const link = document.createElement("a");
+    const cvUrl = language === 'en' ? CV : CV_fr;
+    const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = "Nicolas_Gauthier_CV.pdf";
+    link.download = 'Nicolas_Gauthier_CV.pdf';
     link.click();
   };
   const translations = useTranslation();
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -68,9 +68,9 @@ const UI = () => {
       <div className="fixed flex items-center text-sm md:text-xl right-2 top-2 text-accent p-2 bg-transparent backdrop-blur-sm rounded-lg shadow-sm border border-white/10 z-20 space-x-2 md:space-x-4">
         <button
           className="bg-transparent px-2 py-1 rounded-md hover:bg-accent/10 transition-colors duration-300 text-xs md:text-sm font-medium"
-          onClick={() => setLanguage(language === "en" ? "fr" : "en")}
+          onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
         >
-          {language === "en" ? "Français" : "English"}
+          {language === 'en' ? 'Français' : 'English'}
         </button>
 
         <div className="w-px h-4 bg-accent/20 mx-2 md:mx-4" />
@@ -79,7 +79,7 @@ const UI = () => {
           className="p-1 md:p-2 rounded-md hover:bg-accent/10 cursor-pointer"
           onClick={toggleTheme}
         >
-          {theme === "light" ? (
+          {theme === 'light' ? (
             <IoMoon className="text-xl md:text-2xl" />
           ) : (
             <IoSunny className="text-xl md:text-2xl" />
@@ -97,10 +97,10 @@ const UI = () => {
       </div>
 
       <nav
-        className={`fixed md:top-2/3 md:transform md:-translate-y-2/3 md:left-0 text-accent p-2 backdrop-blur-xl rounded-lg shadow-sm z-20 transition-all duration-300 md:bg-transparent ${
+        className={`fixed md:top-1/2 md:transform md:-translate-y-1/2 md:left-0 text-accent p-2 backdrop-blur-xl rounded-lg shadow-sm z-20 transition-all duration-300 md:bg-transparent ${
           isMenuOpen
-            ? "top-12 max-w-fit left-1.5 right-3.5 flex justify-start md:justify-center"
-            : "hidden md:block"
+            ? 'top-12 max-w-fit left-1.5 right-3.5 flex justify-start md:justify-center'
+            : 'hidden md:block'
         }`}
       >
         <motion.ul
@@ -119,37 +119,37 @@ const UI = () => {
             icon={<IoHome />}
             content={translations.home}
             destination="header"
-            isActive={activeSection === "header"}
+            isActive={activeSection === 'header'}
           />
           <NavLink
             icon={<IoSettingsSharp />}
             content="Services"
             destination="services"
-            isActive={activeSection === "services"}
+            isActive={activeSection === 'services'}
           />
           <NavLink
             icon={<IoFolderOpen />}
             content={translations.projects}
             destination="projects"
-            isActive={activeSection === "projects"}
+            isActive={activeSection === 'projects'}
           />
           <NavLink
             icon={<TbAwardFilled />}
             content={translations.certificates}
             destination="certificates"
-            isActive={activeSection === "certificates"}
+            isActive={activeSection === 'certificates'}
           />
           <NavLink
             icon={<IoPerson />}
             content={translations.about}
             destination="about"
-            isActive={activeSection === "about"}
+            isActive={activeSection === 'about'}
           />
           <NavLink
             icon={<IoMail />}
             content="Contact"
             destination="contact"
-            isActive={activeSection === "contact"}
+            isActive={activeSection === 'contact'}
           />
         </motion.ul>
       </nav>
