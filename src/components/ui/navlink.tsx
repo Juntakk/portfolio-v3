@@ -25,19 +25,19 @@ const NavLink = ({ icon, content, destination, isActive }: NavLinkProps) => {
               hidden: { opacity: 0, x: -50 },
               visible: { opacity: 1, x: 0 },
             }}
-            initial="hidden"
-            animate="visible"
+            initial='hidden'
+            animate='visible'
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <Link
-              className="flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer group"
+              className='flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer group'
               to={destination}
               smooth={true}
               duration={1000}
               spy={true}
             >
               <span
-                className={`text-4xl lg:text-3xl transition-all duration-300 ${
+                className={`text-3xl transition-all duration-300 ${
                   isActive
                     ? "text-accent border-b-2 border-accent py-1"
                     : "text-gray-400 hover:text-accent"
@@ -49,9 +49,9 @@ const NavLink = ({ icon, content, destination, isActive }: NavLinkProps) => {
           </motion.li>
         </TooltipTrigger>
         <TooltipContent
-          side="right"
-          sideOffset={5}
-          className="bg-transparent text-accent rounded-lg shadow-lg py-2 text-xs sm:text-sm font-medium" // Light mode tooltip
+          side='right'
+          sideOffset={10}
+          className='bg-gray-800 border border-accent text-accent rounded-lg shadow-lg p-1 text-xs sm:text-sm font-medium'
         >
           <p>{content}</p>
         </TooltipContent>

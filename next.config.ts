@@ -11,7 +11,6 @@ const nextConfig = {
       }[];
     };
   }) {
-    // Handle pdf files with file-loader
     config.module.rules.push({
       test: /\.pdf$/,
       use: {

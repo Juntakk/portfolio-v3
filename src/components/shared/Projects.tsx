@@ -43,16 +43,16 @@ const Projects = () => {
   }, [selectedCategory, categories, translations.all]);
   return (
     <section
-      id="projects"
-      className="min-h-full sm:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900"
+      id='projects'
+      className='min-h-full sm:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900'
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 text-center mb-8 sm:mb-12"
+          className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-200 text-center mb-8 sm:mb-12'
         >
           {translations.projectsTitle}
         </motion.h2>
@@ -60,8 +60,8 @@ const Projects = () => {
         {/* Category Buttons */}
         <motion.div
           key={language.language}
-          initial="hidden"
-          whileInView="visible"
+          initial='hidden'
+          whileInView='visible'
           variants={{
             hidden: { opacity: 0 },
             visible: {
@@ -69,7 +69,7 @@ const Projects = () => {
               transition: { staggerChildren: 0.2 },
             },
           }}
-          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8"
+          className='flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8'
         >
           {translatedCategories.map((category) => (
             <motion.div

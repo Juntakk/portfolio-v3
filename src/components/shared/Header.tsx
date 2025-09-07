@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-// import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { Link } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -38,40 +37,38 @@ const Header = () => {
 
   return (
     <section
-      id="header"
-      className="flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
+      id='header'
+      className='flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900'
     >
-      {/* Greeting */}
       <motion.h1
-        initial="offscreen"
-        whileInView="onscreen"
+        initial='offscreen'
+        whileInView='onscreen'
         animate={{ opacity: 1, y: 0 }}
         variants={titleVariants}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="mb-3 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white"
+        className='mb-3 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white md:mx-8'
       >
         {translations.greeting}
         <motion.span
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
-          className="text-accent"
+          className='text-accent'
         >
           Nicolas Gauthier
         </motion.span>
       </motion.h1>
 
-      {/* Role */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300"
+        className='text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300'
       >
         {translations.greeting2}
-        <span className="text-accent">
-          <AnimatePresence mode="wait">
+        <span className='text-accent'>
+          <AnimatePresence mode='wait'>
             <motion.span
               key={currentWordIndex}
               initial={{ opacity: 0, y: 30 }}
@@ -79,7 +76,7 @@ const Header = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               variants={titleVariants}
-              className="inline-block text-center"
+              className='inline-block text-center'
             >
               {words[currentWordIndex]}
             </motion.span>
@@ -88,41 +85,19 @@ const Header = () => {
         {translations.greeting3}
       </motion.p>
 
-      {/* Call to Action */}
-      {/* <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
-      >
-        <Link
-          to="projects"
-          smooth={true}
-          duration={1500}
-          aria-label="Scroll to Projects"
-        >
-          <Button
-            variant="outline"
-            className="mt-8 text-accent border-accent hover:bg-accent hover:text-primary transition-colors duration-300"
-          >
-            {translations.workCta}
-          </Button>
-        </Link>
-      </motion.div> */}
-
-      {/* Down Arrow */}
       <motion.div
-        className="mt-12"
+        className='mt-12'
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
       >
         <Link
-          to="services"
+          to='services'
           smooth={true}
           duration={1500}
-          aria-label="Scroll to Services"
+          aria-label='Scroll to Services'
         >
-          <ArrowDown className="text-accent w-14 h-14 hover:cursor-pointer animate-bounce" />
+          <ArrowDown className='text-accent w-14 h-14 hover:cursor-pointer animate-bounce' />
         </Link>
       </motion.div>
     </section>
