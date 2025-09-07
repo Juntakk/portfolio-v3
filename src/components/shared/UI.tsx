@@ -14,8 +14,8 @@ import {
   IoMenu,
   IoClose,
 } from "react-icons/io5";
-import CV from "../../../public/assets/NicolasGauthier_DEV.pdf";
-import CV_fr from "../../../public/assets/NicolasGauthier_DEV_fr.pdf";
+import CV from "../../../public/assets/Nicolas_Gauthier.pdf";
+import CV_fr from "../../../public/assets/Nicolas_Gauthier_FR.pdf";
 import { motion } from "framer-motion";
 import NavLink from "../ui/navlink";
 import { TbAwardFilled } from "react-icons/tb";
