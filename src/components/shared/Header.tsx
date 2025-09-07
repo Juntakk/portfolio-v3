@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowBigDown } from "lucide-react";
 import { Link } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const Header = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [hover, setHover] = useState(false);
   const translations = useTranslation();
   const words = [translations.word1, translations.word2, translations.word3];
 
@@ -97,7 +98,12 @@ const Header = () => {
           duration={1500}
           aria-label='Scroll to Services'
         >
-          <ArrowDown className='text-accent w-14 h-14 hover:cursor-pointer animate-bounce' />
+          <ArrowBigDown
+            className='text-accent w-14 h-14 hover:cursor-pointer animate-bounce'
+            onMouseEnter={() => setTimeout(() => setHover(true), 100)}
+            onMouseLeave={() => setTimeout(() => setHover(false), 200)}
+            fill={hover ? "currentColor" : "none"}
+          />
         </Link>
       </motion.div>
     </section>
