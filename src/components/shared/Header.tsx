@@ -172,7 +172,7 @@ const Header = () => {
         variants={containerVariants}
         initial='hidden'
         animate={isInView ? "visible" : "hidden"}
-        className='mb-2'
+        className='mb-2 cursor-default'
       >
         <motion.span className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-700 dark:text-gray-300 inline-block'>
           {greetingLetters.map((letter, index) => (
@@ -192,7 +192,7 @@ const Header = () => {
         variants={titleContainerVariants}
         initial='hidden'
         animate={isInView ? "visible" : "hidden"}
-        className='mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 dark:text-white md:mx-8'
+        className='mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 dark:text-white md:mx-8 cursor-default'
       >
         <span className='inline-block'>
           {nameLetters.map((letter, index) => (
@@ -200,11 +200,6 @@ const Header = () => {
               key={index}
               variants={nameLetterVariants}
               className='inline-block text-accent relative'
-              whileHover={{
-                scale: 1.2,
-                y: -5,
-                transition: { type: "spring", stiffness: 400 },
-              }}
             >
               {letter === " " ? "\u00A0" : letter}
             </motion.span>
@@ -217,7 +212,7 @@ const Header = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
-        className='text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 min-h-[3rem] sm:min-h-[4rem] flex items-center justify-center'
+        className='text-lg cursor-default sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 min-h-[3rem] sm:min-h-[4rem] flex items-center justify-center'
       >
         <span>{translations.greeting2}</span>
         <span className='text-accent mx-2 inline-block min-w-[100px] text-center relative'>

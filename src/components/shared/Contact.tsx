@@ -99,7 +99,7 @@ const Contact = () => {
   return (
     <section
       id='contact'
-      className='py-10 px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300'
+      className='px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300'
     >
       <motion.div
         className='container mx-auto px-4 sm:px-6'

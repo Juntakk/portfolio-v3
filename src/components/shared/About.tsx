@@ -93,7 +93,7 @@ const AboutMe = () => {
         </motion.div>
 
         {/* Personal Note */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -102,7 +102,7 @@ const AboutMe = () => {
           <p className='text-base sm:text-lg text-gray-700 dark:text-gray-300 sm:block hidden leading-relaxed'>
             {translations.aboutFooter}
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
