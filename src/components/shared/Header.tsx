@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { ArrowBigDown } from "lucide-react";
+import { Play } from "lucide-react";
 import { Link } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
 
@@ -98,8 +98,8 @@ const Header = () => {
           duration={1500}
           aria-label='Scroll to Services'
         >
-          <ArrowBigDown
-            className='text-accent w-14 h-14 hover:cursor-pointer animate-bounce'
+          <Play
+            className='text-accent w-14 h-14 hover:cursor-pointer rotate-90'
             onMouseEnter={() => setTimeout(() => setHover(true), 100)}
             onMouseLeave={() => setTimeout(() => setHover(false), 200)}
             fill={hover ? "currentColor" : "none"}
