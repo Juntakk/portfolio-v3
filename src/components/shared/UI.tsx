@@ -14,8 +14,8 @@ import {
   IoMenu,
   IoClose,
 } from "react-icons/io5";
-import CV from "../../../public/assets/English.pdf";
-import CV_fr from "../../../public/assets/French.pdf";
+import CV from "../../../public/assets/English_CV.pdf";
+import CV_fr from "../../../public/assets/French_CV.pdf";
 import { motion } from "framer-motion";
 import NavLink from "../ui/navlink";
 import { TbAwardFilled } from "react-icons/tb";
