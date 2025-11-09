@@ -17,7 +17,7 @@ const ProjectCarousel = ({
   currentIndex: number;
 }) => {
   return (
-    <Carousel className='w-full max-w-2xl mx-auto rounded-lg mt-2'>
+    <Carousel className='w-full max-w-4xl mx-auto rounded-lg'>
       <CarouselContent>
         {project.screenShots.map((screenshot, index) => (
           <CarouselItem key={index}>

@@ -98,119 +98,148 @@ const ProjectList = ({
                 </div>
               </Card>
             </AlertDialogTrigger>
-            <AlertDialogContent className='flex flex-col justify-center items-center bg-white dark:bg-gray-900 border border-accent dark:border-accent rounded-lg max-w-sm sm:max-w-xl p-5 md:max-w-3xl max-h-[95vh] mx-4 shadow-xl'>
-              <AlertDialogHeader className='w-full px-4 sm:px-6 pt-4 sm:pt-6'>
-                <AlertDialogTitle className='text-2xl sm:text-3xl mb-2 font-bold text-primary dark:text-white/90 text-center'>
+            <AlertDialogContent className='flex flex-col bg-white dark:bg-gray-900 border border-accent dark:border-accent rounded-lg max-w-sm sm:max-w-xl md:max-w-3xl max-h-[95vh] mx-4 shadow-xl overflow-hidden'>
+              {/* Close Button */}
+              <AlertDialogCancel
+                className='absolute top-3 right-3 sm:top-4 sm:right-4 z-50 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 border-0 shadow-md hover:shadow-lg'
+                aria-label='Close dialog'
+              >
+                <svg
+                  className='w-4 h-4'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M6 18L18 6M6 6l12 12'
+                  />
+                </svg>
+              </AlertDialogCancel>
+
+              {/* Header */}
+              <AlertDialogHeader className='px-4 sm:px-6 pt-4 sm:pt-6 pb-3 border-b border-gray-200 dark:border-gray-700'>
+                <AlertDialogTitle className='text-2xl sm:text-3xl font-bold text-primary dark:text-white/90 text-center pr-8'>
                   {currentProject.title}
                 </AlertDialogTitle>
                 <AlertDialogDescription className='mt-2 text-primary dark:text-white/70 text-center leading-relaxed'>
                   {currentProject.desc}
                 </AlertDialogDescription>
               </AlertDialogHeader>
-              <ProjectCarousel
-                project={currentProject}
-                currentIndex={currentIndex}
-              />
-              <AlertDialogFooter className='w-full mt-4 px-4 sm:px-6 pb-4 sm:pb-2 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6 sm:gap-8 text-center'>
-                {/* Language Icons */}
-                <div className='flex justify-center items-center flex-wrap gap-6 sm:gap-8 w-full sm:w-1/3'>
-                  {currentProject.icons?.map((icon, index) => (
-                    <TooltipProvider key={index}>
-                      <Tooltip delayDuration={0}>
-                        <TooltipTrigger asChild>
-                          <div
-                            className='w-6 h-6 text-primary dark:text-accent text-3xl sm:text-4xl hover:scale-110 transition-transform duration-200 hover:cursor-default'
-                            aria-label={currentProject.languages[index]}
-                          >
-                            {icon}
-                          </div>
-                        </TooltipTrigger>
-                        <TooltipContent
-                          side='top'
-                          sideOffset={0}
-                          className='bg-transparent text-accent rounded-lg py-2 ml-3 text-xs sm:text-sm font-medium shadow-sm'
-                        >
-                          <p>{currentProject.languages[index]}</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  ))}
-                </div>
 
-                {/* CTA Buttons */}
-                <div className='flex justify-center items-center gap-2 sm:gap-4 w-full sm:w-1/3'>
-                  {currentProject.demo && (
-                    <Link
-                      href={currentProject.demo}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent border border-muted dark:border-accent rounded-lg hover:bg-accent/10 hover:text-accent transition-all duration-300 shadow-sm hover:shadow-md'
-                      aria-label={`View demo for ${currentProject.title}`}
-                    >
-                      Demo <FaExternalLinkAlt className='ml-2 text-lg' />
-                    </Link>
+              {/* Carousel */}
+              <div className='flex-1 overflow-y-auto px-4 sm:px-12 py-4'>
+                <ProjectCarousel
+                  project={currentProject}
+                  currentIndex={currentIndex}
+                />
+              </div>
+
+              {/* Footer */}
+              <AlertDialogFooter className='px-4 sm:px-6 pb-4 sm:pb-2 pt-3 border-t border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30'>
+                <div className='w-full space-y-4'>
+                  {/* Technologies */}
+                  {currentProject.icons && currentProject.icons.length > 0 && (
+                    <div className='flex justify-center items-center flex-wrap gap-4 sm:gap-6'>
+                      {currentProject.icons.map((icon, index) => (
+                        <TooltipProvider key={index}>
+                          <Tooltip delayDuration={200}>
+                            <TooltipTrigger asChild>
+                              <div
+                                className='text-2xl sm:text-3xl text-primary dark:text-accent hover:scale-110 transition-transform duration-200 cursor-default'
+                                aria-label={currentProject.languages[index]}
+                              >
+                                {icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent
+                              side='top'
+                              className='bg-gray-900 dark:bg-gray-700 text-white text-xs px-2 py-1 rounded'
+                            >
+                              <p>{currentProject.languages[index]}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      ))}
+                    </div>
                   )}
-                  {currentProject.github && (
-                    <Link
-                      href={currentProject.github}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent border border-muted dark:border-accent rounded-lg hover:bg-accent/10 hover:text-accent transition-all duration-300 shadow-sm hover:shadow-md'
-                      aria-label={`View GitHub repository for ${currentProject.title}`}
-                    >
-                      GitHub <FaGithub className='ml-2 text-lg' />
-                    </Link>
-                  )}
-                </div>
 
-                {/* Previous/Next Buttons */}
-                <div className='flex justify-center items-center gap-2 w-full sm:w-1/3'>
-                  <TooltipProvider>
-                    <Tooltip delayDuration={0}>
-                      <TooltipTrigger asChild>
-                        <Button
-                          onClick={handlePrevious}
-                          className='text-primary bg-transparent dark:text-accent border border-muted dark:border-accent rounded-lg hover:bg-accent/10 hover:text-accent hover:scale-110 transition-transform duration-200 shadow-sm hover:shadow-md'
-                        >
-                          <ArrowLeft />
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent
-                        side='top'
-                        sideOffset={0}
-                        className='bg-transparent text-accent rounded-lg py-2 text-xs mr-1 sm:text-sm font-medium shadow-sm'
-                      >
-                        <p>{translations.prevProject}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                  {/* Actions Row */}
+                  <div className='flex flex-col sm:flex-row items-center justify-between gap-4'>
+                    {/* Navigation */}
+                    {filteredProjects.length > 1 && (
+                      <div className='flex items-center gap-3'>
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Button
+                                onClick={handlePrevious}
+                                variant='outline'
+                                size='sm'
+                                className='text-primary dark:text-accent border-muted dark:border-accent hover:bg-accent/10 hover:text-accent'
+                              >
+                                <ArrowLeft className='w-4 h-4' />
+                              </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{translations.prevProject}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                        <span className='text-sm text-gray-500 dark:text-gray-400 min-w-[3rem] text-center'>
+                          {currentIndex + 1} / {filteredProjects.length}
+                        </span>
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Button
+                                onClick={handleNext}
+                                variant='outline'
+                                size='sm'
+                                className='text-primary dark:text-accent border-muted dark:border-accent hover:bg-accent/10 hover:text-accent'
+                              >
+                                <ArrowRight className='w-4 h-4' />
+                              </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{translations.nextProject}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </div>
+                    )}
 
-                  <TooltipProvider>
-                    <Tooltip delayDuration={0}>
-                      <TooltipTrigger asChild>
-                        <Button
-                          onClick={handleNext}
-                          className='text-primary bg-transparent dark:text-accent border border-muted dark:border-accent rounded-lg hover:bg-accent/10 hover:text-accent hover:scale-110 transition-transform duration-200 shadow-sm hover:shadow-md'
+                    {/* CTA Buttons */}
+                    <div className='flex items-center gap-2 sm:gap-3 sm:ml-auto'>
+                      {currentProject.demo && (
+                        <Link
+                          href={currentProject.demo}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent border border-muted dark:border-accent rounded-lg hover:bg-accent/10 hover:text-accent transition-all duration-200 shadow-sm hover:shadow-md'
+                          aria-label={`View demo for ${currentProject.title}`}
                         >
-                          <ArrowRight />
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent
-                        side='top'
-                        sideOffset={0}
-                        className='bg-transparent text-accent rounded-lg py-2 text-xs mr-1 sm:text-sm font-medium shadow-sm'
-                      >
-                        <p>{translations.nextProject}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                          Demo
+                          <FaExternalLinkAlt className='w-3.5 h-3.5' />
+                        </Link>
+                      )}
+                      {currentProject.github && (
+                        <Link
+                          href={currentProject.github}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-primary dark:text-accent border border-muted dark:border-accent rounded-lg hover:bg-accent/10 hover:text-accent transition-all duration-200 shadow-sm hover:shadow-md'
+                          aria-label={`View GitHub repository for ${currentProject.title}`}
+                        >
+                          <FaGithub className='w-4 h-4' />
+                          GitHub
+                        </Link>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <AlertDialogCancel
-                  className='absolute top-3 right-3 sm:top-4 sm:right-4 text-primary dark:text-accent dark:hover:bg-accent hover:text-primary dark:hover:text-primary transition-colors duration-200 bg-background/80 dark:bg-card/80 backdrop-blur-sm p-2.5 rounded-full hover:bg-background/90 border border-primary dark:border-accent shadow-sm hover:shadow-md'
-                  aria-label='Close dialog'
-                >
-                  ✕
-                </AlertDialogCancel>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
