@@ -7,99 +7,168 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, useInView } from "framer-motion";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useRef } from "react";
 
 const Services = () => {
   const translations = useTranslation();
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
   const services = [
     {
-      icon: <Code className='w-10 h-10 text-accent' />,
+      icon: Code,
       title: translations.webDevelopment,
       description: translations.servicesDesc1,
     },
     {
-      icon: <Smartphone className='w-10 h-10 text-accent' />,
+      icon: Smartphone,
       title: translations.mobileDevelopment,
       description: translations.servicesDesc2,
     },
     {
-      icon: <Gamepad className='w-10 h-10 text-accent' />,
+      icon: Gamepad,
       title: translations.gameDevelopment,
       description: translations.servicesDesc3,
     },
     {
-      icon: <LayoutDashboard className='w-10 h-10 text-accent' />,
+      icon: LayoutDashboard,
       title: translations.uiUxDesign,
       description: translations.servicesDesc4,
     },
   ];
 
-  const titleVariants: Variants = {
-    offscreen: { opacity: 0, x: -100 },
-    onscreen: {
-      x: 0,
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
       opacity: 1,
-      transition: { type: "spring", stiffness: 600, damping: 20 },
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const titleVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: -30,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+        duration: 0.6,
+      },
     },
   };
 
   const cardVariants: Variants = {
-    offscreen: { opacity: 0, x: 100 },
-    onscreen: (index: number) => ({
-      x: 0,
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.9,
+    },
+    visible: {
       opacity: 1,
+      y: 0,
+      scale: 1,
       transition: {
         type: "spring",
-        stiffness: 100,
+        stiffness: 200,
         damping: 20,
-        delay: 0.2 + index * 0.2,
+        duration: 0.6,
       },
-    }),
+    },
+  };
+
+  const iconVariants: Variants = {
+    rest: {
+      scale: 1,
+      rotate: 0,
+    },
+    hover: {
+      scale: 1.15,
+      rotate: [0, -10, 10, -10, 0],
+      transition: {
+        scale: {
+          type: "spring",
+          stiffness: 400,
+          damping: 10,
+        },
+        rotate: {
+          type: "tween",
+          duration: 0.5,
+          ease: "easeInOut",
+        },
+      },
+    },
   };
 
   return (
     <section
+      ref={sectionRef}
       id='services'
-      className='py-24 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900 overflow-hidden'
+      className='py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900'
     >
-      <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+      <div className='container mx-auto max-w-7xl'>
         <motion.h2
-          initial='offscreen'
-          whileInView='onscreen'
-          viewport={{ amount: 0.5 }}
           variants={titleVariants}
-          className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-200 text-center mb-8 sm:mb-12'
+          initial='hidden'
+          animate={isInView ? "visible" : "hidden"}
+          className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-200 text-center mb-12 sm:mb-16'
         >
           {translations.servicesTitle}
         </motion.h2>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8'>
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial='offscreen'
-              whileInView='onscreen'
-              viewport={{ amount: 0.5 }}
-              variants={cardVariants}
-              custom={index}
-            >
-              <Card className='bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-accent transition-transform duration-300 transform hover:-translate-y-2'>
-                <CardHeader>
-                  <div className='flex justify-center mb-4 text-accent'>
-                    {service.icon}
-                  </div>
-                  <CardTitle className='text-lg sm:text-xl md:text-2xl text-gray-900 dark:text-white text-center cursor-default'>
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className='text-sm sm:text-base text-gray-700 dark:text-gray-300 text-center mt-2 cursor-default'>
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          variants={containerVariants}
+          initial='hidden'
+          animate={isInView ? "visible" : "hidden"}
+          className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8'
+        >
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                whileHover={{ y: -8 }}
+                className='h-full'
+              >
+                <Card className='bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-accent transition-all duration-300 cursor-pointer group relative overflow-hidden'>
+                  {/* Subtle gradient on hover */}
+                  <div className='absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none' />
+
+                  <CardHeader className='relative z-10 p-6 sm:p-8'>
+                    <motion.div
+                      className='flex justify-center mb-6'
+                      variants={iconVariants}
+                      initial='rest'
+                      whileHover='hover'
+                    >
+                      <div className='p-4 rounded-2xl bg-accent/10 dark:bg-accent/20 group-hover:bg-accent/20 dark:group-hover:bg-accent/30 transition-colors duration-300'>
+                        <IconComponent className='w-8 h-8 sm:w-10 sm:h-10 text-accent' />
+                      </div>
+                    </motion.div>
+
+                    <CardTitle className='text-xl sm:text-2xl font-bold text-gray-900 dark:text-white text-center mb-3 cursor-default group-hover:text-accent transition-colors duration-300'>
+                      {service.title}
+                    </CardTitle>
+
+                    <CardDescription className='text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center leading-relaxed cursor-default'>
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );

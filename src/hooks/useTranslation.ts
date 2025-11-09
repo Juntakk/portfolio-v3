@@ -18,14 +18,10 @@ const translations: { [key: string]: Translations } = {
     mobileDevelopment: "Mobile",
     gameDevelopment: "Video games",
     uiUxDesign: "UI/UX",
-    servicesDesc1:
-      "Building modern, responsive, and scalable tailored deployed websites.",
-    servicesDesc2:
-      "Creating cross-platform mobile apps with seamless user experiences.",
-    servicesDesc3:
-      "Designing and developing engaging games for web and mobile platforms.",
-    servicesDesc4:
-      "Crafting intuitive and visually stunning interfaces for your applications.",
+    servicesDesc1: "Building modern and scalable websites",
+    servicesDesc2: "Creating cross-platform mobile apps",
+    servicesDesc3: "Designing and developing engaging games",
+    servicesDesc4: "Crafting intuitive and stunning interfaces",
     projectsTitle: "Some Projects",
     all: "All",
     AI: "AI",
@@ -68,14 +64,10 @@ const translations: { [key: string]: Translations } = {
     mobileDevelopment: "Mobile",
     gameDevelopment: "Jeux Vidéos",
     uiUxDesign: "UI/UX",
-    servicesDesc1:
-      "Création de sites web modernes, réactifs et évolutifs, adaptés à tout vos besoins.",
-    servicesDesc2:
-      "Création d'applications mobiles multiplateformes avec une expérience utilisateur fluide.",
-    servicesDesc3:
-      "Conception et développement de jeux engageants pour les plateformes web et mobiles.",
-    servicesDesc4:
-      "Création d'interfaces intuitives, fluides et animées pour toutes vos applications.",
+    servicesDesc1: "Création de sites web modernes et évolutifs",
+    servicesDesc2: "Création d'applications mobiles multiplateformes",
+    servicesDesc3: "Conception et développement de jeux engageants",
+    servicesDesc4: "Création d'interfaces intuitives et animées",
     projectsTitle: "Quelques projets",
     all: "Tout",
     AI: "IA",
