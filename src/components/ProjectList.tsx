@@ -183,7 +183,7 @@ const ProjectList = ({
                                 <ArrowLeft className='w-4 h-4' />
                               </Button>
                             </TooltipTrigger>
-                            <TooltipContent>
+                            <TooltipContent side='top'>
                               <p>{translations.prevProject}</p>
                             </TooltipContent>
                           </Tooltip>
@@ -203,7 +203,7 @@ const ProjectList = ({
                                 <ArrowRight className='w-4 h-4' />
                               </Button>
                             </TooltipTrigger>
-                            <TooltipContent>
+                            <TooltipContent side='top'>
                               <p>{translations.nextProject}</p>
                             </TooltipContent>
                           </Tooltip>

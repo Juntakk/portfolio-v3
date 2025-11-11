@@ -237,7 +237,7 @@ const Header = () => {
         variants={scrollButtonVariants}
         initial='initial'
         animate='animate'
-        className='mt-12 sm:mt-16'
+        className='mt-12 sm:mt-16 md:mr-4 lg:mr-10'
       >
         <Link
           to='services'
