@@ -21,14 +21,12 @@ const ImageEffect = ({
   return (
     <div className='flex justify-center items-center w-full'>
       <div className='relative w-full overflow-hidden rounded-lg'>
-        {/* Loader */}
         {isLoading && (
           <div className='absolute inset-0 z-10 flex items-center justify-center bg-primary animate-pulse rounded-lg'>
             <Loader2 size={60} className='animate-spin text-accent' />
           </div>
         )}
 
-        {/* Image */}
         <Image
           src={sampleImg}
           alt='Screenshot'
