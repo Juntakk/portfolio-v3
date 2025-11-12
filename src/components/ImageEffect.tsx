@@ -26,7 +26,6 @@ const ImageEffect = ({
             <Loader2 size={60} className='animate-spin text-accent' />
           </div>
         )}
-
         <Image
           src={sampleImg}
           alt='Screenshot'
