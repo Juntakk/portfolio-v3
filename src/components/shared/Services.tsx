@@ -96,7 +96,7 @@ const Services = () => {
     <section
       ref={sectionRef}
       id='services'
-      className='sm:pb-0 pb-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900'
+      className='sm:pb-0 pb-24 px-4 pt-4 sm:pt-0 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900'
     >
       <div className='container flex flex-col items-center mx-auto max-w-7xl'>
         {/* <motion.h2

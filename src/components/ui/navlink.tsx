@@ -40,7 +40,7 @@ const NavLink = ({ icon, content, destination, isActive }: NavLinkProps) => {
                 className={`text-3xl transition-all duration-300 ${
                   isActive
                     ? "text-accent border-b-2 border-accent py-1"
-                    : "text-gray-400 hover:text-accent"
+                    : "text-gray-500 hover:text-accent"
                 }`}
               >
                 {icon}

@@ -80,7 +80,7 @@ const AboutMe = () => {
                   visible: { opacity: 1, y: 0 },
                 }}
               >
-                <div className='flex flex-col items-center justify-center p-8 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg hover:border-accent transition-all duration-300'>
+                <div className='flex flex-col items-center justify-center p-8 bg-white dark:bg-gray-800 dark:border-gray-700 rounded-lg border-accent shadow-lg transition-all duration-300'>
                   <div className='text-accent mb-4'>
                     <i className='text-5xl sm:text-6xl'>{skill.icon}</i>
                   </div>
