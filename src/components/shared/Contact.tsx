@@ -129,7 +129,7 @@ const Contact = () => {
             variants={childVariants}
             whileHover={{ scale: 1.1 }}
           >
-            <FaLinkedin className='w-10 h-10 sm:w-14 sm:h-14 text-gray-500 hover:text-accent' />
+            <FaLinkedin className='w-10 h-10 sm:w-14 sm:h-14 text-gray-500 dark:text-gray-400 hover:text-accent' />
           </motion.a>
           <motion.a
             href='https://github.com/Juntakk'
@@ -139,7 +139,7 @@ const Contact = () => {
             variants={childVariants}
             whileHover={{ scale: 1.1 }}
           >
-            <FaGithub className='w-10 h-10 sm:w-14 sm:h-14 text-gray-500 hover:text-accent' />
+            <FaGithub className='w-10 h-10 sm:w-14 sm:h-14 text-gray-500 dark:text-gray-400 hover:text-accent' />
           </motion.a>
         </motion.div>
 
