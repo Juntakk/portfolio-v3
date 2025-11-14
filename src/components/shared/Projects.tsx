@@ -44,18 +44,18 @@ const Projects = () => {
   return (
     <section
       id='projects'
-      className='min-h-full sm:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900'
+      className='min-h-full sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900'
     >
-      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='container flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8'>
         {/* Section Title */}
-        <motion.h2
+        {/* <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-200 text-center mb-8 sm:mb-12'
         >
           {translations.projectsTitle}
-        </motion.h2>
+        </motion.h2> */}
 
         {/* Category Buttons */}
         <motion.div

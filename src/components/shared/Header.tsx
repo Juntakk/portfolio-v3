@@ -165,14 +165,14 @@ const Header = () => {
     <section
       ref={ref}
       id='header'
-      className='flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900'
+      className='flex flex-col justify-center items-center text-center gap-1 bg-white dark:bg-gray-900'
     >
       {/* Greeting text with letter-by-letter animation */}
       <motion.div
         variants={containerVariants}
         initial='hidden'
         animate={isInView ? "visible" : "hidden"}
-        className='mb-2 cursor-default'
+        className='cursor-default'
       >
         <motion.span className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-700 dark:text-gray-300 inline-block'>
           {greetingLetters.map((letter, index) => (
@@ -192,7 +192,7 @@ const Header = () => {
         variants={titleContainerVariants}
         initial='hidden'
         animate={isInView ? "visible" : "hidden"}
-        className='mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 dark:text-white md:mx-8 cursor-default'
+        className='text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 dark:text-white md:mx-8 cursor-default'
       >
         <span className='inline-block'>
           {nameLetters.map((letter, index) => (
@@ -212,7 +212,7 @@ const Header = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
-        className='text-lg cursor-default sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 min-h-[3rem] sm:min-h-[4rem] flex items-center justify-center'
+        className='text-2xl cursor-default lg:text-3xl text-gray-700 dark:text-gray-300 min-h-[3rem] sm:min-h-[4rem] flex items-center justify-center'
       >
         <span>{translations.greeting2}</span>
         <span className='text-accent mx-2 inline-block min-w-[100px] text-center relative'>
@@ -237,7 +237,7 @@ const Header = () => {
         variants={scrollButtonVariants}
         initial='initial'
         animate='animate'
-        className='mt-12 sm:mt-16 md:mr-4 lg:mr-10'
+        className='mt-6 md:mr-4 lg:mr-10'
       >
         <Link
           to='services'
@@ -250,8 +250,8 @@ const Header = () => {
             whileHover='hover'
             whileTap='tap'
           >
-            <motion.div className='p-3 sm:p-4 rounded-full bg-accent/10 dark:bg-accent/20 backdrop-blur-sm border border-accent/50 transition-all duration-300 group-hover:bg-accent/20 dark:group-hover:bg-accent/30 group-hover:border-accent'>
-              <ChevronDown className='text-accent w-6 h-6 sm:w-8 sm:h-8 transition-transform duration-300 group-hover:translate-y-1' />
+            <motion.div className='p-3 sm:p-4 transition-all duration-300'>
+              <ChevronDown className='text-accent w-10 h-10 sm:w-12 sm:h-12 animate-bounce transition-all duration-300' />
             </motion.div>
           </motion.div>
         </Link>

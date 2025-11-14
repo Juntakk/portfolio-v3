@@ -25,6 +25,7 @@ const UI = () => {
   const { theme, toggleTheme } = useThemeStore();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("header");
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   const downloadCV = () => {
     const cvUrl = language === "en" ? CV : CV_fr;
@@ -45,7 +46,7 @@ const UI = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: isMobile ? 0.1 : 0.5 }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -53,7 +54,7 @@ const UI = () => {
     return () => {
       sections.forEach((section) => observer.unobserve(section));
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <>

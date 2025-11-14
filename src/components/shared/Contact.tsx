@@ -61,7 +61,7 @@ const Contact = () => {
           boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
         },
         iconTheme: {
-          primary: "#52d4ba",
+          primary: "#fbbf24",
           secondary: "#333333",
         },
         removeDelay: 3000,
@@ -109,16 +109,16 @@ const Contact = () => {
         variants={containerVariants}
       >
         {/* Section Title */}
-        <motion.h2
+        {/* <motion.h2
           className='text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-gray-200 text-center mb-6'
           variants={childVariants}
         >
           {translations.contactTitle}
-        </motion.h2>
+        </motion.h2> */}
 
         {/* Social Media Links */}
         <motion.div
-          className='flex justify-center gap-6 sm:gap-8 mb-10 sm:mb-12'
+          className='flex justify-center gap-6 sm:gap-8 mb-8'
           variants={childVariants}
         >
           <motion.a
@@ -129,17 +129,17 @@ const Contact = () => {
             variants={childVariants}
             whileHover={{ scale: 1.1 }}
           >
-            <FaLinkedin className='w-8 h-8 sm:w-10 sm:h-10' />
+            <FaLinkedin className='w-10 h-10 sm:w-14 sm:h-14 text-gray-300 hover:text-accent' />
           </motion.a>
           <motion.a
             href='https://github.com/Juntakk'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-gray-800 dark:text-gray-200 hover:text-accent dark:hover:text-accent transition-colors duration-300'
+            className='text-gray-100 dark:text-gray-200 hover:text-accent dark:hover:text-accent transition-colors duration-300'
             variants={childVariants}
             whileHover={{ scale: 1.1 }}
           >
-            <FaGithub className='w-8 h-8 sm:w-10 sm:h-10' />
+            <FaGithub className='w-10 h-10 sm:w-14 sm:h-14 text-gray-300 hover:text-accent' />
           </motion.a>
         </motion.div>
 
@@ -151,12 +151,12 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className='space-y-6 sm:space-y-8'>
             {/* Name */}
             <motion.div variants={childVariants}>
-              <Label
+              {/* <Label
                 htmlFor='name'
                 className='block text-sm font-medium text-gray-800 dark:text-gray-100 mb-2'
               >
                 {translations.name}
-              </Label>
+              </Label> */}
               <Input
                 type='text'
                 id='name'
@@ -171,12 +171,12 @@ const Contact = () => {
 
             {/* Email */}
             <motion.div variants={childVariants}>
-              <Label
+              {/* <Label
                 htmlFor='email'
                 className='block text-sm font-medium text-gray-800 dark:text-gray-100 mb-2'
               >
                 Email
-              </Label>
+              </Label> */}
               <Input
                 type='email'
                 id='email'
@@ -191,12 +191,12 @@ const Contact = () => {
 
             {/* Message */}
             <motion.div variants={childVariants}>
-              <Label
+              {/* <Label
                 htmlFor='message'
                 className='block text-sm font-medium text-gray-800 dark:text-gray-100 mb-2'
               >
                 Message
-              </Label>
+              </Label> */}
               <Textarea
                 id='message'
                 name='message'

@@ -50,23 +50,6 @@ const Services = () => {
     },
   };
 
-  const titleVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: -30,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-        duration: 0.6,
-      },
-    },
-  };
-
   const cardVariants: Variants = {
     hidden: {
       opacity: 0,
@@ -113,17 +96,17 @@ const Services = () => {
     <section
       ref={sectionRef}
       id='services'
-      className='py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900'
+      className='sm:pb-0 pb-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900'
     >
-      <div className='container mx-auto max-w-7xl'>
-        <motion.h2
+      <div className='container flex flex-col items-center mx-auto max-w-7xl'>
+        {/* <motion.h2
           variants={titleVariants}
           initial='hidden'
           animate={isInView ? "visible" : "hidden"}
           className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-200 text-center mb-12 sm:mb-16'
         >
           {translations.servicesTitle}
-        </motion.h2>
+        </motion.h2> */}
 
         <motion.div
           variants={containerVariants}
@@ -138,7 +121,7 @@ const Services = () => {
                 key={index}
                 variants={cardVariants}
                 whileHover={{ y: -8 }}
-                className='h-full'
+                className='h-full w-96 sm:w-full'
               >
                 <Card className='bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-accent transition-all duration-300 cursor-pointer group relative overflow-hidden'>
                   {/* Subtle gradient on hover */}

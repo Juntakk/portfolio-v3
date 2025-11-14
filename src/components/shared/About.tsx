@@ -1,38 +1,39 @@
-"use client"; // Required for client-side interactivity in Next.js
+"use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { icons } from "@/data/icons";
-import { useTranslation } from "@/hooks/useTranslation";
 
 const AboutMe = () => {
   const skills = [
-    { name: "Python", icon: icons.python },
     { name: "React", icon: icons.react },
-    { name: "Node", icon: icons.node },
-    { name: "Volleyball", icon: icons.volleyball },
-    { name: "Next", icon: icons.next },
+    { name: "TypeScript", icon: icons.typescript },
+    { name: "Next.js", icon: icons.next },
     { name: "Tailwind", icon: icons.tailwind },
-    { name: "C++", icon: icons.cPlusPlus },
-    { name: "Flutter", icon: icons.flutter },
+    { name: "Node.js", icon: icons.node },
+    { name: "Python", icon: icons.python },
+    { name: "FastAPI", icon: icons.fastapi },
+    { name: "PostgreSQL", icon: icons.postgresql },
+    { name: "Docker", icon: icons.docker },
+    { name: "Git", icon: icons.git },
+    { name: "AWS", icon: icons.aws },
+    { name: "Terraform", icon: icons.terraform },
   ];
-  const translations = useTranslation();
 
   return (
     <section id='about' className='bg-gray-100 dark:bg-gray-900'>
       <div className='py-12 sm:py-24 px-4 sm:px-12 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900'>
         {/* Section Title */}
-        <motion.h2
+        {/* <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className='text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-200 text-center mb-12'
         >
           {translations.aboutTitle}
-        </motion.h2>
+        </motion.h2> */}
 
         {/* Introduction with Picture */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -43,7 +44,7 @@ const AboutMe = () => {
               src='/assets/my_picture.png'
               alt='Nicolas Gauthier'
               fill
-              className='rounded-full object-cover border-4 border-teal-400 hover:cursor-pointer'
+              className='rounded-full object-cover border-4 border-accent hover:cursor-pointer'
               onClick={() =>
                 window.open("https://github.com/Juntakk", "_blank")
               }
@@ -55,7 +56,7 @@ const AboutMe = () => {
               {translations.aboutHeader}
             </p>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Skills Section */}
         <motion.div
@@ -67,9 +68,9 @@ const AboutMe = () => {
           }}
           className='max-w-4xl mx-auto'
         >
-          <h3 className='text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-200 text-center mb-8'>
+          {/* <h3 className='text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-200 text-center mb-8'>
             {translations.skills}
-          </h3>
+          </h3> */}
           <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6'>
             {skills.map((skill, index) => (
               <motion.div
@@ -79,11 +80,11 @@ const AboutMe = () => {
                   visible: { opacity: 1, y: 0 },
                 }}
               >
-                <div className='flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg hover:border-teal-400 transition-all duration-300'>
-                  <div className='text-teal-400 mb-2'>
-                    <i className='text-3xl sm:text-4xl'>{skill.icon}</i>
+                <div className='flex flex-col items-center justify-center p-8 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg hover:border-accent transition-all duration-300'>
+                  <div className='text-accent mb-4'>
+                    <i className='text-5xl sm:text-6xl'>{skill.icon}</i>
                   </div>
-                  <p className='text-sm sm:text-lg text-gray-900 dark:text-white'>
+                  <p className='text-lg sm:text-xl text-gray-900 dark:text-white'>
                     {skill.name}
                   </p>
                 </div>

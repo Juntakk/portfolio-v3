@@ -11,12 +11,12 @@ module.exports = {
         360: "360deg",
       },
       colors: {
-        primary: "#0a192f",
-        secondary: "#ccd6f6",
-        accent: "#52d4ba",
-        muted: "#8892b0",
-        card: "#112240",
-        border: "#1f2a48",
+        primary: "#0a1a14", // Deep forest green
+        secondary: "#e8f5e0", // Pale mint
+        accent: "#fbbf24", // Warm amber
+        muted: "#7c9885", // Sage green
+        card: "#0f2419", // Dark emerald
+        border: "#1a3d2b", // Forest border
       },
       animation: {
         bounce: "bounce 2s infinite",
@@ -29,7 +29,7 @@ module.exports = {
       },
       boxShadow: {
         soft: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-        glow: "0 0 10px rgba(82, 212, 186, 0.5)",
+        glow: "0 0 10px rgba(251, 191, 36, 0.5)",
       },
       keyframes: {
         fadeIn: {

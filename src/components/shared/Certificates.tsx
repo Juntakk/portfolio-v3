@@ -1,4 +1,4 @@
-import { useTranslation } from "@/hooks/useTranslation";
+// import { useTranslation } from "@/hooks/useTranslation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import {
@@ -11,7 +11,7 @@ import { VisuallyHidden } from "radix-ui";
 import { AlertDialogCancel } from "@radix-ui/react-alert-dialog";
 
 const Certificates = () => {
-  const translations = useTranslation();
+  // const translations = useTranslation();
 
   const childVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -28,16 +28,16 @@ const Certificates = () => {
   return (
     <section
       id='certificates'
-      className='min-h-full pt-24 pb-20 sm:px-6 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900'
+      className='sm:px-6 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900'
     >
-      <motion.h2
+      {/* <motion.h2
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-200 text-center mb-8 sm:mb-12'
       >
         {translations.certificates}
-      </motion.h2>
+      </motion.h2> */}
 
       <motion.div
         initial='hidden'
@@ -59,7 +59,7 @@ const Certificates = () => {
               <motion.div
                 key={index}
                 variants={childVariants}
-                className='relative w-[95vw] sm:w-[300px] h-auto aspect-[4/3] hover:cursor-pointer border border-accent dark:border-accent hover:border-transparent bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group transition-all duration-300'
+                className='z-0 relative w-96 sm:w-[300px] h-auto aspect-[4/3] hover:cursor-pointer border border-accent dark:border-accent hover:border-transparent bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group transition-all duration-300'
               >
                 {/* Text in the middle */}
                 <div className='absolute inset-0 z-20 flex items-end justify-end p-4 sm:p-6 md:p-8 text-2xl font-semibold text-accent bg-green transition-all duration-500 opacity-100 group-hover:opacity-0 rounded-lg'>
