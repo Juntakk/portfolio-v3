@@ -125,21 +125,21 @@ const Contact = () => {
             href='https://linkedin.com/in/nicolasgauthierdev'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-gray-800 dark:text-gray-200 hover:text-accent dark:hover:text-accent transition-colors duration-300'
+            className='text-gray-800 dark:text-gray-200 hover:text-accent transition-colors duration-300'
             variants={childVariants}
             whileHover={{ scale: 1.1 }}
           >
-            <FaLinkedin className='w-10 h-10 sm:w-14 sm:h-14 text-gray-500 dark:text-gray-400 hover:text-accent' />
+            <FaLinkedin className='w-10 h-10 sm:w-14 dark:hover:text-accent sm:h-14 text-gray-500 dark:text-gray-400 hover:text-accent' />
           </motion.a>
           <motion.a
             href='https://github.com/Juntakk'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-gray-100 dark:text-gray-200 hover:text-accent dark:hover:text-accent transition-colors duration-300'
+            className='text-gray-100 dark:text-gray-200 hover:text-accent transition-colors duration-300'
             variants={childVariants}
             whileHover={{ scale: 1.1 }}
           >
-            <FaGithub className='w-10 h-10 sm:w-14 sm:h-14 text-gray-500 dark:text-gray-400 hover:text-accent' />
+            <FaGithub className='w-10 h-10 sm:w-14 sm:h-14 text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent' />
           </motion.a>
         </motion.div>
 
