@@ -17,7 +17,7 @@ const ParticlesBackground = () => {
 
     // Particle settings
     const particles = [];
-    const particleCount = 20; // Number of particles
+    const particleCount = 15; // Number of particles
     const minRadius = 3; // Minimum particle size
     const maxRadius = 3; // Maximum particle size
 
@@ -99,8 +99,8 @@ const ParticlesBackground = () => {
         left: 0,
         width: "100vw",
         height: "100%",
-        zIndex: 1, // Ensure it stays in the background
-        pointerEvents: "none", // Allow clicks to pass through
+        zIndex: 1,
+        pointerEvents: "none",
       }}
     />
   );
