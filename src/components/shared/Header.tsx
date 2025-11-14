@@ -192,7 +192,7 @@ const Header = () => {
         variants={titleContainerVariants}
         initial='hidden'
         animate={isInView ? "visible" : "hidden"}
-        className='text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 dark:text-white md:mx-8 cursor-default'
+        className='text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 dark:text-white md:mx-8 cursor-default'
       >
         <span className='inline-block'>
           {nameLetters.map((letter, index) => (

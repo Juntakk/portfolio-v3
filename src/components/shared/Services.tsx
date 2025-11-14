@@ -121,7 +121,7 @@ const Services = () => {
                 key={index}
                 variants={cardVariants}
                 whileHover={{ y: -8 }}
-                className='h-full w-96 sm:w-full'
+                className='h-full w-80 sm:w-full'
               >
                 <Card className='bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-accent transition-all duration-300 cursor-pointer group relative overflow-hidden'>
                   {/* Subtle gradient on hover */}

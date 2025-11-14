@@ -59,7 +59,7 @@ const Certificates = () => {
               <motion.div
                 key={index}
                 variants={childVariants}
-                className='z-0 relative w-96 sm:w-[300px] h-auto aspect-[4/3] hover:cursor-pointer border border-accent dark:border-accent hover:border-transparent bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group transition-all duration-300'
+                className='z-0 relative w-80 sm:w-[300px] h-auto aspect-[4/3] hover:cursor-pointer border border-accent dark:border-accent hover:border-transparent bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group transition-all duration-300'
               >
                 {/* Text in the middle */}
                 <div className='absolute inset-0 z-20 flex items-end justify-end p-4 sm:p-6 md:p-8 text-2xl font-semibold text-accent bg-green transition-all duration-500 opacity-100 group-hover:opacity-0 rounded-lg'>
