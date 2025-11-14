@@ -21,7 +21,7 @@ const AboutMe = () => {
 
   return (
     <section id='about' className='bg-gray-100 dark:bg-gray-900'>
-      <div className='py-12 sm:py-24 px-4 sm:px-12 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900'>
+      <div className='py-12 sm:py-24 px-4 sm:px-12 lg:px-8 overflow-hidden dark:bg-gray-900'>
         {/* Section Title */}
         {/* <motion.h2
           initial={{ opacity: 0, y: 50 }}
@@ -80,7 +80,7 @@ const AboutMe = () => {
                   visible: { opacity: 1, y: 0 },
                 }}
               >
-                <div className='flex flex-col items-center justify-center p-8 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg hover:border-accent transition-all duration-300'>
+                <div className='flex flex-col items-center justify-center p-8 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg hover:border-accent transition-all duration-300'>
                   <div className='text-accent mb-4'>
                     <i className='text-5xl sm:text-6xl'>{skill.icon}</i>
                   </div>
