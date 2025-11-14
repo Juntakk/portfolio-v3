@@ -98,7 +98,7 @@ const ProjectList = ({
                 </div>
               </Card>
             </AlertDialogTrigger>
-            <AlertDialogContent className='flex flex-col bg-white dark:bg-gray-900 border border-accent dark:border-accent rounded-lg max-w-sm sm:max-w-xl md:max-w-3xl max-h-[95vh] mx-4 shadow-xl overflow-hidden'>
+            <AlertDialogContent className='flex p-2 flex-col bg-white dark:bg-gray-900 border border-accent dark:border-accent rounded-lg max-w-[20rem] sm:max-w-xl md:max-w-3xl max-h-[95vh] mx-4 shadow-xl overflow-hidden'>
               {/* Close Button */}
               <AlertDialogCancel
                 className='absolute top-3 right-3 sm:top-4 sm:right-4 z-50 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 border-0 shadow-md hover:shadow-lg'
@@ -130,7 +130,7 @@ const ProjectList = ({
               </AlertDialogHeader>
 
               {/* Carousel */}
-              <div className='flex-1 overflow-y-auto px-4 sm:px-12 py-4'>
+              <div className='flex-1 overflow-y-auto sm:px-12 sm:py-4'>
                 <ProjectCarousel
                   project={currentProject}
                   currentIndex={currentIndex}

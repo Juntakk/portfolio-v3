@@ -22,6 +22,14 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import { FaDocker } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa";
 import { FaAws } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { SiShadcnui } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { BiLogoCPlusPlus } from "react-icons/bi";
+import { SiGodotengine } from "react-icons/si";
+import { SiRaylib } from "react-icons/si";
+import { SiUnrealengine } from "react-icons/si";
+import { FaCss3 } from "react-icons/fa";
 
 export const icons = {
   python: <FaPython />,
@@ -36,6 +44,14 @@ export const icons = {
   docker: <FaDocker />,
   git: <FaGitAlt />,
   aws: <FaAws />,
+  javascript: <IoLogoJavascript />,
+  shadcn: <SiShadcnui />,
+  mongo: <SiMongodb />,
+  cPlusPlus: <BiLogoCPlusPlus />,
+  godot: <SiGodotengine />,
+  raylib: <SiRaylib />,
+  unreal: <SiUnrealengine />,
+  css: <FaCss3 />,
 };
 
 export const mainIcons = {

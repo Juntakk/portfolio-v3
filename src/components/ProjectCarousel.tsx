@@ -21,7 +21,7 @@ const ProjectCarousel = ({
       <CarouselContent>
         {project.screenShots.map((screenshot, index) => (
           <CarouselItem key={index}>
-            <div className='p-2'>
+            <div>
               <Link
                 href={project.demo ? project.demo : project.github || "#"}
                 target='_blank'

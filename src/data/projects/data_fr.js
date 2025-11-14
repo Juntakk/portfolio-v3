@@ -1,20 +1,7 @@
-import { icons, mainIcons } from "../icons"; // Importer les icônes
+import { icons, mainIcons } from "../icons";
 import images from "../../../public/assets/images";
 
-// Données des projets avec catégories
 export const projects_fr = [
-  //   {
-  //     id: 1,
-  //     title: "Chatbot",
-  //     desc: "Chatbot alimenté par l'IA simulant des conversations humaines, exploitant le traitement du langage naturel et des systèmes backend évolutifs.",
-  //     icons: [icons.python, icons.django, icons.numpy],
-  //     languages: ["Python", "Django", "Numpy"],
-  //     demo: "",
-  //     github: "https://github.com/Juntakk/chat-bot",
-  //     category: "IA",
-  //     screenShots: images.chatbotScreenShot,
-  //     icon: mainIcons.chatbot,
-  //   },
   {
     id: 1,
     title: "Floppy Bird",
