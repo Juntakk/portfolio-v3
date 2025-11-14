@@ -18,8 +18,8 @@ const ParticlesBackground = () => {
     // Particle settings
     const particles = [];
     const particleCount = 20; // Number of particles
-    const minRadius = 2; // Minimum particle size
-    const maxRadius = 5; // Maximum particle size
+    const minRadius = 3; // Minimum particle size
+    const maxRadius = 3; // Maximum particle size
 
     // Create particles
     for (let i = 0; i < particleCount; i++) {
@@ -38,7 +38,7 @@ const ParticlesBackground = () => {
       particles.forEach((particle) => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = theme === "dark" ? "#52d4ba" : "#33333349";
+        ctx.fillStyle = theme === "dark" ? "#fbbf24" : "#33333349";
         ctx.fill();
         ctx.closePath();
       });
