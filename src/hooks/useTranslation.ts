@@ -64,7 +64,7 @@ const translations: { [key: string]: Translations } = {
     mobileDevelopment: "Mobile",
     gameDevelopment: "Jeux Vidéos",
     uiUxDesign: "UI/UX",
-    servicesDesc1: "Création de sites web modernes",
+    servicesDesc1: "Création de sites web",
     servicesDesc2: "Création d'applications mobiles",
     servicesDesc3: "Conception de jeux vidéos",
     servicesDesc4: "Création d'interfaces intuitives",
