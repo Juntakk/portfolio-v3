@@ -144,7 +144,7 @@ const Contact = () => {
         </motion.div>
 
         {/* Contact Form */}
-        <motion.div className='max-w-2xl min-w-xl' variants={childVariants}>
+        <motion.div className='max-w-2xl sm:mx-auto' variants={childVariants}>
           <form onSubmit={handleSubmit} className='space-y-6 sm:space-y-8'>
             {/* Name */}
             <motion.div variants={childVariants}>

@@ -56,6 +56,12 @@ const UI = () => {
     };
   }, [isMobile]);
 
+  useEffect(() => {
+    window.addEventListener("scroll", () =>
+      setTimeout(() => setIsMenuOpen(false), 600)
+    );
+  }, []);
+
   return (
     <>
       <Button
