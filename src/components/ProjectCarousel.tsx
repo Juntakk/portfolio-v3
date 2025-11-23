@@ -39,8 +39,8 @@ const ProjectCarousel = ({
 
       {project.screenShots.length > 1 ? (
         <>
-          <CarouselPrevious className='hidden ml-2 sm:flex top-1/2 transform -translate-y-1/2 text-primary dark:text-accent hover:text-primary dark:hover:text-primary transition-colors duration-200 bg-accent/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-accent/90 dark:hover:bg-accent border border-accent dark:border-border' />
-          <CarouselNext className='hidden mr-2 sm:flex top-1/2 transform -translate-y-1/2 text-primary dark:text-accent hover:text-primary dark:hover:text-primary transition-colors duration-200 bg-accent/80 dark:bg-card/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-accent/90 dark:hover:bg-accent border border-muted dark:border-border' />
+          <CarouselPrevious className='hidden ml-2 sm:flex top-1/2 transform -translate-y-1/2 transition-colors duration-200 backdrop-blur-sm p-3 rounded-full shadow-lg dark:border-accent dark:text-primary dark:bg-accent dark:hover:bg-accent/70' />
+          <CarouselNext className='hidden mr-2 sm:flex top-1/2 transform -translate-y-1/2 transition-colors duration-200 backdrop-blur-sm p-3 rounded-full shadow-lg dark:border-accent dark:text-primary dark:bg-accent dark:hover:bg-accent/70' />
         </>
       ) : (
         ""

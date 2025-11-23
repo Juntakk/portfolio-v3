@@ -11,12 +11,12 @@ module.exports = {
         360: "360deg",
       },
       colors: {
-        primary: "#0a1a14", // Deep forest green
-        secondary: "#e8f5e0", // Pale mint
-        accent: "#fbbf24", // Warm amber
-        muted: "#7c9885", // Sage green
-        card: "#0f2419", // Dark emerald
-        border: "#1a3d2b", // Forest border
+        primary: "#0a1a14",
+        secondary: "#e8f5e0",
+        accent: "#f59e0b",
+        muted: "#7c9885",
+        card: "#0f2419",
+        border: "#1a3d2b",
       },
       animation: {
         bounce: "bounce 2s infinite",
