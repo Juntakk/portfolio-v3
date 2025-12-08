@@ -18,7 +18,6 @@ export const getInitialLanguage = (): string => {
   if (browserLang.startsWith("en")) {
     return "en";
   }
-  // Default to "fr" for all other languages
   return "fr";
 };
 
