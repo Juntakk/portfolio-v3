@@ -13,7 +13,13 @@ export const getInitialLanguage = (): string => {
       return savedLang;
     }
   }
-  return "fr"; // Default to "fr" if no saved language
+  // If no saved language, use navigator.language
+  const browserLang = navigator.language.toLowerCase();
+  if (browserLang.startsWith("en")) {
+    return "en";
+  }
+  // Default to "fr" for all other languages
+  return "fr";
 };
 
 export const useLanguageStore = create<LanguageStore>((set) => ({
