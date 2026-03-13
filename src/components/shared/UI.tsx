@@ -14,8 +14,8 @@ import {
   IoMenu,
   IoClose,
 } from "react-icons/io5";
-import CV from "../../../public/assets/English_CV.pdf";
-import CV_fr from "../../../public/assets/French_CV.pdf";
+import CV from "../../../public/assets/nicolas-gauthier_20260312_2231_en.pdf";
+import CV_fr from "../../../public/assets/nicolas-gauthier_20260312_2300_fr.pdf";
 import { motion } from "framer-motion";
 import NavLink from "../ui/navlink";
 import { TbAwardFilled } from "react-icons/tb";
@@ -46,7 +46,7 @@ const UI = () => {
           }
         });
       },
-      { threshold: isMobile ? 0.1 : 0.5 }
+      { threshold: isMobile ? 0.1 : 0.5 },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -58,7 +58,7 @@ const UI = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
-      setTimeout(() => setIsMenuOpen(false), 600)
+      setTimeout(() => setIsMenuOpen(false), 600),
     );
   }, []);
 
