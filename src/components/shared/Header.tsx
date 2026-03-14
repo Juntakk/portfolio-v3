@@ -18,7 +18,7 @@ const Header = () => {
   const nameLetters = useMemo(() => name.split(""), []);
   const greetingLetters = useMemo(
     () => translations.greeting.split(""),
-    [translations.greeting]
+    [translations.greeting],
   );
 
   // Word rotation effect
@@ -165,7 +165,7 @@ const Header = () => {
     <section
       ref={ref}
       id='header'
-      className='flex flex-col justify-center items-center text-center gap-1 bg-white dark:bg-gray-900'
+      className='flex flex-col justify-center items-center text-center gap-1 lg:mt-24 bg-white dark:bg-gray-900'
     >
       {/* Greeting text with letter-by-letter animation */}
       <motion.div
