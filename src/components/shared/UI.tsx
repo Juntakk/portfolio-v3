@@ -14,8 +14,6 @@ import {
   IoMenu,
   IoClose,
 } from "react-icons/io5";
-import CV from "../../../public/assets/nicolas_gauthier_CV_en.pdf";
-import CV_fr from "../../../public/assets/nicolas_gauthier_CV_fr.pdf";
 import { motion } from "framer-motion";
 import NavLink from "../ui/navlink";
 import { TbAwardFilled } from "react-icons/tb";
@@ -28,12 +26,22 @@ const UI = () => {
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   const downloadCV = () => {
-    const cvUrl = language === "en" ? CV : CV_fr;
+    const cvUrl =
+      language === "en"
+        ? "/assets/nicolas_gauthier_CV_en.pdf"
+        : "/assets/nicolas_gauthier_CV_fr.pdf";
+
+    const filename =
+      language === "en"
+        ? "Nicolas_Gauthier_CV_EN.pdf"
+        : "Nicolas_Gauthier_CV_FR.pdf";
+
     const link = document.createElement("a");
     link.href = cvUrl;
-    link.download = "Nicolas_Gauthier_CV.pdf";
+    link.download = filename;
     link.click();
   };
+
   const translations = useTranslation();
 
   useEffect(() => {
